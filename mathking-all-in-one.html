@@ -1,0 +1,1022 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#08060a">
+<title>mathking — The Maths Challenge</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&family=Press+Start+2P&family=Pixelify+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}:root{--paper:#f7f7f4;--ink:#111;--muted:#85857f;--line:#deded8;--mono:'DM Mono',monospace;--sans:'Space Grotesk',sans-serif;--pixel:'Press Start 2P',monospace}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans)}button,input,select{font:inherit}button{cursor:pointer}.topbar{height:70px;padding:0 max(5vw,22px);display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#111;font-weight:700;font-size:18px;letter-spacing:-.8px}.brand-mark{width:31px;height:31px;background:#111;color:white;display:grid;place-items:center;font:9px var(--pixel)}.dot,.section-title h2 span{color:#999}.top-meta,.version,.eyebrow,.art-note,.art-bottom,.pixel-window p,.stats small,.section-index,.challenge-top,.stage small,.syllabus-note small,footer,.mono,.profile-panel label,.profile-foot>span,.quiz-brand,.player-line,.quiz-meta,.topic-tag,.quiz-actions>span,.result-xp small,.credit-kicker,.credit-copy small,.credit-footer,.credit-button{font-family:var(--mono);letter-spacing:1px}.top-meta{font-size:9px;color:#777;display:flex;align-items:center;gap:10px}.top-meta i{width:7px;height:7px;border-radius:50%;background:#111}.top-meta b{color:#bbb}.version{font-size:8px;color:#aaa}.wrap{max-width:1120px;margin:auto;padding:0 30px}.hero{display:grid;grid-template-columns:1fr 1fr;min-height:380px;align-items:center;border-bottom:1px solid var(--line);gap:25px}.eyebrow{font-size:9px;color:#888;display:flex;align-items:center;gap:9px}.eyebrow>span{height:1px;width:20px;background:#111}.hero h1{font-size:clamp(55px,7vw,82px);letter-spacing:-6px;line-height:.94;margin:22px 0 17px}.hero h1 em{font-style:normal;color:transparent;-webkit-text-stroke:1.5px #111}.intro{font-size:14px;color:#777;max-width:390px;line-height:1.65;margin-bottom:23px}.primary{border:0;background:#111;color:white;padding:15px 18px;font:10px var(--mono);letter-spacing:1px;transition:.2s}.primary:hover:not(:disabled){background:#333;transform:translateY(-2px)}.primary b{margin-left:24px}.primary:disabled{opacity:.35;cursor:not-allowed}.hero-art{height:290px;position:relative;display:grid;place-items:center}.art-note,.art-bottom{position:absolute;color:#aaa;font-size:8px}.art-note{top:4px;right:0}.art-bottom{bottom:3px;left:0}.pixel-window{width:240px;height:220px;background:#fff;border:1px solid #111;box-shadow:10px 10px #111;transform:rotate(3deg)}.window-top{height:25px;border-bottom:1px solid #111;display:flex;gap:5px;align-items:center;padding:0 8px}.window-top i{width:6px;height:6px;border:1px solid #111;border-radius:50%}.window-top label{margin-left:auto;font:8px var(--mono)}.pixel-face{width:110px;height:100px;background:#111;margin:26px auto 0;position:relative;clip-path:polygon(12% 0,88% 0,88% 12%,100% 12%,100% 88%,88% 88%,88% 100%,12% 100%,12% 88%,0 88%,0 12%,12% 12%)}.pixel-face b{position:absolute;top:31px;width:13px;height:17px;background:white}.pixel-face b:first-child{left:26px}.pixel-face b:nth-child(2){right:26px}.pixel-face i{position:absolute;bottom:17px;left:39px;width:33px;height:6px;background:white}.pixel-window p{text-align:center;font-size:8px}.float{position:absolute;font:30px var(--mono)}.f1{left:10%;top:30px}.f2{right:7%;top:70px}.f3{left:12%;bottom:30px}.challenge{padding:45px 0 0}.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:18px}.section-head .eyebrow{margin:0 0 8px}.section-head h2{font-size:34px;letter-spacing:-2px;margin:0}.section-index{font-size:8px;color:#aaa}.challenge-card{border:1px solid #111;background:#fff;padding:22px}.challenge-top{display:flex;justify-content:space-between;color:#999;font-size:8px}.stage-track{display:grid;grid-template-columns:repeat(8,1fr);gap:7px;margin:27px 0 20px}.stage{border:1px solid var(--line);min-height:77px;padding:10px;display:flex;flex-direction:column;justify-content:space-between}.stage b{font:15px var(--pixel)}.stage small{font-size:6px;color:#999}.stage:last-child{background:#111;color:#fff;border-color:#111}.stage:last-child small{color:#bbb}.challenge-copy{font-size:12px;color:#777;line-height:1.65;max-width:650px;margin:0 0 18px}.syllabus-note{display:flex;align-items:center;gap:15px;padding:20px 2px;border-bottom:1px solid var(--line)}.syllabus-symbol{width:40px;height:40px;background:#111;color:#fff;display:grid;place-items:center;font:15px var(--pixel)}.syllabus-note small{display:block;color:#999;font-size:8px;margin-bottom:5px}.syllabus-note strong{font-size:13px}.syllabus-note p{margin:4px 0 0;font-size:11px;color:#888}.stats{display:grid;grid-template-columns:repeat(4,1fr);padding:23px 0;border-bottom:1px solid var(--line)}.stats>div{padding:0 20px;border-right:1px solid var(--line)}.stats>div:first-child{padding-left:0}.stats>div:last-child{border:0}.stats small{display:block;font-size:8px;color:#999;margin-bottom:10px}.stats strong{font:15px var(--pixel)}.stats .rank{font-size:9px}footer{display:flex;justify-content:space-between;padding:15px 0 28px;color:#aaa;font-size:8px}.hidden{display:none!important}.overlay{position:fixed;inset:0;z-index:10;background:#111c;backdrop-filter:blur(5px);display:grid;place-items:center;padding:16px}.profile-panel,.quiz-panel{width:min(620px,100%);max-height:92vh;overflow:auto;background:var(--paper);border:1px solid #111;box-shadow:9px 9px #000;padding:25px 28px}.modal-top,.quiz-head{display:flex;justify-content:space-between;align-items:center}.mono{font-size:8px;color:#888}.close{border:0;background:transparent;font-size:27px}.profile-panel>.eyebrow{margin:28px 0 10px}.profile-panel h2,.quiz-panel h2{font-size:clamp(27px,5vw,38px);letter-spacing:-1.5px;margin:0 0 8px}.profile-panel h2 span{color:#999}.sub{font-size:12px;color:#888;margin:0 0 25px}.profile-panel label{display:block;font-size:8px;color:#777;margin:0 0 18px}.profile-panel input,.profile-panel select{display:block;width:100%;margin-top:9px;background:#fff;border:1px solid var(--line);padding:13px 12px;font:13px var(--sans);color:#111;outline:none}.profile-panel input:focus,.profile-panel select:focus{border-color:#111}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.profile-foot{display:flex;justify-content:space-between;align-items:center;margin-top:8px}.profile-foot>span{font-size:7px;color:#aaa}.quiz-brand{font-size:9px}.quiz-brand span{color:#999}.player-line{display:flex;justify-content:space-between;color:#777;font-size:8px;margin-top:20px}.progress{height:3px;background:#ddd;margin:15px 0}.progress span{display:block;height:100%;background:#111;width:0;transition:.25s}.quiz-meta{display:flex;justify-content:space-between;color:#999;font-size:8px}.topic-tag{font-size:8px;color:#888;margin:27px 0 9px}.quiz-panel h2{line-height:1.17}.question-sub{font-size:12px;color:#888;margin:0 0 18px}.options{display:grid;gap:8px}.option{background:white;border:1px solid var(--line);padding:13px;text-align:left;display:flex;gap:12px;align-items:center;font-size:13px}.option:hover{border-color:#111}.option.selected{background:#111;color:#fff;border-color:#111}.option:disabled{cursor:default}.option.correct{background:#e8e8e2;border-color:#111}.option.wrong{background:#eee;color:#777}.key{font:9px var(--mono);color:#999}.quiz-actions{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:20px}.quiz-actions>span{font-size:8px;color:#999}.explanation{font-size:12px;line-height:1.6;background:#ecece7;padding:13px;color:#555;margin:8px 0 0}.result{text-align:center;padding:30px 0 5px}.result-icon{width:54px;height:54px;border:1px solid #111;border-radius:50%;display:grid;place-items:center;margin:0 auto 18px;font-size:23px}.centered{justify-content:center}.result>p:not(.eyebrow){font-size:12px;color:#777;line-height:1.6}.result-xp{display:grid;gap:12px;margin:24px}.result-xp small{font-size:8px;color:#999}.result-xp strong{font:20px var(--pixel)}.credits{position:fixed;inset:0;z-index:30;background:#050505;color:white;overflow-y:auto;display:block;padding:8vh 25px 7vh}.credits-inner{width:min(680px,100%);margin:0 auto}.credit-kicker{font-size:9px;color:#aaa;margin:0 0 30px;animation:rise .65s both}.credits h2{font-size:clamp(48px,9vw,88px);letter-spacing:-5px;line-height:.9;margin:0 0 40px;font-weight:700;animation:rise .8s .1s both}.credits h2 span{color:transparent;-webkit-text-stroke:1px white}.credit-row{display:flex;align-items:center;gap:20px;padding:20px 0;border-top:1px solid #444;animation:rise .7s both}.credit-row:nth-of-type(2){animation-delay:.25s}.credit-row:nth-of-type(3){animation-delay:.4s}.credit-row:nth-of-type(4){animation-delay:.55s}.credit-art{width:66px;height:66px;flex:0 0 66px;border:1px solid #777;display:grid;place-items:center;color:white;background:linear-gradient(145deg,#333,#080808);box-shadow:5px 5px 0 #777,9px 9px 0 #222}.credit-art svg{width:49px;height:49px}.credit-copy small{display:block;font-size:8px;color:#aaa;margin-bottom:9px}.credit-copy strong{display:block;font-size:clamp(15px,3vw,21px);font-weight:700;letter-spacing:.3px}.credit-footer{display:flex;justify-content:space-between;color:#999;font-size:8px;border-top:1px solid #444;padding-top:20px;margin-top:25px;animation:rise .7s .7s both}.credit-button{margin-top:24px;background:white;color:#111;border:0;padding:14px 16px;font-size:9px;font-weight:700;animation:rise .7s .8s both}@keyframes rise{from{opacity:0;transform:translateY(35px)}to{opacity:1;transform:translateY(0)}}@media(max-width:700px){.stage-track{grid-template-columns:repeat(4,1fr)}.hero{grid-template-columns:1fr;padding:35px 0 20px}.hero h1{font-size:60px}.hero-art{height:250px}.stats{grid-template-columns:repeat(2,1fr);row-gap:18px}.stats>div{padding:0 12px}.stats>div:nth-child(2){border:0}.stats>div:nth-child(3){padding-left:0}.stats strong{font-size:12px}.wrap{padding:0 17px}.topbar{padding:0 15px}.top-meta{font-size:7px;gap:6px}.version{font-size:7px}.section-head h2{font-size:29px}.challenge-card{padding:16px}.challenge-top{font-size:7px}.stage{min-height:68px;padding:8px}.stage b{font-size:12px}.stage small{font-size:5px}.form-grid{grid-template-columns:1fr;gap:0}.profile-panel,.quiz-panel{padding:20px 16px}.profile-foot{align-items:flex-start;flex-direction:column;gap:12px}.profile-foot .primary{width:100%}.quiz-actions{align-items:stretch;flex-direction:column}.quiz-actions .primary{width:100%}.credits{padding:7vh 22px}.credit-row{gap:15px}.credit-art{width:57px;height:57px;flex-basis:57px}.credit-art svg{width:42px;height:42px}footer{font-size:6px}}
+
+
+/* Uploaded cat-laugh meme reaction */
+.heart-meme-overlay{
+ position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;
+ flex-direction:column;gap:14px;padding:22px;background:rgba(8,8,8,.78);
+ pointer-events:none;opacity:0;animation:heartMemeIn .18s ease-out forwards;
+}
+.heart-meme-overlay.hidden{display:none!important}
+.heart-meme-overlay video{
+ display:block;width:min( min(78vw, 420px), 62vh);max-height:66vh;object-fit:contain;
+ border:3px solid #fff;border-radius:18px;box-shadow:0 18px 70px #0009;background:#111;
+}
+.heart-meme-caption{
+ max-width:min(90vw,620px);padding:12px 18px;border:2px solid #fff;border-radius:10px;
+ background:#050505;color:#fff;font:900 clamp(12px,2.3vw,20px)/1.45 'DM Mono',monospace;
+ text-align:center;letter-spacing:.04em;text-transform:uppercase;box-shadow:6px 6px 0 #fff;
+}
+.heart-meme-overlay.final{
+ background:rgba(0,0,0,.94);
+}
+.heart-meme-overlay.final video{
+ width:min( min(88vw, 560px), 72vh);max-height:76vh;border-width:4px;
+}
+.heart-meme-overlay.final .heart-meme-caption{
+ font-size:clamp(16px,3vw,28px);padding:16px 22px;
+}
+@keyframes heartMemeIn{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:scale(1)}}
+
+:root{--gold:#b8892b;--gold2:#e6c260}
+.topbar{position:sticky;top:0;z-index:5;background:#f7f7f4e8;backdrop-filter:blur(12px)}
+.nav{display:flex;gap:26px;font:9px var(--mono);letter-spacing:1px}.nav a{color:#555;text-decoration:none}.nav a:hover{color:var(--gold)}
+.hero h1 em{-webkit-text-stroke:1.5px var(--gold)}.hero-art .pixel-window{box-shadow:10px 10px var(--gold)}
+.primary{background:linear-gradient(135deg,#111,#2b2b2b);box-shadow:0 6px 18px #0002}.primary:hover:not(:disabled){background:var(--gold)}
+.challenge-card{box-shadow:12px 12px 0 #e6e6df}.stage{transition:.2s;background:#fff}.stage:hover{border-color:var(--gold);transform:translateY(-3px)}
+.stage:nth-child(n+4):not(:last-child)::after{content:"HARD";font:6px var(--mono);color:#b3261e;letter-spacing:1px}
+.stage:last-child::after{content:"HARD+";font:6px var(--mono);color:var(--gold2)}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:45px 0 10px}.features>div{border:1px solid var(--line);background:#fff;padding:22px;transition:.2s}.features>div:hover{border-color:var(--gold);transform:translateY(-4px)}
+.features b{font:11px var(--pixel);color:var(--gold)}.features h3{margin:16px 0 8px;font-size:18px;letter-spacing:-.5px}.features p{margin:0;font-size:12px;line-height:1.6;color:#777}
+.board{margin-top:30px;background:#111;color:#fff;padding:28px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.board small{font:8px var(--mono);letter-spacing:1px;color:var(--gold2)}.board strong{display:block;font-size:22px;margin:8px 0 4px;letter-spacing:-1px}.board p{margin:0;font-size:12px;color:#aaa}
+.board .chips{display:flex;gap:6px;flex-wrap:wrap}.chips span{border:1px solid #555;padding:8px 11px;font:9px var(--mono)}
+@media(max-width:700px){.nav{display:none}.features{grid-template-columns:1fr}}
+/* FULL-SCREEN QUIZ */
+#quizOverlay{padding:0;background:#07070b;backdrop-filter:none;place-items:stretch;z-index:20}
+#quizOverlay .quiz-panel{width:100%;max-width:none;height:100%;max-height:none;border:0;box-shadow:none;color:#f4f1ea;padding:22px max(5vw,16px);background:radial-gradient(ellipse at 50% -10%,#221c3a,#07070b 62%);display:flex;flex-direction:column;justify-content:flex-start}
+#quizOverlay .quiz-panel>*{width:min(820px,100%);margin-left:auto;margin-right:auto}
+#quizOverlay h2{color:#fff;font-size:clamp(24px,4vw,42px)}#quizOverlay .close{color:#fff}
+#quizOverlay .quiz-brand span,#quizOverlay .player-line,#quizOverlay .quiz-meta,#quizOverlay .quiz-actions>span,#quizOverlay .question-sub,#quizOverlay .eyebrow,#quizOverlay .topic-tag{color:#9b97ad}
+#quizOverlay .eyebrow>span{background:var(--gold2)}#quizOverlay .progress{background:#26243a}#quizOverlay .progress span{background:linear-gradient(90deg,var(--gold),var(--gold2))}
+#quizOverlay .option{background:#13121e;border-color:#2c2a40;color:#f4f1ea;padding:16px;font-size:15px;transition:.15s}#quizOverlay .option:hover:not(:disabled){border-color:var(--gold2);transform:translateX(4px)}
+#quizOverlay .option.selected{background:var(--gold2);color:#111;border-color:var(--gold2)}#quizOverlay .option.correct{background:#0f3d2a;border-color:#35c47c;color:#fff}#quizOverlay .option.wrong{background:#3d1520;border-color:#d9455f;color:#f3c6cd}
+#quizOverlay .key{color:inherit;opacity:.6}#quizOverlay .explanation{background:#17162a;color:#c5c1d6}
+#quizOverlay .primary{background:var(--gold2);color:#111}#quizOverlay .result{margin:auto}#quizOverlay .result>p:not(.eyebrow){color:#aaa}#quizOverlay .result-icon{border-color:var(--gold2);color:var(--gold2)}#quizOverlay .result-xp strong{color:var(--gold2)}
+.timebar{height:4px;background:#26243a;margin-bottom:6px!important}.timebar i{display:block;height:100%;width:100%;background:#e5484d}
+.topic-tag.hard{color:#ff7b7b!important}#timer{color:#ff7b7b}
+/* MOVIE CREDITS */
+.credits{background:#000;padding:0;overflow:hidden}.credits:before{content:"";position:absolute;inset:0;background:radial-gradient(1px 1px at 20% 30%,#fff8,transparent),radial-gradient(1px 1px at 70% 60%,#fff6,transparent),radial-gradient(1.5px 1.5px at 40% 80%,#fff5,transparent),radial-gradient(1px 1px at 85% 15%,#fff7,transparent),radial-gradient(ellipse at 50% 50%,#2a1f0a55,#000 70%);background-size:300px 300px,400px 400px,250px 250px,350px 350px,100% 100%}
+.credits:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(#000 0,transparent 22%,transparent 78%,#000 100%)}
+.roll{position:relative;text-align:center;padding-top:100vh;animation:roll 42s linear forwards}
+@keyframes roll{to{transform:translateY(calc(-100% + 100vh))}}
+.roll .cr{margin:0 auto 14vh;width:min(720px,90%)}.cr small{display:block;font:10px var(--mono);letter-spacing:5px;color:var(--gold2);margin-bottom:16px}
+.cr strong{display:block;font-size:clamp(24px,5vw,46px);font-weight:600;letter-spacing:4px;color:#f5efe0;text-shadow:0 0 28px #e6c26055}
+.cr em{display:block;font:11px var(--mono);letter-spacing:3px;color:#8c8678;font-style:normal;margin-top:12px}
+.cr.title h2{font-size:clamp(46px,11vw,120px);letter-spacing:-4px;line-height:.9;margin:0;background:linear-gradient(#fff6d8,#b8892b);-webkit-background-clip:text;color:transparent;-webkit-text-stroke:0;animation:none}
+.cr.end{min-height:100vh;margin:0 auto;display:flex;flex-direction:column;justify-content:center;align-items:center;width:100%}.cr.end h3{font:clamp(18px,4vw,30px) var(--pixel);color:var(--gold2);letter-spacing:6px;margin:0 0 30px}
+.cbtn{background:var(--gold2);color:#111;border:0;padding:15px 22px;font:700 10px var(--mono);letter-spacing:2px;position:relative;z-index:3}
+.skip{position:fixed;top:18px;right:18px;z-index:5;background:#0008;color:#ccc;border:1px solid #555;padding:10px 14px;font:9px var(--mono);letter-spacing:1px}
+@media(prefers-reduced-motion:reduce){.roll{animation:none;padding-top:8vh}.credits{overflow-y:auto}}
+/* FONT: Game Paused (letters only; digits/symbols fall back to the pixel font) */
+@font-face{font-family:'Game Paused';src:url('GamePaused.otf') format('opentype');font-display:swap}
+:root{--game:'Game Paused','Press Start 2P',monospace}
+.hero h1,.section-head h2,.profile-panel h2,.brand,.features h3,.board strong,.cr strong,.cr.title h2,.result h2,.credits h2{font-family:var(--game);font-weight:400;letter-spacing:0}
+.hero h1{font-size:clamp(50px,7.5vw,88px);line-height:1}.section-head h2{font-size:42px}.features h3{font-size:22px}.brand{font-size:22px}
+.primary,.cbtn,.skip,.topic-tag{font-family:var(--game);font-size:14px;letter-spacing:1px}.topic-tag{font-size:15px}
+.stage small{font-family:var(--game);font-size:10px;letter-spacing:0}.cr strong{letter-spacing:3px}
+/* HEARTS */
+.hearts{display:flex;gap:8px}.hearts span{position:relative;font-size:28px;line-height:1;color:#ff3b5c;text-shadow:0 0 14px #ff3b5c99;display:inline-block}
+.hearts span.gone{color:#34303f;text-shadow:none}.hearts span.lose{animation:hl 1.1s forwards}
+.hearts span.lose:after{content:"−1";position:absolute;left:50%;top:100%;transform:translateX(-50%);font:700 11px var(--mono);color:#ff8fa3;animation:fl 1.1s forwards}
+@keyframes hl{0%{transform:scale(1)}15%{transform:scale(1.8) rotate(-10deg);color:#fff}35%{transform:scale(1.4) rotate(10deg) translateX(-4px);color:#ff3b5c}55%{transform:scale(1.5) rotate(-6deg) translateX(4px)}100%{transform:scale(.85) translateY(16px) rotate(24deg);color:#34303f;text-shadow:none;opacity:.5}}
+@keyframes fl{from{opacity:1;top:100%}to{opacity:0;top:260%}}
+#quizOverlay.hit .quiz-panel{animation:shake .5s}#quizOverlay.hit:after{content:"";position:fixed;inset:0;pointer-events:none;box-shadow:inset 0 0 140px 40px #ff1744bb;animation:flash .8s forwards;z-index:3}
+@keyframes shake{20%{transform:translateX(-12px)}40%{transform:translateX(10px)}60%{transform:translateX(-7px)}80%{transform:translateX(4px)}}@keyframes flash{to{opacity:0}}
+/* TROLL */
+.troll{width:120px;height:120px;display:block;margin:0 auto 14px;animation:wob 1.3s ease-in-out infinite}@keyframes wob{50%{transform:rotate(-7deg) scale(1.07)}}
+.troll-pop{animation:pop .5s}@keyframes pop{from{transform:scale(.6);opacity:0}}
+
+/* ===== MATHKING FX: attractive quiz layer (load after premium.css) ===== */
+#fxCanvas{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:70}
+
+/* header: brand, streak, hearts, sound, close */
+.quiz-head{gap:14px}.quiz-brand{flex:1}
+.sound-btn{background:transparent;border:1px solid #ffffff33;color:#fff;border-radius:8px;padding:4px 9px;font-size:15px;line-height:1.2}
+.topbar .sound-btn{color:#111;border-color:#0003;margin-left:12px}
+.sound-btn:hover{border-color:var(--gold2)}
+.streak{font:700 13px var(--mono);color:#111;background:linear-gradient(135deg,#ffb347,#ff5e3a);padding:5px 10px;border-radius:99px;box-shadow:0 0 16px #ff7a3a88;white-space:nowrap}
+.streak.bump{animation:bump .45s}
+@keyframes bump{40%{transform:scale(1.45) rotate(-6deg)}}
+.hearts span:not(.gone):not(.lose){animation:beat 1.6s ease-in-out infinite}
+@keyframes beat{50%{transform:scale(1.14)}}
+
+/* floating maths symbols behind the quiz */
+#quizOverlay .quiz-panel>.bgsym{position:fixed;inset:0;width:auto;margin:0;pointer-events:none;overflow:hidden;z-index:0}
+.bgsym span{position:absolute;bottom:-70px;font:700 var(--sz,40px) var(--mono);color:var(--gold2);opacity:.09;animation:drift var(--d,18s) linear var(--dl,0s) infinite}
+@keyframes drift{to{transform:translateY(-120vh) rotate(var(--r,200deg))}}
+#quizOverlay .quiz-panel>*:not(.bgsym){position:relative;z-index:1}
+
+/* stage pips */
+.pips{display:flex;gap:6px;margin-top:16px}
+.pips span{flex:1;height:8px;border-radius:4px;background:#26243a}
+.pips span.done{background:var(--gold2)}
+.pips span.now{background:linear-gradient(90deg,var(--gold2) var(--f,0%),#26243a var(--f,0%));box-shadow:0 0 10px var(--gold2)}
+
+/* question + options */
+.slide{animation:slideq .45s cubic-bezier(.2,.9,.3,1.2) both}
+@keyframes slideq{from{opacity:0;transform:translateY(18px)}}
+#quizOverlay .option{animation:optin .4s backwards;animation-delay:calc(var(--i,0)*70ms);border-radius:10px}
+@keyframes optin{from{opacity:0;transform:translateX(-26px)}}
+#quizOverlay .key{width:28px;height:28px;flex:0 0 28px;display:grid;place-items:center;border:1px solid currentColor;border-radius:7px;opacity:.75}
+#quizOverlay .option.selected{transform:translateX(6px);box-shadow:0 0 22px color-mix(in srgb,var(--gold2) 45%,transparent)}
+#quizOverlay .option.correct{animation:okpulse .7s;box-shadow:0 0 26px #35c47c88}
+#quizOverlay .option.wrong{animation:wrongshake .4s}
+@keyframes okpulse{40%{transform:scale(1.04)}}
+@keyframes wrongshake{25%{transform:translateX(-9px)}75%{transform:translateX(9px)}}
+#timer.urgent{animation:blink .5s steps(2) infinite;font-weight:700}
+@keyframes blink{50%{opacity:.3}}
+#quizOverlay .explanation{border-left:3px solid var(--gold2)}
+
+/* stage intro card */
+.stage-card{position:fixed;inset:0;z-index:25;display:grid;place-items:center;text-align:center;overflow:hidden;color:#fff;background:#0b0a14;background:radial-gradient(circle at 50% 45%,color-mix(in srgb,var(--acc) 30%,#07070b),#07070b 70%)}
+.stage-card .scn{font:700 clamp(14px,3.4vw,22px) var(--mono);letter-spacing:10px;color:var(--acc)}
+.stage-card h2{font:clamp(44px,12vw,130px) var(--game);margin:.1em 0;line-height:1;color:#fff;text-shadow:0 0 40px var(--acc)}
+.stage-card .sct{font:11px var(--mono);letter-spacing:3px;color:#b8b4c8;padding:0 16px}
+.stage-card:after{content:"";position:absolute;left:50%;top:50%;width:20vmin;height:20vmin;margin:-10vmin 0 0 -10vmin;border:3px solid var(--acc);border-radius:50%;opacity:0}
+.stage-card.go .scn{animation:scIn .5s both}
+.stage-card.go h2{animation:scBig .7s .1s cubic-bezier(.2,1.4,.4,1) both}
+.stage-card.go .sct{animation:scIn .5s .5s both}
+.stage-card.go:after{animation:ring 1s .1s ease-out}
+@keyframes scIn{from{opacity:0;transform:translateY(20px)}}
+@keyframes scBig{from{opacity:0;transform:scale(2.4)}}
+@keyframes ring{from{opacity:.9;transform:scale(.2)}to{opacity:0;transform:scale(9)}}
+
+/* team intro */
+.team-intro{position:fixed;inset:0;z-index:40;display:grid;place-items:center;text-align:center;overflow:hidden;background:#050508;color:#fff}
+.team-intro .ti-glow{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 55%,#e6c26044,transparent 60%);animation:tiglow 2.4s ease-in-out infinite alternate}
+.team-intro>div{position:relative}
+.ti-presents{font:11px var(--mono);letter-spacing:6px;color:#8c8678;animation:scIn .8s .2s both}
+.team-intro h1{font:clamp(44px,12vw,120px) var(--game);margin:.15em 0;background:linear-gradient(#fff6d8,#b8892b);-webkit-background-clip:text;background-clip:text;color:transparent;animation:tiPop 1.2s .5s cubic-bezier(.2,1.5,.4,1) both;filter:drop-shadow(0 0 30px #e6c26088)}
+.ti-sub{font:11px var(--mono);letter-spacing:4px;color:var(--gold2);animation:scIn .8s 1.6s both}
+@keyframes tiPop{from{opacity:0;transform:scale(.3) rotate(-8deg)}}
+@keyframes tiglow{to{opacity:.35}}
+
+/* secret troll stage */
+#secretView{margin:auto;text-align:center}
+.secret-timer{display:flex;align-items:center;gap:12px;margin:14px 0}
+.secret-timer .timebar{flex:1;margin:0!important;height:10px;border-radius:5px;overflow:hidden;display:block}
+#ssecs{font:20px var(--pixel);color:#ff7b7b;min-width:2ch;text-align:right}
+.secret-q{font:italic 500 clamp(18px,3.4vw,28px)/1.45 Georgia,serif;border:2px dashed #ff4d4d;padding:16px;border-radius:10px;margin:8px 0 6px}
+#smsg{min-height:1.6em;margin-top:14px;font:700 13px var(--mono);color:#ffb4b4}
+.psst{opacity:0;transition:opacity 2s;font:11px var(--mono);color:#9b97ad;margin-top:12px}.psst.on{opacity:.9}
+.faaah{position:fixed;inset:0;z-index:50;display:grid;place-items:center;text-align:center;background:hsl(355 85% 40%);color:#fff}
+.faaah.go{animation:shake .3s 6}
+.faaah p{font:clamp(44px,15vw,130px) var(--game);margin:.05em 0;text-shadow:0 6px 0 #0006}
+.faaah small{font:12px var(--mono);letter-spacing:4px}
+#faaahFace .troll{width:min(55vw,40vh);height:min(55vw,40vh);margin:0 auto;animation:wob .25s ease-in-out infinite}
+
+/* floating XP text */
+.xppop{position:fixed;z-index:71;pointer-events:none;font:700 20px var(--mono);color:#e6c260;text-shadow:0 0 12px #e6c260;animation:xpup 1.1s ease-out forwards}
+@keyframes xpup{to{opacity:0;transform:translateY(-70px) scale(1.3)}}
+
+/* credits roll: 42s -> 28s (the music is timed to match) */
+.roll{animation-duration:28s}
+
+@media(max-width:700px){.streak{font-size:11px;padding:4px 8px}.quiz-head{gap:8px}.stage-card .sct{font-size:9px}}
+@media(prefers-reduced-motion:reduce){.bgsym,#fxCanvas{display:none}.slide,#quizOverlay .option,.stage-card *,.hearts span{animation:none!important}}
+
+
+/* CAT MEME REACTIONS — original meme-inspired pixel/line-art cats */
+.cat-meme-toast{position:fixed;z-index:90;right:clamp(14px,3vw,38px);bottom:clamp(16px,4vh,38px);width:min(390px,calc(100vw - 28px));min-height:118px;display:flex;align-items:center;gap:14px;padding:13px 16px;background:#f8f8f5;color:#111;border:2px solid #111;box-shadow:8px 8px 0 #111;transform:translateX(130%) rotate(2deg);opacity:0;pointer-events:none}
+.cat-meme-toast.show{animation:catMemeIn .38s cubic-bezier(.2,1.3,.4,1) forwards,catMemeOut .35s ease-in 2.65s forwards}
+.cat-meme-art{width:92px;height:92px;flex:0 0 92px;display:grid;place-items:center;background:#e9e9e4;border:1px solid #111;overflow:hidden}
+.cat-meme-art svg{width:100%;height:100%;display:block}
+.cat-meme-copy{display:flex;flex-direction:column;gap:8px;min-width:0}
+.cat-meme-copy small{font:8px var(--mono);letter-spacing:1.4px;color:#777}
+.cat-meme-copy strong{font:700 15px/1.2 var(--sans);letter-spacing:-.35px}
+.cat-meme-close{position:absolute;right:7px;top:3px;font:16px var(--mono);color:#888}
+@keyframes catMemeIn{0%{transform:translateX(130%) rotate(5deg);opacity:0}75%{transform:translateX(-7px) rotate(-1deg);opacity:1}100%{transform:translateX(0) rotate(0);opacity:1}}
+@keyframes catMemeOut{to{transform:translateX(130%) rotate(3deg);opacity:0}}
+#stageResult .troll{filter:grayscale(1);background:#fff;border:2px solid #111;border-radius:14px;padding:5px}
+#stageResult.troll-pop .troll{animation:wob .35s ease-in-out 3}
+@media(max-width:600px){.cat-meme-toast{right:14px;left:14px;bottom:14px;width:auto;min-height:100px;padding:10px}.cat-meme-art{width:76px;height:76px;flex-basis:76px}.cat-meme-copy strong{font-size:13px}}
+@media(prefers-reduced-motion:reduce){.cat-meme-toast.show{animation:none;transform:none;opacity:1}}
+
+/* Puzzle-style dark red UI skin. Visual only: no quiz logic changed. */
+:root{--paper:#08060a;--ink:#f5ecec;--muted:#9d8d91;--line:rgba(255,255,255,.12);--gold:#e11d2e;--gold2:#ff4458;--pixel:'Pixelify Sans','Press Start 2P',monospace;--red:#e11d2e;--r2:#ff4458;--wine:#5c0d17;--pn:#110a0e}
+body{color:var(--ink);background:radial-gradient(60rem 38rem at 85% -10%,rgba(225,29,46,.26),transparent),radial-gradient(40rem 30rem at -8% 70%,rgba(110,10,28,.35),transparent),#08060a;background-attachment:fixed}
+.topbar{background:rgba(8,6,10,.7)!important;border-bottom:1px solid var(--line)}
+.brand{color:#f5ecec;font-family:var(--pixel)}.brand-mark{background:var(--red);border-radius:3px}.dot,.section-title h2 span{color:var(--r2)}
+.top-meta,.version,.eyebrow,.art-note,.art-bottom,.section-index,.stage small,footer{color:var(--muted)}
+.top-meta i{background:var(--r2)}.eyebrow>span{background:var(--muted)}
+.nav a{color:var(--muted)}.nav a:hover{color:var(--r2)}
+.hero,.hero h1,h1,h2,h3{border-color:var(--line)}
+.hero h1{font-family:var(--pixel);letter-spacing:-2px;line-height:1.02}
+.hero h1 em{-webkit-text-stroke:2px var(--r2)}
+.intro,.challenge-copy,.features p,.sub{color:var(--muted)}
+.primary,#quizOverlay .primary{display:inline-block;text-decoration:none;border-radius:4px;color:#fff;font-family:var(--pixel);font-size:13px;text-transform:uppercase;background:linear-gradient(120deg,#ff3b4e,#a80d1c);box-shadow:0 10px 36px rgba(225,29,46,.4)}
+.primary:hover:not(:disabled){background:linear-gradient(120deg,#ff5668,#c4112a);box-shadow:0 14px 46px rgba(255,59,78,.55)}
+.primary.ghost{background:none;border:1px solid var(--r2);box-shadow:none;margin-left:8px}
+.pixel-window{background:var(--pn);border:2px solid #f5ecec;box-shadow:14px 14px 0 var(--wine),0 0 70px rgba(225,29,46,.2);color:#f5ecec}
+.pixel-window *{border-color:#f5ecec}
+.pixel-face,.pixel-face b,.pixel-face i{background-color:var(--red)}
+.float{color:var(--r2)}
+.challenge-card,.escape-card{background:var(--pn);border:1px solid #f5ecec;box-shadow:12px 12px 0 var(--wine);color:#f5ecec}
+.escape-card{margin-top:30px;padding:20px 22px;box-shadow:12px 12px 0 var(--wine)}
+.challenge-top{color:var(--muted)}
+.stage{background:rgba(255,255,255,.04)!important;border-color:var(--line);color:#f5ecec}
+.stage:hover{border-color:var(--r2)!important}
+.stage:last-child{background:var(--red)!important;border-color:var(--red)}
+.stage:nth-child(n+4):not(:last-child)::after{color:var(--r2)}
+.stage:last-child::after{color:#fff}
+.syllabus-note,.stats,.stats>div{border-color:var(--line);color:#f5ecec}
+.syllabus-note small,.stats small{color:var(--muted)}.syllabus-note p{color:var(--muted)}
+.features>div{background:var(--pn);border-color:var(--line);color:#f5ecec}
+.features>div:hover{border-color:var(--r2)}.features b{color:var(--r2)}
+.board{background:#030203;border:1px solid var(--line)}.board small{color:var(--r2)}
+.chips span{border-color:var(--line);color:var(--r2)}
+.rank,.stats strong{color:#f5ecec}
+/* modals */
+.overlay{background:rgba(4,2,5,.82)}
+.profile-panel{background:var(--pn);color:#f5ecec;border:2px solid #f5ecec;box-shadow:12px 12px 0 var(--wine)}
+.profile-panel input,.profile-panel select{background:#0b0609;color:#f5ecec;border:1px solid var(--line)}
+.profile-panel input:focus,.profile-panel select:focus{border-color:var(--r2)}
+.profile-panel label,.profile-foot>span,.mono{color:var(--muted)}
+.close{color:#f5ecec}
+/* quiz */
+#quizOverlay{background:#09060a}
+#quizOverlay .quiz-panel{background:radial-gradient(50rem 34rem at 80% -5%,rgba(225,29,46,.2),transparent),radial-gradient(40rem 30rem at 0 100%,rgba(100,10,25,.3),transparent),#09060a;color:#f5ecec}
+#quizOverlay h2,.topic-tag{font-family:var(--pixel)}
+#quizOverlay .topic-tag{color:var(--r2)}
+#quizOverlay .option{background:rgba(255,255,255,.05);border-color:var(--line);border-radius:6px}
+#quizOverlay .option:hover:not(:disabled){border-color:var(--r2)}
+#quizOverlay .option.selected{background:linear-gradient(135deg,#ff3b4e,#a80d1c);color:#fff;border-color:transparent;box-shadow:0 0 22px rgba(225,29,46,.5)}
+#quizOverlay .progress span{background:linear-gradient(90deg,var(--red),var(--r2))}
+#quizOverlay .progress,.timebar,.pips span{background:rgba(255,255,255,.1)}
+#quizOverlay .eyebrow>span{background:var(--r2)}
+#quizOverlay .explanation{background:#150d12;border-left-color:var(--r2);color:#d9cdd0}
+#quizOverlay .result-icon{border-color:var(--r2);color:var(--r2)}#quizOverlay .result-xp strong{color:var(--r2)}
+.stage-card h2,.cr.title h2,.team-intro h1{font-family:var(--pixel)}
+.cr small,.cr.end h3,.ti-sub,.xppop{color:var(--r2)}
+.cr strong{text-shadow:0 0 28px rgba(225,29,46,.5)}
+.cbtn{background:linear-gradient(120deg,#ff3b4e,#a80d1c);color:#fff}
+.cat-meme-toast{background:#fff;color:#111;box-shadow:6px 6px 0 var(--red)}
+
+</style>
+<style>.pixel-face b,.pixel-face i{background-color:#08060a!important}.pixel-face{box-shadow:0 0 40px rgba(225,29,46,.45)}</style>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#"><span class="brand-mark">MK</span><span>mathking<span class="dot">.</span></span></a>
+  <div class="top-meta"><i></i> MATH CHALLENGE <b>/</b> 8 STAGES</div>
+  <nav class="nav"><a href="#challenge">CHALLENGE</a><a href="#escape-room" data-open-escape>ESCAPE ROOM</a><a href="#why">WHY MATHKING</a><a href="#board">TN BOARD</a></nav><span class="version">V 4.0</span>
+</header>
+<main class="wrap">
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow"><span></span> THE SCHOOL MATHEMATICS CHALLENGE</p>
+      <h1>One quiz.<br><em>Eight stages.</em></h1>
+      <p class="intro">From classroom basics to brain-bending problems. Pick your details, then prove what you know.</p>
+      <button class="primary" id="beginBtn">ENTER THE CHALLENGE <b>↗</b></button> <a class="primary ghost" href="#escape-room" data-open-escape>ESCAPE ROOM <b>↗</b></a>
+    </div>
+    <div class="hero-art">
+      <span class="art-note">MATHKING / 2026</span>
+      <div class="pixel-window">
+        <div class="window-top"><i></i><i></i><i></i><label>mathking.exe</label></div>
+        <div class="pixel-face"><b></b><b></b><i></i></div>
+        <p>READY PLAYER_01</p>
+      </div>
+      <span class="float f1">+</span><span class="float f2">÷</span><span class="float f3">?</span>
+      <span class="art-bottom">THINK × SOLVE × ADVANCE</span>
+    </div>
+  </section>
+
+  <section class="challenge" id="challenge">
+    <div class="section-head">
+      <div><p class="eyebrow"><span></span> THE MAIN EVENT</p><h2>Your challenge<span>.</span></h2></div>
+      <span class="section-index">01 / 01</span>
+    </div>
+    <div class="challenge-card">
+      <div class="challenge-top"><span>THE MATHKING RUN</span><span>8 STAGES · ONE JOURNEY</span></div>
+      <div class="stage-track" id="stageTrack">
+        <div class="stage"><b>01</b><small>WARM UP</small></div><div class="stage"><b>02</b><small>NUMBER SENSE</small></div>
+        <div class="stage"><b>03</b><small>OPERATIONS</small></div><div class="stage"><b>04</b><small>CONCEPTS</small></div>
+        <div class="stage"><b>05</b><small>GEOMETRY</small></div><div class="stage"><b>06</b><small>ALGEBRA</small></div>
+        <div class="stage"><b>07</b><small>BRAIN TEASER</small></div><div class="stage"><b>08</b><small>FINAL BOSS</small></div>
+      </div>
+      <p class="challenge-copy">Every stage has 3 questions, you have 3 hearts, and trolls wait in between. Stages 1–3 ease you in. From Stage 4 the quiz turns hard: tougher questions, a 45-second timer and bonus XP. Finish all eight stages and a secret stage is waiting. The quiz opens full screen.</p>
+      <button class="primary" id="startQuiz">START 8-STAGE QUIZ <b>↗</b></button>
+    </div>
+    <div class="challenge-card escape-card"><div class="challenge-top"><span>MATHKING ESCAPE ROOM</span><span>5 LOCKS · 12 MINUTES</span></div><p class="challenge-copy">New: a puzzle room. Crack five locks (fruit equations, number ladder, magic square, Make 24 and the final vault), collect the digits and escape before the clock runs out. Medium difficulty, with hints that cost 20 seconds.</p><a class="primary" href="#escape-room" data-open-escape>START ESCAPE ROOM <b>↗</b></a></div>
+    <div class="syllabus-note"><span class="syllabus-symbol">∑</span><div><small>SYLLABUS RANGE</small><strong>Classes 2–12 · Age-appropriate mathematics</strong><p>Topics adapt to the standard you select before starting.</p></div></div>
+  </section>
+
+  <section class="features" id="why"><div><b>01</b><h3>Full-screen focus</h3><p>The quiz takes over your whole screen. No distractions, just you and the problem.</p></div><div><b>02</b><h3>Gets harder at Stage 4</h3><p>Warm up gently, then face tougher questions against a ticking clock.</p></div><div><b>03</b><h3>Fresh questions</h3><p>Every run mixes questions from a growing bank, so no two runs feel the same.</p></div></section>
+<section class="board" id="board"><div><small>TAMIL NADU STATE BOARD</small><strong>Classes 6 – 12</strong><p>Questions aligned to the Samacheer Kalvi mathematics syllabus.</p></div><div class="chips"><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span></div></section>
+<section class="stats">
+    <div><small>TOTAL XP</small><strong id="xp">0000</strong></div><div><small>QUIZ RUNS</small><strong id="runs">00</strong></div><div><small>BEST SCORE</small><strong id="best">00/24</strong></div><div><small>PLAYER RANK</small><strong class="rank" id="rank">BEGINNER</strong></div>
+  </section>
+  <footer><span>© 2026 MATHKING</span><span>BUILT FOR CURIOUS MINDS ✳</span><span>V 4.0.0</span></footer>
+</main>
+
+<div class="overlay hidden" id="profileOverlay" role="dialog" aria-modal="true" aria-labelledby="profileTitle">
+ <form class="profile-panel" id="profileForm">
+  <div class="modal-top"><span class="mono">PLAYER REGISTRATION / 01</span><button type="button" class="close" id="closeProfile">×</button></div>
+  <p class="eyebrow"><span></span> BEFORE YOU BEGIN</p><h2 id="profileTitle">Who's playing<span>?</span></h2>
+  <p class="sub">Enter your details to personalise your eight-stage challenge.</p>
+  <label>YOUR NAME<input id="playerName" name="playerName" placeholder="Enter your name" maxlength="32" required></label>
+  <div class="form-grid">
+   <label>STANDARD<select id="standard" required><option value="">Select class</option></select></label>
+   <label>SECTION<input id="section" name="section" placeholder="e.g. A, B, C" maxlength="8" required></label>
+  </div>
+  <div class="profile-foot"><span>YOUR DETAILS STAY ON THIS DEVICE</span><button class="primary" type="submit">CONTINUE <b>↗</b></button></div>
+ </form>
+</div>
+
+<div class="overlay hidden" id="quizOverlay" role="dialog" aria-modal="true" aria-labelledby="question">
+ <div class="quiz-panel">
+  <div class="quiz-head"><div class="quiz-brand">mathking <span>/ PLAYER CHALLENGE</span></div><div class="hearts" id="hearts" aria-label="Hearts"></div><button class="close" id="closeQuiz" aria-label="Close">×</button></div>
+  <div class="player-line"><span id="playerLabel">PLAYER</span><span id="standardLabel">CLASS — SECTION —</span></div>
+  <div class="progress"><span id="progress"></span></div><div class="timebar hidden" id="timebar"><i></i></div>
+  <div class="quiz-meta"><span id="stageLabel">STAGE 01 / 08</span><span id="questionNumber">QUESTION 01 / 01</span><span id="timer"></span></div>
+  <div id="questionView"><p class="topic-tag" id="topicTag">WARM UP</p><h2 id="question">Question</h2><p class="question-sub">Choose one answer.</p><div class="options" id="options"></div><div class="quiz-actions"><span id="quizMessage">SELECT YOUR ANSWER</span><button class="primary" id="submit" disabled>SUBMIT ANSWER <b>↗</b></button></div></div>
+  <div class="result hidden" id="stageResult"><svg class="troll" viewBox="0 0 100 100" aria-hidden="true"><ellipse cx="9" cy="52" rx="8" ry="12" fill="#5aa84a"/><ellipse cx="91" cy="52" rx="8" ry="12" fill="#5aa84a"/><circle cx="50" cy="55" r="40" fill="#6bbf59"/><path d="M38 17q4-12 12-4q8-8 12 4" fill="#e2792b"/><path d="M25 38l20 6M75 38l-20 6" stroke="#1b2b17" stroke-width="5" stroke-linecap="round"/><circle cx="36" cy="50" r="9" fill="#fff"/><circle cx="64" cy="50" r="9" fill="#fff"/><circle cx="38" cy="52" r="4" fill="#111"/><circle cx="62" cy="52" r="4" fill="#111"/><path d="M24 68q26 30 52 0q-26 8-52 0z" fill="#1b2b17"/><path d="M34 71h6v5h-6zM46 73h8v6h-8zM60 71h6v5h-6z" fill="#fff"/></svg><p class="eyebrow centered">CAT REVIEW</p><h2 id="stageResultTitle">Good work.</h2><p id="stageResultText"></p><button class="primary" id="nextStage">CONTINUE <b>↗</b></button></div>
+  <div class="hidden" id="secretView">
+   <p class="eyebrow centered"><span></span> SECRET STAGE ??? <span></span></p>
+   <div class="secret-timer"><div class="timebar"><i id="sbar"></i></div><b id="ssecs">20</b></div>
+   <div class="secret-q">Evaluate &int;&#8320;^&infin; (x&sup2; &middot; e&#739; &middot; sin x) &divide; (1 + cos&#8309;x) dx and prove your answer using Class 12 methods.</div>
+   <div class="options">
+    <button type="button" class="option"><span class="key">A</span><span>&pi;&sup2;/7</span></button>
+    <button type="button" class="option"><span class="key">B</span><span>e<sup>&pi;</sup> &minus; 1</span></button>
+    <button type="button" class="option"><span class="key">C</span><span>0</span></button>
+    <button type="button" class="option"><span class="key">D</span><span>None of these</span></button>
+   </div>
+   <div id="smsg"></div>
+   <div class="psst" id="psst">Psst&hellip; do not click anything. Just wait for the timer. &#129323;</div>
+  </div>
+  <div class="result hidden" id="finalResult"><div class="result-icon" id="finalIcon">★</div><p class="eyebrow centered" id="finalEyebrow">ALL EIGHT STAGES COMPLETE</p><h2 id="finalTitle">Challenge complete.</h2><p id="finalText"></p><div class="result-xp"><small>XP EARNED</small><strong id="earnedXP">+000</strong></div><button class="primary hidden" id="retry">TRY AGAIN <b>↗</b></button> <button class="primary" id="showCredits">VIEW CREDITS <b>↗</b></button></div>
+ </div>
+</div>
+
+<div class="stage-card hidden" id="stageCard" aria-live="polite"><div><div class="scn" id="scNum"></div><h2 id="scName"></h2><div class="sct" id="scTag"></div></div></div>
+
+<div class="team-intro hidden" id="teamIntro"><div class="ti-glow"></div><div><div class="ti-presents">PRESENTED BY</div><h1 id="tiTeam">TEAM 7</h1><div class="ti-sub">MATHKING / THE MATHS CHALLENGE</div></div><button type="button" class="skip" id="tiSkip">SKIP INTRO</button></div>
+
+<div class="cat-meme-toast hidden" id="catMemeToast" aria-live="polite"><div class="cat-meme-art" id="catMemeArt"></div>
+<div class="heart-meme-overlay hidden" id="heartMemeOverlay" aria-hidden="true">
+ <video id="heartMemeVideo" playsinline preload="auto">
+  <source src="assets/cat-laughing.mp4" type="video/mp4">
+ </video>
+ <div class="heart-meme-caption" id="heartMemeCaption">ANOTHER HEART DOWN. THE CAT IS HOWLING.</div>
+</div>
+<div class="cat-meme-copy"><small id="catMemeTag">CAT REACTION</small><strong id="catMemeCaption">The cat is judging.</strong></div><span class="cat-meme-close">×</span></div>
+
+<div class="faaah hidden" id="faaah"><div><div id="faaahFace"></div><p>FAAAH!</p><small>THE CORRECT ANSWER WAS PATIENCE</small></div></div>
+
+<div class="credits hidden" id="credits">
+ <button class="skip goHome">SKIP ✕</button>
+ <div class="roll">
+  <div class="cr title"><small>A MATHKING PRODUCTION</small><h2>THE<br>MATHKING<br>RUN</h2></div>
+  <div class="cr"><small>CREATED &amp; PLANNED BY</small><strong>VIMALKUMAR</strong><em>XI "B"</em></div>
+  <div class="cr"><small>SUPPORTED BY</small><strong>ARIHARAN J</strong></div>
+  <div class="cr"><small>PRESENTED &amp; FUNDED BY</small><strong>TEAM 7</strong></div>
+  <div class="cr"><small>CURRICULUM</small><strong>TAMIL NADU STATE BOARD</strong><em>CLASSES 6 – 12</em></div>
+  <div class="cr"><small>STARRING</small><strong>EVERY STUDENT WHO DARED TO PLAY</strong></div>
+  <div class="cr"><small>NO NUMBERS WERE HARMED</small><em>MATHKING © 2026</em></div>
+  <div class="cr end"><h3>THE END</h3><button class="cbtn goHome" id="creditsHome">RETURN TO MATHKING ↗</button></div>
+ </div>
+</div>
+
+
+<div id="escapeEmbed" aria-hidden="true">
+  <button id="closeEscape" type="button" aria-label="Close Escape Room">✕ CLOSE ESCAPE ROOM</button>
+  <iframe id="escapeFrame" title="Mathking Escape Room" allow="fullscreen; autoplay"></iframe>
+</div>
+<style>
+#escapeEmbed{display:none;position:fixed;inset:0;z-index:99999;background:#08060a}
+#escapeEmbed.open{display:block}
+#escapeEmbed iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:#08060a}
+#closeEscape{position:absolute;z-index:3;top:12px;right:16px;padding:9px 13px;border:1px solid #ff4458;background:#08060a;color:#fff;font:10px 'DM Mono',monospace;letter-spacing:1px;cursor:pointer;border-radius:4px}
+#closeEscape:hover{background:#e11d2e}
+body.escape-open{overflow:hidden}
+</style>
+
+<script>
+/* MATHKING SOUND ENGINE
+   Every sound below is built in code, so the game works with no audio files.
+   To use your own audio, put files in the "assets" folder with the names below.
+   If a file is missing, the built-in sound plays instead. */
+const MK_CONFIG={
+  team:"TEAM 7",
+  files:{
+    intro:"assets/intro.mp3",          // team intro jingle
+    heartbreak:"assets/heart-break.mp3", // plays every time a heart breaks
+    faaah:"assets/faaah.mp3",          // the secret-stage troll sound
+    credits:"assets/credits.mp3",      // warm music for the credits scene
+    finalCat:"assets/green-screen-cat.mp3" // supplied audio sting when all hearts are gone
+  }
+};
+
+const SFX=(()=>{
+  let ac,master,muted=localStorage.getItem("mk_mute")==="1";
+  const bad={};
+  const note=n=>440*Math.pow(2,(n-69)/12);
+
+  function ctx(){
+    if(!ac){
+      const C=window.AudioContext||window.webkitAudioContext;
+      if(!C)return null;
+      ac=new C();master=ac.createGain();master.gain.value=.9;master.connect(ac.destination);
+    }
+    if(ac.state==="suspended")ac.resume();
+    return ac;
+  }
+  function tone(f,d,o){
+    o=o||{};const a=ctx();if(!a)return;
+    const t=a.currentTime+(o.at||0),os=a.createOscillator(),g=a.createGain();
+    os.type=o.type||"sine";os.frequency.setValueAtTime(f,t);
+    if(o.to)os.frequency.exponentialRampToValueAtTime(o.to,t+d);
+    g.gain.setValueAtTime(.0001,t);
+    g.gain.exponentialRampToValueAtTime(o.v||.2,t+.012);
+    g.gain.exponentialRampToValueAtTime(.0001,t+d);
+    os.connect(g);g.connect(master);os.start(t);os.stop(t+d+.03);
+  }
+  function noise(d,o){
+    o=o||{};const a=ctx();if(!a)return;
+    const n=Math.floor(a.sampleRate*d),buf=a.createBuffer(1,n,a.sampleRate),data=buf.getChannelData(0);
+    for(let i=0;i<n;i++)data[i]=Math.random()*2-1;
+    const s=a.createBufferSource(),f=a.createBiquadFilter(),g=a.createGain(),t=a.currentTime+(o.at||0);
+    s.buffer=buf;f.type=o.type||"bandpass";f.Q.value=o.q||1;
+    f.frequency.setValueAtTime(o.f||1000,t);
+    if(o.to)f.frequency.exponentialRampToValueAtTime(o.to,t+d);
+    g.gain.setValueAtTime(o.v||.3,t);g.gain.exponentialRampToValueAtTime(.0001,t+d);
+    s.connect(f);f.connect(g);g.connect(master);s.start(t);
+  }
+  function fah(){
+    const a=ctx();if(!a)return;
+    const s=a.currentTime,o=a.createOscillator(),g=a.createGain(),f1=a.createBiquadFilter(),f2=a.createBiquadFilter();
+    o.type="sawtooth";
+    o.frequency.setValueAtTime(190,s);o.frequency.linearRampToValueAtTime(310,s+.15);o.frequency.linearRampToValueAtTime(230,s+1.3);
+    f1.type="bandpass";f1.frequency.value=800;f1.Q.value=4;
+    f2.type="bandpass";f2.frequency.value=1250;f2.Q.value=5;
+    g.gain.setValueAtTime(.0001,s);g.gain.exponentialRampToValueAtTime(.55,s+.08);
+    g.gain.setValueAtTime(.55,s+.9);g.gain.exponentialRampToValueAtTime(.001,s+1.4);
+    o.connect(f1);o.connect(f2);f1.connect(g);f2.connect(g);g.connect(master);o.start(s);o.stop(s+1.5);
+  }
+
+  const S={
+    select:()=>tone(900,.05,{type:"square",v:.08}),
+    correct:k=>{
+      const b=60+Math.min(k||1,7);
+      [0,4,7,12].forEach((s,i)=>tone(note(b+s),.18,{type:"triangle",at:i*.07,v:.2}));
+      tone(note(b+19),.3,{at:.3,v:.12});
+    },
+    xp:()=>{tone(1318,.07,{type:"square",v:.08});tone(1760,.25,{type:"square",at:.07,v:.08});},
+    heartbreak:()=>{
+      noise(.28,{type:"highpass",f:2500,v:.5});
+      tone(240,.35,{type:"sawtooth",to:45,v:.26});
+      tone(90,.4,{to:40,v:.4,at:.05});
+      tone(1400,.08,{type:"square",to:300,v:.1});
+    },
+    tick:()=>tone(1200,.03,{type:"square",v:.06}),
+    tick2:()=>tone(1700,.05,{type:"square",v:.12}),
+    stage:()=>{
+      noise(.5,{f:300,to:3500,q:2,v:.35});
+      [72,76,79,84].forEach((n,i)=>tone(note(n),.25,{type:"triangle",at:.35+i*.08,v:.15}));
+    },
+    troll:()=>{
+      tone(466,.3,{type:"sawtooth",v:.13});
+      tone(440,.3,{type:"sawtooth",at:.32,v:.13});
+      tone(415,.3,{type:"sawtooth",at:.64,v:.13});
+      tone(392,.8,{type:"sawtooth",at:.96,to:330,v:.13});
+    },
+    // Original meme-style sounds synthesized in Web Audio (no copyrighted audio files).
+    catMeow:()=>{
+      tone(620,.22,{type:"sawtooth",to:880,v:.12});
+      tone(880,.42,{type:"sawtooth",to:430,at:.2,v:.13});
+      tone(1240,.12,{type:"triangle",to:700,at:.12,v:.035});
+    },
+    bruh:()=>{
+      tone(180,.75,{type:"sawtooth",to:62,v:.24});
+      tone(92,.65,{type:"sine",to:48,at:.08,v:.28});
+      noise(.18,{type:"lowpass",f:180,to:70,v:.18});
+    },
+    vineBoom:()=>{
+      tone(72,.85,{type:"sine",to:34,v:.55});
+      tone(48,.65,{type:"triangle",to:28,at:.02,v:.34});
+      noise(.24,{type:"lowpass",f:110,to:45,v:.22});
+    },
+    catLaugh:()=>{
+      [0,.16,.32,.48,.64].forEach((at,i)=>tone(420+(i%2)*90,.12,{type:"square",to:300,at,v:.055}));
+      tone(260,.42,{type:"triangle",to:170,at:.72,v:.08});
+    },
+    sadMeow:()=>{
+      tone(740,.28,{type:"sawtooth",to:490,v:.09});
+      tone(490,.58,{type:"sawtooth",to:220,at:.24,v:.1});
+    },
+    win:()=>{
+      [60,64,67,72,76].forEach((n,i)=>tone(note(n),.22,{type:"triangle",at:i*.12,v:.2}));
+      [72,76,79,84].forEach(n=>tone(note(n),.9,{at:.7,v:.1}));
+    },
+    gameover:()=>{
+      [67,63,60,55].forEach((n,i)=>tone(note(n),.35,{type:"sawtooth",at:i*.28,v:.12}));
+    },
+    intro:()=>{
+      noise(.6,{f:200,to:4000,q:2,v:.3});
+      [60,64,67,72,67,72,76,84].forEach((n,i)=>tone(note(n),.28,{type:"triangle",at:.3+i*.16,v:.2}));
+      tone(note(36),1.4,{v:.35,at:.3});
+    },
+    faaah:fah
+  };
+
+  function play(k,arg){
+    if(muted)return null;
+    const src=MK_CONFIG.files[k];
+    if(src&&!bad[k]){
+      try{
+        const a=new Audio(src);
+        a.addEventListener("error",()=>{bad[k]=1;try{S[k]()}catch(e){}});
+        const p=a.play();if(p&&p.catch)p.catch(()=>{});
+        return a;
+      }catch(e){}
+    }
+    try{S[k]&&S[k](arg)}catch(e){}
+    return null;
+  }
+
+  /* ---------- warm credits music (soft pads + gentle plucks + reverb) ---------- */
+  const M={g:null,osc:[],audio:null};
+  function reverb(a){
+    const len=Math.floor(a.sampleRate*2.6),ir=a.createBuffer(2,len,a.sampleRate);
+    for(let c=0;c<2;c++){const d=ir.getChannelData(c);for(let i=0;i<len;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/len,2.4)}
+    const cv=a.createConvolver();cv.buffer=ir;return cv;
+  }
+  function synthMusic(dur){
+    const a=ctx();if(!a)return;
+    musicStop(true);
+    const t0=a.currentTime+.1,g=a.createGain(),lp=a.createBiquadFilter(),rv=reverb(a),wet=a.createGain(),osc=[];
+    lp.type="lowpass";lp.frequency.value=1500;
+    g.gain.setValueAtTime(.0001,t0);g.gain.exponentialRampToValueAtTime(.5,t0+2.5);
+    g.gain.setValueAtTime(.5,t0+dur-4);g.gain.exponentialRampToValueAtTime(.0001,t0+dur);
+    wet.gain.value=.55;
+    g.connect(lp);lp.connect(master);lp.connect(rv);rv.connect(wet);wet.connect(master);
+    // C - Am - F - G - C - Am - F - C (a soft, hopeful loop that ends at home)
+    const chords=[[48,55,59,64],[45,52,60,64],[41,48,57,64],[43,50,59,62],[48,55,59,64],[45,52,60,64],[41,48,57,64],[48,55,60,64]];
+    const step=dur/chords.length;
+    chords.forEach((ch,i)=>{
+      const s=t0+i*step;
+      ch.forEach(n=>[["sine",0],["triangle",7]].forEach(([type,det])=>{
+        const o=a.createOscillator(),e=a.createGain();
+        o.type=type;o.frequency.value=note(n);o.detune.value=det;
+        e.gain.setValueAtTime(.0001,s);e.gain.linearRampToValueAtTime(.075,s+1.1);
+        e.gain.setValueAtTime(.075,s+step-.9);e.gain.linearRampToValueAtTime(.0001,s+step+.9);
+        o.connect(e);e.connect(g);o.start(s);o.stop(s+step+1);osc.push(o);
+      }));
+      [0,1,2,3,2,1].forEach((idx,k)=>{
+        const s2=s+k*step/6,o=a.createOscillator(),e=a.createGain();
+        o.type="triangle";o.frequency.value=note(ch[idx]+12);
+        e.gain.setValueAtTime(.0001,s2);e.gain.linearRampToValueAtTime(.07,s2+.012);e.gain.exponentialRampToValueAtTime(.0001,s2+1.6);
+        o.connect(e);e.connect(g);o.start(s2);o.stop(s2+1.7);osc.push(o);
+      });
+    });
+    M.g=g;M.osc=osc;
+  }
+  function music(dur){
+    if(muted)return;
+    musicStop(true);
+    const src=MK_CONFIG.files.credits;
+    if(src&&!bad.credits){
+      try{
+        const au=new Audio(src);au.volume=.85;
+        au.addEventListener("error",()=>{bad.credits=1;if(M.audio===au){M.audio=null;synthMusic(dur)}});
+        M.audio=au;const p=au.play();if(p&&p.catch)p.catch(()=>{});
+        return;
+      }catch(e){}
+    }
+    synthMusic(dur);
+  }
+  function musicStop(quick){
+    if(M.audio){try{M.audio.pause()}catch(e){}M.audio=null}
+    if(M.g&&ac){
+      const t=ac.currentTime,g=M.g,os=M.osc;
+      try{g.gain.cancelScheduledValues(t);g.gain.setValueAtTime(Math.max(g.gain.value,.0001),t);g.gain.exponentialRampToValueAtTime(.0001,t+(quick?.05:.8))}catch(e){}
+      setTimeout(()=>os.forEach(o=>{try{o.stop()}catch(e){}}),quick?120:950);
+      M.g=null;M.osc=[];
+    }
+  }
+  addEventListener("pointerdown",()=>ctx(),{once:true,capture:true});
+  return{
+    play,
+    correct:k=>play("correct",k),
+    music,musicStop:()=>musicStop(),
+    toggle:()=>{muted=!muted;localStorage.setItem("mk_mute",muted?"1":"0");if(muted)musicStop();return muted},
+    isMuted:()=>muted
+  };
+})();
+
+/* MATHKING FX: confetti, stage cards, team intro, streaks, secret troll stage */
+const FX=(()=>{
+  const $=id=>document.getElementById(id);
+  const RM=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const COLORS=["#e6c260","#ff6b8a","#5ee0a0","#5ab8ff","#c58bff","#ff9d5c"];
+  const ACC=["#e6c260","#5ee0a0","#5ab8ff","#c58bff","#ff9d5c","#ff6b8a","#ffe14d","#ff4d4d"];
+
+  /* ---------- particles ---------- */
+  const cv=document.createElement("canvas");cv.id="fxCanvas";document.body.appendChild(cv);
+  const g=cv.getContext("2d");let P=[],running=false;
+  function size(){cv.width=innerWidth;cv.height=innerHeight}
+  size();addEventListener("resize",size);
+  function loop(){
+    g.clearRect(0,0,cv.width,cv.height);
+    P=P.filter(p=>p.l>0);
+    P.forEach(p=>{
+      p.vy+=p.gr;p.x+=p.vx;p.y+=p.vy;p.r+=p.vr;p.l--;
+      g.save();g.globalAlpha=Math.min(1,p.l/20);g.translate(p.x,p.y);g.rotate(p.r);
+      g.fillStyle=p.c;g.fillRect(-p.s/2,-p.s/2,p.s,p.s*p.h);g.restore();
+    });
+    if(P.length)requestAnimationFrame(loop);else{running=false;g.clearRect(0,0,cv.width,cv.height)}
+  }
+  function burst(n,x,y,o){
+    if(RM)return;
+    for(let i=0;i<n;i++){
+      const a=Math.random()*Math.PI*2,sp=o.sp*(.4+Math.random()*.8);
+      P.push({x,y,vx:Math.cos(a)*sp,vy:Math.sin(a)*sp-(o.up||0),gr:o.gr||.25,r:Math.random()*6,vr:(Math.random()-.5)*.4,
+        s:o.s?o.s*(.6+Math.random()):6+Math.random()*6,h:o.h||1.6,l:(o.l||90)+Math.random()*40,
+        c:(o.c||COLORS)[i%(o.c||COLORS).length]});
+    }
+    if(!running){running=true;requestAnimationFrame(loop)}
+  }
+  function confetti(x,y,n){
+    x=x==null?innerWidth/2:x;y=y==null?innerHeight*.4:y;
+    burst(n||70,x,y,{sp:11,up:6});
+  }
+  function shards(el){
+    const r=el.getBoundingClientRect();
+    burst(26,r.left+r.width/2,r.top+r.height/2,{sp:6,c:["#ff3b5c","#ff8fa3","#b3122f"],s:5,h:1,gr:.35,l:60});
+  }
+  function pop(text,x,y){
+    const e=document.createElement("div");e.className="xppop";e.textContent=text;
+    e.style.left=x+"px";e.style.top=y+"px";document.body.appendChild(e);setTimeout(()=>e.remove(),1100);
+  }
+
+  /* ---------- streak, pips, accent ---------- */
+  function badge(k){
+    const b=$("streakBadge");if(!b)return;
+    b.classList.toggle("hidden",k<2);
+    if(k>=2){b.textContent="🔥 x"+k;b.classList.remove("bump");void b.offsetWidth;b.classList.add("bump")}
+  }
+  function onCorrect(k,gain){
+    const b=document.querySelector(".option.selected"),
+      r=b?b.getBoundingClientRect():{left:innerWidth/2,top:innerHeight/2,width:0};
+    const y=r.top+(r.height||0)/2;
+    confetti(r.left+r.width/2,y,36+Math.min(k,6)*8);
+    pop("+"+gain+" XP",r.left+r.width-70,y-10);
+    setTimeout(()=>SFX.play("xp"),220);
+    badge(k);
+  }
+  function pips(s,q){
+    const p=$("pips");if(!p)return;
+    p.innerHTML="";
+    for(let i=0;i<8;i++){
+      const e=document.createElement("span");
+      if(i<s)e.className="done";
+      else if(i===s){e.className="now";e.style.setProperty("--f",(q/3*100)+"%")}
+      p.appendChild(e);
+    }
+  }
+  function onQuestion(s,q){
+    const o=$("quizOverlay");
+    o.style.setProperty("--gold2",ACC[s]);o.style.setProperty("--gold",ACC[s]);
+    pips(s,q);
+    const h=$("question");h.classList.remove("slide");void h.offsetWidth;h.classList.add("slide");
+  }
+  let catToastTimer=null;
+  const CAT_LINES={
+    sideeye:{tag:"SIDE-EYE CAT",sound:"catMeow",face:"sideeye"},
+    cry:{tag:"CRYING CAT",sound:"sadMeow",face:"cry"},
+    smug:{tag:"SMUG CAT",sound:"catLaugh",face:"smug"},
+    shock:{tag:"SHOCKED CAT",sound:"vineBoom",face:"shock"},
+    sleepy:{tag:"SLEEPY CAT",sound:"bruh",face:"sleepy"},
+    judge:{tag:"JUDGING CAT",sound:"bruh",face:"judge"}
+  };
+  function catSVG(face){
+    const eye=(x,y,r=7)=>`<ellipse cx="${x}" cy="${y}" rx="${r}" ry="${r+2}" fill="#111"/>`;
+    let eyes="",mouth="<path d='M43 65q7 8 14 0' fill='none' stroke='#111' stroke-width='3' stroke-linecap='round'/>";
+    if(face==="sideeye"){eyes=`<ellipse cx="39" cy="49" rx="5" ry="8" fill="#111"/><ellipse cx="64" cy="49" rx="8" ry="5" fill="#111"/>`;mouth="<path d='M43 68q10-6 19 0' fill='none' stroke='#111' stroke-width='3'/>"}
+    if(face==="cry"){eyes=`${eye(39,49)}${eye(64,49)}<path d='M35 57q-9 15 1 20q8-4 2-20M65 57q-8 16 2 20q8-5-2-20' fill='#65b8ff'/>`;mouth="<path d='M42 69q8-12 16 0' fill='none' stroke='#111' stroke-width='3'/>"}
+    if(face==="smug"){eyes="<path d='M30 49q9-10 18 0M57 49q9-10 18 0' fill='none' stroke='#111' stroke-width='4' stroke-linecap='round'/>";mouth="<path d='M43 66q13 8 22-3' fill='none' stroke='#111' stroke-width='4' stroke-linecap='round'/>"}
+    if(face==="shock"){eyes=`${eye(39,49,9)}${eye(64,49,9)}`;mouth="<ellipse cx='52' cy='69' rx='7' ry='10' fill='#111'/>"}
+    if(face==="sleepy"){eyes="<path d='M29 52q10-9 20 0M57 52q10-9 20 0' fill='none' stroke='#111' stroke-width='4' stroke-linecap='round'/>";mouth="<path d='M44 68q8 4 16 0' fill='none' stroke='#111' stroke-width='3'/>"}
+    if(face==="judge"){eyes="<path d='M29 47l20 5M57 52l20-5' stroke='#111' stroke-width='5' stroke-linecap='round'/>";mouth="<path d='M42 69h20' stroke='#111' stroke-width='4' stroke-linecap='round'/>"}
+    const fur=face==="smug"?"#f2a34a":face==="cry"?"#d8dce5":face==="sleepy"?"#b9b9b3":"#fff";
+    const inner=face==="smug"?"#c96f28":"#aaa";
+    return `<svg viewBox='0 0 104 104' role='img' aria-label='Funny cat reaction'><rect width='104' height='104' fill='#e9e9e4'/><path d='M17 38L12 10Q29 13 38 29Q52 22 67 29Q78 12 93 10L87 43Q95 59 86 79Q76 96 52 96Q28 96 18 79Q9 59 17 38Z' fill='${fur}' stroke='#111' stroke-width='3'/><path d='M20 29L17 17Q29 20 36 32M84 29L88 17Q76 20 69 32' fill='${inner}' stroke='#111' stroke-width='2'/><path d='M29 39q9-6 18 0M57 39q9-6 18 0' fill='none' stroke='#111' stroke-width='3'/>${eyes}<path d='M48 59q4-5 8 0q-4 5-8 0' fill='#f28b9b' stroke='#111' stroke-width='1.5'/>${mouth}<path d='M20 62L4 58M20 68L4 70M84 62l16-4M84 68l16 2' stroke='#111' stroke-width='1.5'/>${face==="cry"?"<path d='M35 58q-10 17 0 22M67 58q10 17 0 22' stroke='#56a9ed' stroke-width='4' fill='none'/>":""}<path d='M38 87q14 7 28 0' fill='none' stroke='#ddd' stroke-width='3'/></svg>`;
+  }
+  function catReaction(kind,caption,sound){
+    const cfg=CAT_LINES[kind]||CAT_LINES.sideeye,box=$("catMemeToast");
+    if(!box)return;
+    clearTimeout(catToastTimer);
+    $("catMemeArt").innerHTML=catSVG(cfg.face);
+    $("catMemeTag").textContent=cfg.tag;
+    $("catMemeCaption").textContent=caption||"The cat has reviewed your decision.";
+    box.classList.remove("hidden","show");void box.offsetWidth;box.classList.add("show");
+    SFX.play(sound||cfg.sound);
+    catToastTimer=setTimeout(()=>{box.classList.remove("show");setTimeout(()=>box.classList.add("hidden"),380)},3100);
+  }
+  function trollMood(score){
+    if(score===3){confetti(null,null,90);catReaction("smug","A perfect score? The cat suspects academic fraud.","catLaugh")}
+    else if(score===2)catReaction("sideeye","2/3. The cat expected more. It always does.","catMeow");
+    else if(score===1)catReaction("cry","1/3. Even the cat is trying not to laugh.","sadMeow");
+    else catReaction("shock","0/3. The calculator has requested a new owner.","vineBoom");
+  }
+
+  /* ---------- stage card ---------- */
+  function stageCard(s,cb){
+    const c=$("stageCard");
+    $("scNum").textContent="STAGE "+String(s+1).padStart(2,"0");
+    $("scName").textContent=STAGES[s];
+    $("scTag").textContent=s===7?"FINAL BOSS · DO NOT BLINK · 30 XP PER ANSWER"
+      :s>=HARD?"HARD MODE · 45 SECOND TIMER · 30 XP PER ANSWER":"WARM START · 20 XP PER ANSWER";
+    c.style.setProperty("--acc",ACC[s]);
+    c.classList.remove("hidden","go");void c.offsetWidth;c.classList.add("go");
+    SFX.play("stage");
+    setTimeout(()=>{c.classList.add("hidden");cb()},RM?500:1700);
+  }
+
+  /* ---------- team intro (first run of each visit) ---------- */
+  function teamIntro(cb){
+    if(sessionStorage.getItem("mk_intro")){cb();return}
+    sessionStorage.setItem("mk_intro","1");
+    const t=$("teamIntro");let au=null,tt=0,done=false;
+    $("tiTeam").textContent=MK_CONFIG.team;
+    t.classList.remove("hidden");
+    const end=()=>{
+      if(done)return;done=true;clearTimeout(tt);
+      if(au&&au.pause)au.pause();
+      t.classList.add("hidden");cb();
+    };
+    au=SFX.play("intro");
+    tt=setTimeout(end,RM?1200:4800);
+    $("tiSkip").onclick=end;
+  }
+
+  /* ---------- secret troll stage ---------- */
+  let sI=0,sLeft=20,sClicks=0,secretOn=false;
+  function secretClick(b){
+    if(!secretOn||hearts<=0)return;
+    sClicks++;
+    b.classList.remove("wrong");void b.offsetWidth;b.classList.add("wrong");
+    loseHeart();
+    const m=["Wrong! 💔","Nope! 😂","Still wrong! 🤣","Are you even reading? 👀"];
+    $("smsg").textContent=m[sClicks%m.length];
+    if(hearts<=0){
+      setTimeout(()=>{
+        if(!secretOn)return;
+        setHearts(3);$("smsg").textContent="Hearts reloaded! There is no game over here. Just wait… 😏";
+      },1100);
+    }
+  }
+  function secretStage(cb){
+    secretOn=true;sClicks=0;sLeft=20;setHearts(3);
+    const o=$("quizOverlay");o.style.setProperty("--gold2",ACC[7]);o.style.setProperty("--gold",ACC[7]);
+    $("stageLabel").textContent="SECRET STAGE / ???";$("questionNumber").textContent="";
+    $("timer").textContent="";$("timebar").classList.add("hidden");
+    $("progress").style.width="100%";
+    $("smsg").textContent="";$("psst").classList.remove("on");$("ssecs").textContent=sLeft;
+    document.querySelectorAll("#secretView .option").forEach(b=>{b.disabled=false;b.classList.remove("wrong","selected","correct")});
+    $("secretView").classList.remove("hidden");
+    SFX.play("stage");
+    const bar=$("sbar");
+    bar.style.transition="none";bar.style.width="100%";void bar.offsetWidth;
+    bar.style.transition="width 20s linear";bar.style.width="0";
+    clearInterval(sI);
+    sI=setInterval(()=>{
+      sLeft--;$("ssecs").textContent=Math.max(sLeft,0);
+      if(sLeft>0&&sLeft<=10)SFX.play(sLeft<=5?"tick2":"tick");
+      if(sLeft===12)$("psst").classList.add("on");
+      if(sLeft<=0){clearInterval(sI);reveal(cb)}
+    },1000);
+  }
+  function reveal(cb){
+    secretOn=false;
+    const f=$("faaah");
+    f.classList.remove("hidden","go");void f.offsetWidth;f.classList.add("go");
+    SFX.play("faaah");
+    setTimeout(()=>{
+      f.classList.add("hidden");f.classList.remove("go");
+      $("secretView").classList.add("hidden");
+      $("quizOverlay").style.setProperty("--gold2","#e6c260");
+      cb(sClicks
+        ?{xp:25,msg:"Secret stage: you clicked "+sClicks+" time"+(sClicks>1?"s":"")+" and broke hearts for nothing. Troll bonus +25 XP."}
+        :{xp:100,msg:"Secret stage: you did not touch a thing. Patience bonus +100 XP!"});
+    },RM?900:2300);
+  }
+  function stopSecret(){
+    clearInterval(sI);secretOn=false;
+    $("secretView").classList.add("hidden");$("faaah").classList.add("hidden");
+  }
+
+  /* ---------- misc ---------- */
+  function enterFS(){
+    try{const r=document.documentElement.requestFullscreen&&document.documentElement.requestFullscreen();if(r&&r.catch)r.catch(()=>{})}catch(e){}
+  }
+  function syncSound(){
+    document.querySelectorAll(".sound-btn").forEach(b=>b.textContent=SFX.isMuted()?"🔇":"🔊");
+  }
+  function soundBtn(){
+    const b=document.createElement("button");
+    b.type="button";b.className="sound-btn";b.setAttribute("aria-label","Turn sound on or off");
+    b.onclick=()=>{SFX.toggle();syncSound();SFX.play("select")};
+    return b;
+  }
+
+  /* ---------- one-time setup ---------- */
+  (function init(){
+    const panel=document.querySelector("#quizOverlay .quiz-panel"),head=panel.querySelector(".quiz-head");
+    // floating maths symbols behind the quiz
+    const bg=document.createElement("div");bg.className="bgsym";
+    "+ − × ÷ π ∑ √ ∞ % = x² ∫ ∆ ≈ θ".split(" ").forEach((s,i)=>{
+      const e=document.createElement("span");e.textContent=s;
+      e.style.cssText="left:"+(i*7.3%96)+"%;--sz:"+(26+(i*13)%40)+"px;--d:"+(16+(i*5)%14)+"s;--dl:-"+((i*3)%16)+"s;--r:"+(i%2?240:-240)+"deg";
+      bg.appendChild(e);
+    });
+    panel.prepend(bg);
+    // streak badge + sound buttons
+    const st=document.createElement("span");st.id="streakBadge";st.className="streak hidden";
+    head.insertBefore(st,$("closeQuiz"));
+    head.insertBefore(soundBtn(),$("closeQuiz"));
+    document.querySelector(".topbar").appendChild(soundBtn());
+    syncSound();
+    // stage pips
+    const pp=document.createElement("div");pp.id="pips";pp.className="pips";
+    panel.insertBefore(pp,panel.querySelector(".progress"));
+    // secret stage + faaah face use the troll drawing from the stage result
+    const face=document.querySelector("#stageResult .troll");
+    if(face)$("faaahFace").appendChild(face.cloneNode(true));
+    document.querySelectorAll("#secretView .option").forEach(b=>b.onclick=()=>secretClick(b));
+    // keyboard: A-D or 1-4 to choose, Enter to submit
+    addEventListener("keydown",e=>{
+      if(e.repeat||$("quizOverlay").classList.contains("hidden"))return;
+      if(e.target.matches&&e.target.matches("input,select,textarea"))return;
+      if(!$("stageCard").classList.contains("hidden"))return;
+      if(!$("questionView").classList.contains("hidden")){
+        const opts=document.querySelectorAll("#options .option"),
+          i="ABCD".indexOf(e.key.toUpperCase()),j=["1","2","3","4"].indexOf(e.key),idx=i>=0?i:j;
+        if(idx>=0&&opts[idx]&&!opts[idx].disabled)opts[idx].click();
+        else if(e.key==="Enter"&&!$("submit").disabled){e.preventDefault();$("submit").click()}
+      }else if(e.key==="Enter"&&!$("stageResult").classList.contains("hidden")){
+        $("nextStage").click();
+      }
+    });
+  })();
+
+  return{confetti,shards,onCorrect,streak:badge,onQuestion,trollMood,catReaction,stageCard,teamIntro,secretStage,stopSecret,enterFS};
+})();
+
+// Extra Tamil Nadu (Samacheer) style questions, Classes 6-12. Index 0-2 = easy variety, 3-7 = HARD pool (stages 4-8). [question, options, answerIndex, explanation]
+const EXTRA={
+6:[["Round 4,567 to the nearest hundred.",["4,500","4,600","4,570","5,000"],1,"67 is more than 50, so round up to 4,600."],["Greatest 5-digit number with all different digits?",["99,999","98,765","98,756","97,865"],1,"Use the largest digits in descending order: 98,765."],["Evaluate 6 + 4 × 3.",["30","18","22","24"],1,"BODMAS: 4 × 3 = 12, then 6 + 12 = 18."],["Find the LCM of 12, 15 and 20.",["30","60","120","180"],1,"12 = 2²×3, 15 = 3×5, 20 = 2²×5, so LCM = 60."],["Two angles of a triangle are 50° and 65°. The third angle is:",["55°","65°","75°","115°"],1,"180° − 115° = 65°."],["If 3(n − 2) = 15, then n =",["5","6","7","9"],2,"n − 2 = 5, so n = 7."],["A rectangle's length is twice its breadth and its perimeter is 36 cm. Its area is:",["48 cm²","64 cm²","72 cm²","81 cm²"],2,"6b = 36, b = 6, l = 12, area = 72 cm²."],["Boys : girls = 3 : 5 and there are 40 students. How many girls?",["15","24","25","30"],2,"40 ÷ 8 × 5 = 25."]],
+7:[["Simplify (−5) × (−4).",["−20","−9","9","20"],3,"Negative × negative = positive: 20."],["Express 0.25 as a percentage.",["2.5%","25%","0.25%","250%"],1,"0.25 × 100 = 25%."],["Solve x/4 = 12.",["3","8","16","48"],3,"x = 12 × 4 = 48."],["Simple interest on ₹2,000 at 5% p.a. for 3 years:",["₹100","₹300","₹500","₹600"],1,"I = PNR/100 = 2000×3×5/100 = ₹300."],["Exterior angle of a triangle is 110°, one opposite interior angle is 40°. The other is:",["60°","70°","80°","150°"],1,"Exterior angle = sum of opposite interior angles: 110 − 40 = 70°."],["Simplify (2x²)(3x³).",["5x⁵","6x⁵","6x⁶","5x⁶"],1,"Multiply coefficients, add powers: 6x⁵."],["Legs of a right triangle are 6 cm and 8 cm. The hypotenuse is:",["9 cm","10 cm","12 cm","14 cm"],1,"√(36 + 64) = 10 cm."],["A book's price rises from ₹80 to ₹100. Percentage increase?",["20%","25%","30%","125%"],1,"20/80 × 100 = 25%."]],
+8:[["Find the cube of 4.",["12","16","48","64"],3,"4 × 4 × 4 = 64."],["Scientific notation of 0.00045:",["4.5 × 10⁻³","4.5 × 10⁻⁴","4.5 × 10⁴","4.5 × 10⁻⁵"],1,"Move the decimal 4 places right: 4.5 × 10⁻⁴."],["Expand (a + b)².",["a² + b²","a² + 2ab + b²","a² − 2ab + b²","2a + 2b"],1,"Standard identity."],["Compound interest on ₹1,000 at 10% p.a. for 2 years:",["₹200","₹210","₹220","₹121"],1,"A = 1000(1.1)² = 1210, so CI = ₹210."],["Total surface area of a cube of side 5 cm:",["100 cm²","125 cm²","150 cm²","250 cm²"],2,"6a² = 6 × 25 = 150 cm²."],["Factorise 2x² + 5x + 3.",["(2x+1)(x+3)","(2x+3)(x+1)","(2x−3)(x−1)","(x+3)(x+2)"],1,"2x² + 2x + 3x + 3 = (2x+3)(x+1)."],["If x + 1/x = 5, then x² + 1/x² =",["21","23","25","27"],1,"(x + 1/x)² − 2 = 25 − 2 = 23."],["Two dice are rolled. Probability the sum is 7?",["1/12","1/9","1/6","1/36"],2,"6 favourable outcomes out of 36 = 1/6."]],
+9:[["Number of subsets of a set with 3 elements:",["3","6","8","9"],2,"2³ = 8."],["n(A)=5, n(B)=3, n(A∩B)=2. Find n(A∪B).",["6","8","10","5"],0,"5 + 3 − 2 = 6."],["If a + b = 7 and ab = 12, then a² + b² =",["19","25","37","49"],1,"49 − 2×12 = 25."],["Rationalise 1/(√3 − √2).",["√3 − √2","√3 + √2","5","1/5"],1,"Multiply by (√3+√2)/(√3+√2); denominator becomes 1."],["Slope of the line through (1, 2) and (3, 8):",["2","3","4","6"],1,"(8 − 2)/(3 − 1) = 3."],["If p(x) = x³ − 2x² + x − 5, then p(2) =",["−5","−3","3","5"],1,"8 − 8 + 2 − 5 = −3."],["Curved surface area of a cylinder, r = 7 cm, h = 10 cm (π = 22/7):",["220 cm²","308 cm²","440 cm²","1540 cm²"],2,"2πrh = 2 × 22/7 × 7 × 10 = 440."],["An arc subtends 80° at the centre. The angle on the remaining circle is:",["40°","80°","160°","100°"],0,"Angle at centre is twice the angle on the circle."]],
+10:[["If n(A)=2 and n(B)=3, then n(A×B) =",["5","6","8","9"],1,"2 × 3 = 6."],["5th term of the AP with a = 2, d = 3:",["11","14","17","20"],1,"2 + 4×3 = 14."],["HCF of 24 and 36:",["6","12","24","72"],1,"24 = 2³×3, 36 = 2²×3²; HCF = 12."],["Sum of the roots of 2x² − 7x + 3 = 0:",["−7/2","7/2","3/2","−3/2"],1,"Sum = −b/a = 7/2."],["If sin θ = 3/5 (θ acute), tan θ =",["3/4","4/3","4/5","5/3"],0,"cos θ = 4/5, so tan θ = 3/4."],["Volume of a sphere of radius 3 cm:",["12π","27π","36π","108π"],2,"(4/3)π × 27 = 36π cm³."],["Slope of the line 3x − 2y + 6 = 0:",["−3/2","3/2","2/3","3"],1,"y = (3/2)x + 3."],["Two dice are rolled. Probability that the sum is 8?",["1/6","5/36","1/9","7/36"],1,"Pairs: (2,6),(3,5),(4,4),(5,3),(6,2) = 5/36."]],
+11:[["If n(A) = 4, the number of subsets of A is:",["8","12","16","4"],2,"2⁴ = 16."],["Domain of f(x) = √(x − 2):",["x > 2","x ≥ 2","x ≤ 2","All reals"],1,"Need x − 2 ≥ 0."],["sin²30° + cos²30° =",["0","1/2","1","2"],2,"sin²θ + cos²θ = 1."],["Number of diagonals of a hexagon:",["6","9","12","15"],1,"n(n−3)/2 = 6×3/2 = 9."],["lim x→2 (x² − 4)/(x − 2) =",["0","2","4","∞"],2,"(x+2) → 4."],["Coefficient of x² in (1 + x)⁵:",["5","10","15","20"],1,"⁵C₂ = 10."],["Differentiate y = x² sin x.",["2x cos x","2x sin x + x² cos x","x² cos x","2x sin x − x² cos x"],1,"Product rule."],["Sum to infinity of GP 1, 1/2, 1/4, …",["1","3/2","2","∞"],2,"a/(1 − r) = 1/(1/2) = 2."]],
+12:[["i⁴ equals:",["−1","1","i","−i"],1,"i² = −1, so i⁴ = 1."],["∫ cos x dx =",["sin x + C","−sin x + C","cos x + C","−cos x + C"],0,"d/dx(sin x) = cos x."],["Determinant of [[1,2],[3,6]]:",["0","3","6","12"],0,"6 − 6 = 0."],["(1 + i)² =",["2","2i","1 + 2i","−2i"],1,"1 + 2i + i² = 2i."],["∫₀^π sin x dx =",["0","1","2","π"],2,"[−cos x] from 0 to π = 1 + 1 = 2."],["Order of d²y/dx² + 3(dy/dx)³ + y = 0:",["1","2","3","6"],1,"Highest derivative is second order."],["If a·b = 0 for non-zero vectors a and b, they are:",["Parallel","Perpendicular","Equal","Opposite"],1,"cos θ = 0, so θ = 90°."],["X ~ B(4, 1/2). P(X = 2) =",["1/4","3/8","1/2","5/8"],1,"⁴C₂ (1/2)⁴ = 6/16 = 3/8."]]};
+
+// 8 more questions per class (6-12), one per stage. Plus generators that fill Classes 2-5 to 3 per stage.
+const EXTRA2={
+6:[["What is 15 × 12?",["160","180","190","200"],1,"= 180"],["Which is a prime number?",["21","27","29","33"],2,"29 has only 2 factors"],["Evaluate 48 ÷ 6 + 2.",["6","8","10","12"],2,"8 + 2 = 10"],["HCF of 36 and 48?",["6","12","18","24"],1,"HCF = 12"],["Angle sum of a quadrilateral?",["180°","270°","360°","540°"],2,"= 360°"],["Solve 5x − 3 = 22.",["4","5","6","7"],1,"5x = 25"],["How many 3-digit numbers are multiples of 100?",["8","9","10","90"],1,"100 to 900 = 9"],["The mean of 4 numbers is 15. Their sum is:",["45","60","64","75"],1,"4 × 15 = 60"]],
+7:[["Find 3/4 + 1/2.",["4/6","5/4","1","5/6"],1,"3/4 + 2/4 = 5/4"],["Value of 2⁵?",["10","16","25","32"],3,"= 32"],["Solve 5x = −35.",["−7","7","−30","−40"],0,"x = −7"],["A sum doubles in 5 years at simple interest. Rate % p.a.?",["10","15","20","25"],2,"100/5 = 20%"],["Diagonal of a 12 cm by 5 cm rectangle:",["13 cm","15 cm","17 cm","60 cm"],0,"√169 = 13"],["Simplify (x + 3)(x + 2).",["x² + 5x + 6","x² + 6","x² + 5x + 5","x² + 6x + 5"],0,"Expand each term"],["Mean of 3, 5, 7, 9 and x is 7. Find x.",["9","10","11","13"],2,"Sum 35, so x = 11"],["Cost price ₹250, selling price ₹300. Profit %?",["15%","20%","25%","50%"],1,"50/250 = 20%"]],
+8:[["√225 =",["13","15","25","45"],1,"15 × 15 = 225"],["Which is a perfect cube?",["100","125","150","200"],1,"5³ = 125"],["Solve 4x + 7 = 2x + 15.",["2","3","4","6"],2,"2x = 8"],["Simplify (2/3)⁻².",["4/9","9/4","−4/9","−9/4"],1,"Flip, then square"],["Area of a trapezium: parallel sides 6 and 10 cm, height 4 cm.",["24 cm²","32 cm²","40 cm²","64 cm²"],1,"½ × 16 × 4 = 32"],["Factorise a² − 16b².",["(a−4b)²","(a−4b)(a+4b)","(a−16b)(a+b)","(a+4b)²"],1,"Difference of squares"],["Two successive 10% discounts on ₹1000 give:",["₹800","₹810","₹820","₹900"],1,"900 × 0.9 = 810"],["Volume of a cylinder, r = 7 cm, h = 10 cm (π = 22/7):",["440 cm³","1100 cm³","1540 cm³","154 cm³"],2,"πr²h = 1540"]],
+9:[["Which is a rational number?",["√2","√9","π","√11"],1,"√9 = 3"],["Zero of the polynomial 2x − 6:",["2","3","6","−3"],1,"2x = 6"],["Expand (x + 2)(x − 2).",["x² + 4","x² − 4","x² − 2x","x² + 4x − 4"],1,"Difference of squares"],["Distance from the origin to (6, 8):",["8","10","12","14"],1,"√100 = 10"],["Sum of interior angles of a hexagon:",["540°","720°","900°","1080°"],1,"(6−2) × 180"],["x − y = 3 and xy = 10. Find x² + y².",["19","29","39","49"],1,"9 + 20 = 29"],["Volume of a cone with r = 3, h = 4:",["12π","36π","9π","24π"],0,"⅓π·9·4 = 12π"],["Mean of 5 observations is 20. One observation (10) is removed. New mean?",["20","22.5","25","18"],1,"90 ÷ 4 = 22.5"]],
+10:[["Roots of x² − 9 = 0:",["3 only","−3 only","3 and −3","9"],2,"x = ±3"],["Sum of the first 10 natural numbers:",["45","50","55","60"],2,"n(n+1)/2 = 55"],["If the discriminant is negative, roots are:",["Real, distinct","Equal","Not real","Rational"],2,"Δ < 0"],["20th term of the AP 5, 8, 11, …",["57","60","62","65"],2,"5 + 19 × 3 = 62"],["sin 60° · cos 30° =",["3/4","1/2","1","√3/4"],0,"(√3/2)² = 3/4"],["Angle of elevation is 45° from 30 m away. Height of the tower:",["15 m","30 m","30√3 m","60 m"],1,"tan 45° = 1"],["Curved surface area of a cone, r = 7, l = 25 (π = 22/7):",["154","275","550","1100"],2,"πrl = 550"],["Distance between (2, 3) and (−1, 7):",["3","4","5","7"],2,"√(9 + 16) = 5"]],
+11:[["A = {1,2,3,4}, B = {3,4,5}. A − B =",["{1,2}","{3,4}","{5}","{1,2,5}"],0,"Elements only in A"],["Range of f(x) = x² on the reals:",["All reals","y ≥ 0","y > 0","y ≤ 0"],1,"Squares are ≥ 0"],["180° in radians:",["π/2","π","2π","π/4"],1,"= π"],["⁶P₂ =",["12","15","30","36"],2,"6 × 5 = 30"],["Solution of |x| < 3:",["x < 3","−3 < x < 3","x > −3","x < −3 or x > 3"],1,"Between −3 and 3"],["Derivative of eˣ + ln x:",["eˣ + 1/x","eˣ − 1/x","eˣ + x","x·eˣ⁻¹"],0,"d/dx ln x = 1/x"],["Slope of a line perpendicular to y = 2x + 1:",["2","−2","1/2","−1/2"],3,"Product of slopes = −1"],["A coin is tossed 3 times. P(at least one head) =",["1/8","3/8","7/8","1/2"],2,"1 − 1/8"]],
+12:[["d/dx (sin x) =",["cos x","−cos x","−sin x","tan x"],0,"Standard result"],["Inverse of the identity matrix I:",["0","I","−I","2I"],1,"I·I = I"],["|3 − 4i| =",["1","5","7","25"],1,"√(9 + 16)"],["∫ eˣ dx =",["eˣ + C","x·eˣ + C","eˣ⁺¹ + C","e + C"],0,"eˣ is its own integral"],["∫₀¹ 3x² dx =",["0","1","3","1/3"],1,"[x³] from 0 to 1"],["Magnitude of 2i − j + 2k:",["1","3","5","9"],1,"√(4+1+4) = 3"],["Solution of dy/dx = 2x:",["y = x² + c","y = 2x² + c","y = x + c","y = 2 + c"],0,"Integrate both sides"],["A, B independent: P(A) = 0.4, P(B) = 0.5. P(A∩B) =",["0.2","0.9","0.1","0.45"],0,"0.4 × 0.5"]]};
+const R=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
+function mkq(q,ans,exp){let d=[ans+1,ans-1,ans+10,ans-10,ans+2,ans+5].filter(v=>v>=0&&v!==ans).slice(0,3),o=[ans,...d].sort(()=>Math.random()-.5);return[q,o.map(String),o.indexOf(ans),exp||"Answer: "+ans]}
+function gen(s,n){const m=n*10;let a,b;switch(s){
+case 0:a=R(10,m*5);b=R(10,m*5);return mkq(`What is ${a} + ${b}?`,a+b);
+case 1:a=R(100,m*100);return mkq(`Which number comes just before ${a}?`,a-1);
+case 2:a=R(2,n+5);b=R(2,9);return mkq(`What is ${a} × ${b}?`,a*b);
+case 3:a=R(5,10*n);return mkq(`What is one quarter of ${4*a}?`,a);
+case 4:a=R(2,8+n*2);b=R(2,8+n*2);return mkq(`A rectangle is ${a} cm by ${b} cm. What is its perimeter in cm?`,2*(a+b));
+case 5:a=R(3,20);b=a+R(3,30);return mkq(`Find the missing number: __ + ${a} = ${b}`,b-a);
+case 6:a=R(1,10);b=R(2,9);return mkq(`What comes next: ${a}, ${a+b}, ${a+2*b}, ${a+3*b}, __ ?`,a+4*b);
+default:a=R(3,9);b=R(5,20);return mkq(`A shop sells ${a} pens at ₹${b} each. What is the total cost in ₹?`,a*b)}}
+
+const $=id=>document.getElementById(id);
+const curriculum={
+2:{topics:["Numbers & place value","Addition & subtraction","Multiplication","Shapes, time & money"],questions:[
+["WARM UP","What is 36 + 28?",["54","64","66","74"],1,"36 + 28 = 64."],
+["NUMBERS","Which number comes just before 500?",["499","490","501","400"],0,"499 comes immediately before 500."],
+["OPERATIONS","There are 4 boxes with 5 crayons each. How many crayons?",["9","15","20","25"],2,"4 × 5 = 20 crayons."],
+["FRACTIONS","Which is one half?",["1/3","1/2","1/4","2/3"],1,"One of two equal parts is one half."],
+["GEOMETRY","How many sides do 2 triangles have altogether?",["3","5","6","8"],2,"Each triangle has 3 sides. Together they have 6."],
+["LOGIC","A week has 7 days. How many days are in 2 weeks?",["9","12","14","21"],2,"2 × 7 = 14 days."],
+["BRAIN TEASER","How many months have at least 28 days?",["1","2","6","12"],3,"All 12 months have at least 28 days."],
+["FINAL BOSS","You have 5 sweets and take 2. How many did you take?",["2","3","5","7"],0,"You took 2 sweets. The question asks how many you took."]]},
+3:{topics:["Numbers","Multiplication & division","Fractions","Measurement & patterns"],questions:[
+["WARM UP","What is 125 + 75?",["190","200","210","250"],1,"125 + 75 = 200."],["NUMBERS","What is the place value of 6 in 364?",["6","60","600","36"],1,"The 6 is in the tens place: 60."],["OPERATIONS","What is 8 × 7?",["54","56","64","48"],1,"8 × 7 = 56."],["FRACTIONS","What is 1/4 of 20?",["4","5","10","15"],1,"20 ÷ 4 = 5."],["GEOMETRY","How many corners does a rectangle have?",["2","3","4","6"],2,"A rectangle has four corners."],["LOGIC","Continue: 3, 6, 9, 12, __",["13","14","15","18"],2,"The sequence increases by 3."],["BRAIN TEASER","Which is larger: 0.5 or 0.50?",["0.5","0.50","Equal","Cannot tell"],2,"They represent the same value."],["FINAL BOSS","A dozen eggs costs ₹60. What do 6 eggs cost at the same rate?",["₹20","₹25","₹30","₹40"],2,"Six is half of twelve, so the cost is ₹30."]]},
+4:{topics:["Large numbers","Factors & multiples","Fractions & decimals","Perimeter & area"],questions:[
+["WARM UP","What is 450 − 175?",["265","275","285","325"],1,"450 − 175 = 275."],["NUMBERS","What is the place value of 8 in 48,216?",["8","80","800","8,000"],3,"8 is in the thousands place."],["OPERATIONS","Which is a common factor of 18 and 24?",["4","5","6","8"],2,"6 divides both 18 and 24."],["FRACTIONS","What is 3/4 of 20?",["10","12","15","16"],2,"20 ÷ 4 × 3 = 15."],["GEOMETRY","A square has side 5 cm. Its perimeter is:",["10 cm","15 cm","20 cm","25 cm"],2,"4 × 5 = 20 cm."],["LOGIC","What comes next: 2, 4, 8, 16, __?",["20","24","30","32"],3,"Each term is doubled."],["BRAIN TEASER","How many times can you subtract 5 from 25?",["5 times","4 times","Once","25 times"],2,"After the first subtraction, you are subtracting from 20, not 25."],["FINAL BOSS","A square has 4 corners. How many corners do 3 separate squares have?",["7","10","12","16"],2,"Each square has 4 corners: 3 × 4 = 12."]]},
+5:{topics:["Fractions & decimals","Factors & multiples","Area & volume","Unit conversion"],questions:[
+["WARM UP","What is 2.5 + 1.75?",["3.25","4.25","4.5","5.25"],1,"2.50 + 1.75 = 4.25."],["NUMBERS","What is 0.75 as a fraction in simplest form?",["1/2","2/3","3/4","4/5"],2,"75/100 simplifies to 3/4."],["OPERATIONS","What is the HCF of 12 and 18?",["3","6","9","12"],1,"The highest common factor is 6."],["FRACTIONS","Calculate 2/5 + 1/5.",["1/5","2/5","3/5","3/10"],2,"Equal denominators: (2 + 1)/5 = 3/5."],["GEOMETRY","A rectangle is 8 cm by 3 cm. Its area is:",["11 cm²","22 cm²","24 cm²","48 cm²"],2,"Area = 8 × 3 = 24 cm²."],["LOGIC","A number is multiplied by zero. The result is:",["The number","Zero","One","Cannot know"],1,"Any number multiplied by zero is zero."],["BRAIN TEASER","Which is the smallest: 0.09, 0.9, 0.19, 0.109?",["0.09","0.9","0.19","0.109"],0,"0.09 is nine hundredths, smaller than the other values."],["FINAL BOSS","How many grams are in 2.5 kilograms?",["250","2,050","2,500","25,000"],2,"2.5 × 1,000 = 2,500 grams."]]},
+6:{topics:["Whole numbers & integers","Fractions & decimals","Ratio","Basic algebra & geometry"],questions:[
+["WARM UP","Evaluate −7 + 12.",["−19","−5","5","19"],2,"−7 + 12 = 5."],["NUMBERS","Which is the smallest integer?",["−2","0","3","−1"],0,"−2 is less than −1, 0 and 3."],["OPERATIONS","Calculate 3/4 + 1/4.",["1/2","1","1 1/4","2"],1,"4/4 = 1."],["FRACTIONS","What is 0.4 as a fraction in simplest form?",["1/4","2/5","4/5","1/2"],1,"0.4 = 4/10 = 2/5."],["GEOMETRY","The sum of angles in a triangle is:",["90°","180°","270°","360°"],1,"The interior angles of a triangle add to 180°."],["ALGEBRA","If x + 9 = 16, find x.",["5","6","7","8"],2,"Subtract 9 from both sides: x = 7."],["BRAIN TEASER","What is 100 divided by 0?",["0","100","1","Undefined"],3,"Division by zero is undefined."],["FINAL BOSS","A ratio 2:3 has 25 total parts. What is one part worth?",["3","5","10","15"],1,"There are 5 ratio parts; 25 ÷ 5 = 5."]]},
+7:{topics:["Rational numbers","Linear equations","Percentages","Lines & angles"],questions:[
+["WARM UP","Evaluate −3/5 + 1/5.",["−4/5","−2/5","2/5","4/5"],1,"−3/5 + 1/5 = −2/5."],["NUMBERS","What is the reciprocal of −4/7?",["4/7","−7/4","7/4","−4/7"],1,"Swap numerator and denominator, retaining the negative sign."],["OPERATIONS","Solve 3x = 27.",["6","8","9","12"],2,"x = 27 ÷ 3 = 9."],["FRACTIONS","What is 20% of 150?",["20","25","30","35"],2,"0.2 × 150 = 30."],["GEOMETRY","Angles on a straight line total:",["90°","180°","270°","360°"],1,"A straight angle is 180°."],["ALGEBRA","If 2x + 3 = 13, find x.",["4","5","6","8"],1,"2x = 10, so x = 5."],["BRAIN TEASER","You pass the runner in second place. What place are you now in?",["First","Second","Third","Last"],1,"You take the second-place position."],["FINAL BOSS","A shirt marked ₹500 has a 10% discount. Sale price?",["₹400","₹440","₹450","₹490"],2,"10% of ₹500 is ₹50; ₹500 − ₹50 = ₹450."]]},
+8:{topics:["Squares & cubes","Exponents","Algebraic expressions","Mensuration & data"],questions:[
+["WARM UP","What is √196?",["12","13","14","16"],2,"14 × 14 = 196."],["NUMBERS","Simplify 2³ × 2².",["2⁵","2⁶","4⁵","2¹"],0,"For the same base, add exponents: 2⁵."],["OPERATIONS","Expand 3(x + 4).",["3x + 4","3x + 7","3x + 12","x + 12"],2,"Distributive property gives 3x + 12."],["FRACTIONS","What is 5⁰?",["0","1","5","25"],1,"Any non-zero number raised to power zero equals 1."],["GEOMETRY","Area of a circle with radius 7 cm, π = 22/7:",["44","144","154","308"],2,"πr² = 22/7 × 49 = 154 cm²."],["ALGEBRA","Factorise x² − 9.",["(x−9)(x+1)","(x−3)(x+3)","(x−3)²","(x+9)(x−1)"],1,"Difference of squares: x² − 3² = (x−3)(x+3)."],["BRAIN TEASER","A number doubled and increased by 6 gives 20. What is the number?",["6","7","8","13"],1,"2x + 6 = 20, so x = 7."],["FINAL BOSS","The mean of 4, 6, 8 and 10 is:",["6","7","8","9"],1,"(4 + 6 + 8 + 10) ÷ 4 = 7."]]},
+9:{topics:["Number systems","Polynomials","Coordinate geometry","Geometry & statistics"],questions:[
+["WARM UP","Which number is irrational?",["0.25","√2","3/4","0.5"],1,"√2 cannot be expressed as a ratio of two integers."],["NUMBERS","The decimal expansion of 1/8 is:",["0.125","0.25","0.375","0.625"],0,"1 ÷ 8 = 0.125."],["OPERATIONS","Degree of 5x³ + 2x² − 7 is:",["1","2","3","5"],2,"The highest power of x is 3."],["FRACTIONS","Simplify (2/3) ÷ (4/9).",["2/3","3/2","8/27","1/2"],1,"(2/3) × (9/4) = 18/12 = 3/2."],["GEOMETRY","A triangle with all three sides equal is:",["Scalene","Isosceles only","Equilateral","Right angled"],2,"An equilateral triangle has three equal sides."],["ALGEBRA","Factorise x² − 5x + 6.",["(x−1)(x−6)","(x−2)(x−3)","(x+2)(x+3)","(x−5)(x+1)"],1,"The factors of 6 adding to −5 are −2 and −3."],["BRAIN TEASER","Which is greater: 0.999 or 1?",["0.999","1","Equal","Cannot compare"],1,"1 is greater than 0.999."],["FINAL BOSS","Mean of 2, 4, 6 and 8:",["4","5","6","7"],1,"Their sum is 20; 20 ÷ 4 = 5."]]},
+10:{topics:["Quadratic equations","Trigonometry","Pair of linear equations","Geometry & probability"],questions:[
+["WARM UP","Roots of x² − 5x + 6 = 0 are:",["1 and 6","2 and 3","−2 and −3","3 and 5"],1,"(x−2)(x−3) = 0."],["NUMBERS","sin 30° equals:",["0","1/2","√3/2","1"],1,"The standard value is 1/2."],["OPERATIONS","If x + y = 10 and x − y = 2, find x.",["4","5","6","8"],2,"Adding gives 2x = 12, so x = 6."],["FRACTIONS","The decimal form of 3/8 is:",["0.125","0.25","0.375","0.625"],2,"3 ÷ 8 = 0.375."],["GEOMETRY","The distance between (0,0) and (3,4) is:",["3","4","5","7"],2,"Distance = √(3² + 4²) = 5."],["ALGEBRA","If the discriminant of a quadratic is zero, its roots are:",["Distinct real","Equal real","Non-real","Always zero"],1,"A zero discriminant gives two equal real roots."],["BRAIN TEASER","Which is heavier: 1 kg of iron or 1 kg of cotton?",["Iron","Cotton","Same weight","Cannot know"],2,"Both have a mass of exactly 1 kilogram."],["FINAL BOSS","A fair die is rolled. Probability of an even number?",["1/6","1/3","1/2","2/3"],2,"Three even outcomes out of six gives 3/6 = 1/2."]]},
+11:{topics:["Sets & functions","Trigonometry","Sequences & series","Permutations & limits"],questions:[
+["WARM UP","If A={1,2,3} and B={3,4}, A ∩ B is:",["{1,2}","{3}","{3,4}","{1,2,3,4}"],1,"The intersection contains elements common to both sets."],["NUMBERS","cos 60° equals:",["0","1/2","√3/2","1"],1,"The standard value of cos 60° is 1/2."],["OPERATIONS","10th term of AP 3, 7, 11, ... is:",["35","37","39","43"],2,"a₁₀ = 3 + 9 × 4 = 39."],["FRACTIONS","If f(x)=2x+1, find f(3).",["5","6","7","8"],2,"f(3) = 2(3) + 1 = 7."],["GEOMETRY","Number of ways to arrange 3 different books in a row:",["3","6","9","12"],1,"3! = 6 arrangements."],["ALGEBRA","Solve 2x − 5 = 9.",["5","6","7","8"],2,"2x = 14, so x = 7."],["BRAIN TEASER","A number multiplied by itself gives 49. Which values are possible?",["Only 7","Only −7","7 or −7","49 only"],2,"Both 7² and (−7)² equal 49."],["FINAL BOSS","The sum of the first 5 natural numbers is:",["10","15","20","25"],1,"1 + 2 + 3 + 4 + 5 = 15."]]},
+12:{topics:["Calculus","Matrices & determinants","Vectors & 3D geometry","Probability & integrals"],questions:[
+["WARM UP","Differentiate f(x)=x³.",["x²","2x","3x²","3x"],2,"Using the power rule, derivative is 3x²."],["NUMBERS","Determinant of [[2,1],[3,4]] is:",["5","8","11","−5"],0,"(2 × 4) − (1 × 3) = 5."],["OPERATIONS","Magnitude of vector (3,4,0) is:",["3","4","5","7"],2,"√(3² + 4² + 0²) = 5."],["FRACTIONS","Evaluate ∫ 2x dx.",["x² + C","2x² + C","x + C","2 + C"],0,"The antiderivative of 2x is x² + C."],["GEOMETRY","Distance between (1,2,3) and (1,2,8) is:",["3","4","5","6"],2,"Only the z-coordinate changes: distance = |8−3| = 5."],["ALGEBRA","If A is a 2×3 matrix, how many elements does it contain?",["5","6","8","9"],1,"2 rows × 3 columns = 6 elements."],["BRAIN TEASER","What is 0! ?",["0","1","Undefined","Infinite"],1,"By definition, 0! = 1."],["FINAL BOSS","Two fair coins are tossed. Probability of exactly one head?",["1/4","1/2","3/4","1"],1,"HT and TH are 2 of the 4 equally likely outcomes."]]}
+};
+const STAGES=["WARM UP","NUMBER SENSE","OPERATIONS","CONCEPTS","GEOMETRY","ALGEBRA","BRAIN TEASER","FINAL BOSS"],HARD=3,TIME=45;
+let streak=0,runQs=[],tm=null,timedOut=false,hearts=3,qi=0;
+let profile=null,stage=0,questionInStage=0,stageScore=0,totalCorrect=0,earned=0,selected=-1,answered=false,runScore=0;
+let stats=JSON.parse(localStorage.getItem("mathking_stats")||'{"xp":0,"runs":0,"best":0}');
+function saveStats(){localStorage.setItem("mathking_stats",JSON.stringify(stats));renderStats()}
+function renderStats(){$("xp").textContent=String(stats.xp).padStart(4,"0");$("runs").textContent=String(stats.runs).padStart(2,"0");$("best").textContent=String(stats.best).padStart(2,"0")+"/24";$("rank").textContent=stats.xp>=1000?"MATH KING":stats.xp>=500?"MASTER":stats.xp>=200?"PRO":stats.xp>=50?"THINKER":"BEGINNER"}
+function fillStandards(){for(let n=2;n<=12;n++){let o=document.createElement("option");o.value=n;o.textContent="Class "+n;$("standard").append(o)}}
+function openProfile(){$("profileOverlay").classList.remove("hidden");$("playerName").focus()}
+function beginProfile(e){e.preventDefault();profile={name:$("playerName").value.trim(),standard:Number($("standard").value),section:$("section").value.trim().toUpperCase()};if(!profile.name||!profile.standard||!profile.section)return;localStorage.setItem("mathking_player",JSON.stringify(profile));$("profileOverlay").classList.add("hidden");FX.enterFS();FX.teamIntro(startRun)}
+function buildRun(){const n=profile.standard,b=curriculum[n].questions,x=EXTRA[n],y=EXTRA2[n];runQs=b.map((q,s)=>{let p=[];if(x&&y){const e=[STAGES[s],...x[s]],f=[STAGES[s],...y[s]];p=s>=HARD?[e,f,q]:[q,e,f]}else{p=[q];for(let i=0;i<12;i++)p.push([STAGES[s],...gen(s,n)])}const seen={};p=p.filter(z=>!seen[z[1]]&&(seen[z[1]]=1));return p.slice(0,3).sort(()=>Math.random()-.5)})}
+function renderHearts(){$("hearts").innerHTML="";for(let i=0;i<3;i++){const s=document.createElement("span");s.textContent="♥";if(i>=hearts)s.className="gone";$("hearts").append(s)}}
+let heartMemeTimer=0;
+function playHeartMeme(finalHit){
+  const box=$("heartMemeOverlay"),video=$("heartMemeVideo"),caption=$("heartMemeCaption");
+  if(!box||!video)return;
+  clearTimeout(heartMemeTimer);
+  box.classList.toggle("final",!!finalHit);
+  caption.textContent=finalHit
+    ?"ZERO HEARTS. THE CAT HAS OFFICIALLY ENDED YOUR CAREER."
+    :"ANOTHER HEART DOWN. THE CAT IS HOWLING.";
+  box.classList.remove("hidden");
+  video.pause();video.currentTime=0;
+  const playback=video.play();
+  if(playback&&playback.catch)playback.catch(()=>{});
+  heartMemeTimer=setTimeout(()=>{
+    video.pause();box.classList.add("hidden");box.classList.remove("final");
+  },finalHit?5200:4100);
+}
+function loseHeart(){
+  hearts=Math.max(0,hearts-1);
+  const s=$("hearts").children[hearts];
+  if(s){s.className="lose";FX.shards(s)}
+  SFX.play("heartbreak");
+  playHeartMeme(hearts===0);
+  const o=$("quizOverlay");o.classList.remove("hit");o.offsetWidth;o.classList.add("hit")
+}
+const TAUNTS={3:["PERFECT SCORE? THE CAT SUSPECTS A LEAKED ANSWER KEY.","THREE FOR THREE. DON'T LET IT GO TO YOUR HEAD."],2:["2/3. CLOSE ENOUGH TO MAKE THE CAT SIGH.","ALMOST IMPRESSIVE. THE CAT WILL NOT CLAP."],1:["1/3. THE CAT HAS STOPPED MAKING EYE CONTACT.","ONE RIGHT. EVEN A BROKEN CALCULATOR GETS A TURN."],0:["0/3. THE CAT HAS FILED A FORMAL COMPLAINT.","ZERO. YOUR PENCIL IS ASKING FOR A TRANSFER."]};
+function troll(){const L=TAUNTS[stageScore],t=L[Math.floor(Math.random()*L.length)],s=$("stageResult");$("stageResultTitle").textContent=t;$("stageResultText").textContent=`Stage ${stage+1}: ${stageScore}/3 correct. Hearts remaining: ${"♥".repeat(hearts)||"none. spectacular."}.`+(stage+1===HARD?" The difficulty has increased. Your confidence may not survive.":"");s.classList.remove("troll-pop");s.offsetWidth;s.classList.add("troll-pop");FX.trollMood(stageScore)}
+function startRun(){buildRun();hearts=3;qi=0;renderHearts();$("retry").classList.add("hidden");$("quizOverlay").classList.remove("hit");FX.enterFS();FX.stopSecret();stage=0;questionInStage=0;totalCorrect=0;earned=0;runScore=0;stageScore=0;$("quizOverlay").classList.remove("hidden");$("questionView").classList.remove("hidden");$("stageResult").classList.add("hidden");$("finalResult").classList.add("hidden");streak=0;FX.streak(0);FX.stageCard(stage,renderQuestion)}
+function currentQuestion(){return runQs[stage][qi]}
+function renderQuestion(){answered=false;selected=-1;let q=currentQuestion();$("playerLabel").textContent=profile.name.toUpperCase();$("standardLabel").textContent=`CLASS ${profile.standard} / SECTION ${profile.section}`;$("stageLabel").textContent=`STAGE ${String(stage+1).padStart(2,"0")} / 08`;$("questionNumber").textContent=`QUESTION ${qi+1} / 3`;$("progress").style.width=((stage*3+qi)/24*100)+"%";$("topicTag").textContent=STAGES[stage]+(stage>=HARD?" · HARD":"");$("topicTag").classList.toggle("hard",stage>=HARD);FX.onQuestion(stage,qi);startTimer();$("question").textContent=q[1];$("options").innerHTML="";q[2].forEach((answer,i)=>{let b=document.createElement("button");b.className="option";b.style.setProperty("--i",i);let k=document.createElement("span");k.className="key";k.textContent=String.fromCharCode(65+i);let t=document.createElement("span");t.textContent=answer;b.append(k,t);b.onclick=()=>{if(answered)return;selected=i;SFX.play("select");document.querySelectorAll(".option").forEach(x=>x.classList.remove("selected"));b.classList.add("selected");$("submit").disabled=false};$("options").append(b)});$("quizMessage").textContent="SELECT YOUR ANSWER";$("submit").disabled=true;$("submit").textContent="SUBMIT ANSWER ↗"}
+function startTimer(){clearInterval(tm);timedOut=false;let hard=stage>=HARD,bar=$("timebar"),i=bar.firstElementChild,t=TIME;bar.classList.toggle("hidden",!hard);$("timer").textContent="";if(!hard)return;i.style.transition="none";i.style.width="100%";i.offsetWidth;i.style.transition="width "+TIME+"s linear";i.style.width="0";$("timer").textContent="⏱ "+t+"s";$("timer").classList.remove("urgent");tm=setInterval(()=>{t--;$("timer").textContent="⏱ "+t+"s";if(t>0&&t<=10)SFX.play(t<=5?"tick2":"tick");$("timer").classList.toggle("urgent",t<=10);if(t<=0){clearInterval(tm);timedOut=true;submitAnswer()}},1000)}
+function submitAnswer(){if(answered||(selected<0&&!timedOut))return;clearInterval(tm);answered=true;let q=currentQuestion(),ok=selected===q[3];if(ok){stageScore++;totalCorrect++;runScore++;streak++;const gain=stage>=HARD?30:20;earned+=gain;SFX.correct(streak);FX.onCorrect(streak,gain)}else{streak=0;FX.streak(0);loseHeart();const lines=timedOut?["TIME'S UP. THE CAT FINISHED A NAP BEFORE YOU DID.","45 SECONDS. ZERO ANSWERS. IMPRESSIVE COMMITMENT."]:["THE CAT SAW THAT ANSWER AND LOOKED AWAY.","YOU CLICKED THAT WITH CONFIDENCE. THAT'S THE SCARY PART.","MATH CALLED. IT WANTS ITS DIGNITY BACK.","THAT ANSWER HAS BEEN FORWARDED TO THE DEPARTMENT OF BRUH.","THE CAT ISN'T MAD. JUST DEEPLY, DEEPLY DISAPPOINTED."];FX.catReaction(timedOut?"sleepy":(hearts===0?"cry":"sideeye"),lines[Math.floor(Math.random()*lines.length)],timedOut?"bruh":(hearts===0?"sadMeow":"catMeow"))}document.querySelectorAll(".option").forEach((b,i)=>{b.disabled=true;if(i===q[3])b.classList.add("correct");if(i===selected&&i!==q[3])b.classList.add("wrong")});let exp=document.createElement("p");exp.className="explanation";exp.textContent=(ok?"Correct. ":timedOut?"Time is up. ":"Not quite. ")+q[4];$("options").append(exp);$("quizMessage").textContent=ok?(stage>=HARD?"30":"20")+" XP EARNED":hearts<=0?"NO HEARTS LEFT":"HEART LOST";$("submit").disabled=false;$("submit").textContent=hearts<=0?"CONTINUE ↗":qi<2?"NEXT QUESTION ↗":stage===7?"FINISH QUIZ ↗":"COMPLETE STAGE ↗"}
+function completeStage(){clearInterval(tm);if(!answered){submitAnswer();return}if(hearts<=0){$("questionView").classList.add("hidden");finishRun(true);return}if(qi<2){qi++;renderQuestion();return}$("questionView").classList.add("hidden");if(stage===7){FX.secretStage(b=>{earned+=b.xp;finishRun();$("finalText").textContent+=" "+b.msg});return}$("stageResult").classList.remove("hidden");troll();$("progress").style.width=((stage*3+3)/24*100)+"%"}
+function nextStage(){stage++;stageScore=0;qi=0;$("stageResult").classList.add("hidden");$("questionView").classList.remove("hidden");FX.stageCard(stage,renderQuestion)}
+function finishRun(over){SFX.play(over?"gameover":"win");if(over)SFX.play("finalCat");if(!over)FX.confetti(null,null,160);stats.xp+=earned;stats.runs++;stats.best=Math.max(stats.best,totalCorrect);saveStats();$("questionView").classList.add("hidden");$("finalResult").classList.remove("hidden");$("progress").style.width="100%";$("finalTitle").textContent=totalCorrect===24?"SUSPICIOUSLY PERFECT.":totalCorrect>=20?"OKAY, SHOW-OFF.":totalCorrect>=14?"NOT A DISASTER.":"THE CAT NEEDS A MOMENT.";$("finalText").textContent=`${profile.name}, all 8 stages complete. ${totalCorrect}/24 correct. ${totalCorrect===24?"The cat has requested an investigation into your suspiciously powerful brain.":totalCorrect>=20?"Decent work. Please remain humble; the cat is watching.":totalCorrect>=14?"You survived. The cat is not legally required to be impressed.":"You finished. The cat finished judging you three stages ago."}`;$("earnedXP").textContent="+"+String(earned).padStart(3,"0");$("finalIcon").textContent=over?"💔":"★";$("finalEyebrow").textContent=over?"GAME OVER":"ALL EIGHT STAGES COMPLETE";$("retry").classList.toggle("hidden",!over);if(over){$("finalTitle").textContent="THE CAT WON.";$("finalText").textContent=`${profile.name}, out of hearts at Stage ${stage+1}. ${totalCorrect}/24 correct. The cat has changed the Wi-Fi password.`;FX.catReaction("cry","The cat says: perhaps try reading the questions next time.","bruh")}}
+function leaveFS(){try{document.fullscreenElement&&document.exitFullscreen()}catch(e){}}
+function closeQuiz(){if(confirm("Exit this quiz? Your current run will end.")){clearInterval(tm);FX.stopSecret();leaveFS();$("quizOverlay").classList.add("hidden");$("credits").classList.remove("hidden");SFX.music(28)}}
+function showCredits(){leaveFS();const r=document.querySelector(".roll");r.style.animation="none";r.offsetWidth;r.style.animation="";$("quizOverlay").classList.add("hidden");$("credits").classList.remove("hidden");$("credits").scrollTop=0;SFX.music(28)}
+fillStandards();renderStats();$("beginBtn").onclick=openProfile;$("startQuiz").onclick=openProfile;$("profileForm").onsubmit=beginProfile;$("closeProfile").onclick=()=>$("profileOverlay").classList.add("hidden");$("submit").onclick=completeStage;$("nextStage").onclick=nextStage;$("closeQuiz").onclick=closeQuiz;$("showCredits").onclick=showCredits;$("retry").onclick=startRun;document.querySelectorAll(".goHome").forEach(b=>b.onclick=()=>{$("credits").classList.add("hidden");SFX.musicStop();window.scrollTo({top:0,behavior:"smooth"})});
+const saved=localStorage.getItem("mathking_player");if(saved){try{profile=JSON.parse(saved);$("playerName").value=profile.name;$("standard").value=profile.standard;$("section").value=profile.section}catch(e){}}
+
+function setHearts(n){hearts=n;renderHearts()}
+
+</script>
+
+<script>
+(() => {
+  const escapeUrl = "data:text/html;charset=utf-8;base64,PCFET0NUWVBFIGh0bWw+CjxodG1sIGxhbmc9ImVuIj4KPGhlYWQ+CjxtZXRhIGNoYXJzZXQ9InV0Zi04Ij4KPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQ9IndpZHRoPWRldmljZS13aWR0aCwgaW5pdGlhbC1zY2FsZT0xIj4KPHRpdGxlPk1hdGhraW5nIMK3IEVzY2FwZSB0aGUgbWF0aHMgcm9vbTwvdGl0bGU+CjxsaW5rIHJlbD0icHJlY29ubmVjdCIgaHJlZj0iaHR0cHM6Ly9mb250cy5nb29nbGVhcGlzLmNvbSI+CjxsaW5rIHJlbD0icHJlY29ubmVjdCIgaHJlZj0iaHR0cHM6Ly9mb250cy5nc3RhdGljLmNvbSIgY3Jvc3NvcmlnaW4+CjxsaW5rIGhyZWY9Imh0dHBzOi8vZm9udHMuZ29vZ2xlYXBpcy5jb20vY3NzMj9mYW1pbHk9UGl4ZWxpZnkrU2Fuczp3Z2h0QDUwMDs2MDA7NzAwJmZhbWlseT1TcGFjZStHcm90ZXNrOndnaHRANDAwOzUwMDs2MDA7NzAwJmZhbWlseT1TcGFjZStNb25vOndnaHRANDAwOzcwMCZkaXNwbGF5PXN3YXAiIHJlbD0ic3R5bGVzaGVldCI+CjxzdHlsZT4KOnJvb3R7LS1iazojMDgwNjBhOy0tcG46IzExMGEwZTstLXJlZDojZTExZDJlOy0tcjI6I2ZmNDQ1ODstLXdpbmU6IzVjMGQxNzstLWluazojZjVlY2VjOy0tbXV0OiM5ZDhkOTE7LS1vazojMzFkMjdjOy0tbGluZTpyZ2JhKDI1NSwyNTUsMjU1LC4xMik7Y29sb3Itc2NoZW1lOmRhcmt9Cip7Ym94LXNpemluZzpib3JkZXItYm94O21hcmdpbjowO3BhZGRpbmc6MH0KYm9keXttaW4taGVpZ2h0OjEwMHZoO2NvbG9yOnZhcigtLWluayk7Zm9udDo0MDAgMTZweC8xLjYgJ1NwYWNlIEdyb3Rlc2snLHN5c3RlbS11aSxzYW5zLXNlcmlmO2JhY2tncm91bmQ6cmFkaWFsLWdyYWRpZW50KDYwcmVtIDM4cmVtIGF0IDg1JSAtMTAlLHJnYmEoMjI1LDI5LDQ2LC4yNiksdHJhbnNwYXJlbnQpLHJhZGlhbC1ncmFkaWVudCg0MHJlbSAzMHJlbSBhdCAtOCUgNzAlLHJnYmEoMTEwLDEwLDI4LC4zNSksdHJhbnNwYXJlbnQpLHZhcigtLWJrKTtiYWNrZ3JvdW5kLWF0dGFjaG1lbnQ6Zml4ZWQ7b3ZlcmZsb3cteDpoaWRkZW59CmJ1dHRvbixpbnB1dHtmb250OmluaGVyaXQ7Y29sb3I6aW5oZXJpdH0KOmZvY3VzLXZpc2libGV7b3V0bGluZToycHggc29saWQgdmFyKC0tcjIpO291dGxpbmUtb2Zmc2V0OjNweH0KLnB4e2ZvbnQtZmFtaWx5OidQaXhlbGlmeSBTYW5zJywnQ291cmllciBOZXcnLG1vbm9zcGFjZTtmb250LXdlaWdodDo2MDB9Ci5tb3tmb250OjQwMCAuNjhyZW0gJ1NwYWNlIE1vbm8nLG1vbm9zcGFjZTtsZXR0ZXItc3BhY2luZzouMTRlbTt0ZXh0LXRyYW5zZm9ybTp1cHBlcmNhc2U7Y29sb3I6dmFyKC0tbXV0KX0KLndyYXB7d2lkdGg6bWluKDEwNjBweCw5MnZ3KTttYXJnaW46MCBhdXRvfQpuYXZ7ZGlzcGxheTpmbGV4O2p1c3RpZnktY29udGVudDpzcGFjZS1iZXR3ZWVuO2FsaWduLWl0ZW1zOmNlbnRlcjtnYXA6MTZweDtwYWRkaW5nOjE4cHggNHZ3O2JvcmRlci1ib3R0b206MXB4IHNvbGlkIHZhcigtLWxpbmUpO2JhY2tncm91bmQ6cmdiYSg4LDYsMTAsLjcpO2JhY2tkcm9wLWZpbHRlcjpibHVyKDEwcHgpO3Bvc2l0aW9uOnN0aWNreTt0b3A6MDt6LWluZGV4OjV9Ci5sb2dve2Rpc3BsYXk6ZmxleDthbGlnbi1pdGVtczpjZW50ZXI7Z2FwOjEwcHg7Zm9udC1zaXplOjEuMzVyZW19Ci5sb2dvIGJ7YmFja2dyb3VuZDp2YXIoLS1yZWQpO2NvbG9yOiNmZmY7Zm9udC1zaXplOi44cmVtO3BhZGRpbmc6NnB4IDdweDtib3JkZXItcmFkaXVzOjNweH0KbmF2IC5taWR7ZGlzcGxheTpmbGV4O2dhcDoyNnB4fQoucm91bmR7Ym9yZGVyOjFweCBzb2xpZCB2YXIoLS1saW5lKTtiYWNrZ3JvdW5kOnJnYmEoMjU1LDI1NSwyNTUsLjA1KTtib3JkZXItcmFkaXVzOjhweDtwYWRkaW5nOjdweCAxNnB4O2N1cnNvcjpwb2ludGVyO2ZvbnQ6NDAwIC43OHJlbSAnU3BhY2UgTW9ubycsbW9ub3NwYWNlfQoucm91bmQ6aG92ZXJ7Ym9yZGVyLWNvbG9yOnZhcigtLXIyKX0KLmhlcm97ZGlzcGxheTpncmlkO2dyaWQtdGVtcGxhdGUtY29sdW1uczoxLjFmciAuOWZyO2dhcDo0MHB4O2FsaWduLWl0ZW1zOmNlbnRlcjtwYWRkaW5nOjcwcHggMCA4MHB4fQouZXllYnJvd3tkaXNwbGF5OmZsZXg7Z2FwOjEycHg7YWxpZ24taXRlbXM6Y2VudGVyO21hcmdpbi1ib3R0b206MjJweH0KLmV5ZWJyb3c6YmVmb3Jle2NvbnRlbnQ6IiI7d2lkdGg6MjZweDtoZWlnaHQ6MXB4O2JhY2tncm91bmQ6dmFyKC0tbXV0KX0KaDF7Zm9udC1zaXplOmNsYW1wKDMuNHJlbSw4dncsNi4ycmVtKTtsaW5lLWhlaWdodDouOTh9CmgxIC5ve2NvbG9yOnRyYW5zcGFyZW50Oy13ZWJraXQtdGV4dC1zdHJva2U6MnB4IHZhcigtLXIyKTtkaXNwbGF5OmJsb2NrfQpoMSBpe2Rpc3BsYXk6aW5saW5lLWJsb2NrO3dpZHRoOi4xNmVtO2hlaWdodDouMTZlbTtiYWNrZ3JvdW5kOnZhcigtLXJlZCk7bWFyZ2luLWxlZnQ6LjFlbX0KLmxlYWR7bWF4LXdpZHRoOjMwcmVtO2NvbG9yOnZhcigtLW11dCk7bWFyZ2luOjI0cHggMCAzMHB4fQouY3Rhe2JvcmRlcjowO2JvcmRlci1yYWRpdXM6NHB4O3BhZGRpbmc6MTVweCAyNnB4O2ZvbnQ6NjAwIC45NXJlbSAnUGl4ZWxpZnkgU2FucycsJ0NvdXJpZXIgTmV3Jyxtb25vc3BhY2U7bGV0dGVyLXNwYWNpbmc6LjA0ZW07dGV4dC10cmFuc2Zvcm06dXBwZXJjYXNlO2NvbG9yOiNmZmY7YmFja2dyb3VuZDpsaW5lYXItZ3JhZGllbnQoMTIwZGVnLCNmZjNiNGUsI2E4MGQxYyk7Y3Vyc29yOnBvaW50ZXI7Ym94LXNoYWRvdzowIDEwcHggMzZweCByZ2JhKDIyNSwyOSw0NiwuNCk7dHJhbnNpdGlvbjp0cmFuc2Zvcm0gLjJzLGJveC1zaGFkb3cgLjJzfQouY3RhOmhvdmVye3RyYW5zZm9ybTp0cmFuc2xhdGVZKC0ycHgpO2JveC1zaGFkb3c6MCAxNHB4IDQ2cHggcmdiYSgyNTUsNTksNzgsLjU1KX0KLmN0YTpkaXNhYmxlZHtvcGFjaXR5Oi40NTtjdXJzb3I6ZGVmYXVsdDt0cmFuc2Zvcm06bm9uZX0KLnN0YWdlLWFydHtwb3NpdGlvbjpyZWxhdGl2ZTtoZWlnaHQ6MzYwcHg7ZGlzcGxheTpncmlkO3BsYWNlLWl0ZW1zOmNlbnRlcn0KLnN0YWdlLWFydD5zcGFue3Bvc2l0aW9uOmFic29sdXRlO2ZvbnQ6MS44cmVtICdQaXhlbGlmeSBTYW5zJyxtb25vc3BhY2U7Y29sb3I6dmFyKC0tcjIpO29wYWNpdHk6Ljh9Ci53aW57d2lkdGg6bWluKDMwMHB4LDgwJSk7YmFja2dyb3VuZDp2YXIoLS1wbik7Ym9yZGVyOjJweCBzb2xpZCB2YXIoLS1pbmspO2JveC1zaGFkb3c6MTRweCAxNHB4IDAgdmFyKC0td2luZSksMCAwIDcwcHggcmdiYSgyMjUsMjksNDYsLjIpO3RyYW5zZm9ybTpyb3RhdGUoMi41ZGVnKX0KLndpbiAudGJ7ZGlzcGxheTpmbGV4O2FsaWduLWl0ZW1zOmNlbnRlcjtnYXA6NnB4O3BhZGRpbmc6OHB4IDEwcHg7Ym9yZGVyLWJvdHRvbToycHggc29saWQgdmFyKC0taW5rKX0KLndpbiAudGIgaXt3aWR0aDo5cHg7aGVpZ2h0OjlweDtib3JkZXI6MS41cHggc29saWQgdmFyKC0taW5rKTtib3JkZXItcmFkaXVzOjUwJX0KLndpbiAudGIgc3BhbnttYXJnaW4tbGVmdDphdXRvfQoud2luIC5iZHtwYWRkaW5nOjMwcHggMCAyMHB4O3RleHQtYWxpZ246Y2VudGVyfQouZmFjZXt3aWR0aDoxMTBweDtoZWlnaHQ6MTEwcHg7bWFyZ2luOjAgYXV0byAxOHB4O2JhY2tncm91bmQ6dmFyKC0tcmVkKTtwb3NpdGlvbjpyZWxhdGl2ZTtib3JkZXItcmFkaXVzOjEwcHg7Ym94LXNoYWRvdzowIDAgNDBweCByZ2JhKDIyNSwyOSw0NiwuNil9Ci5mYWNlOmJlZm9yZSwuZmFjZTphZnRlcntjb250ZW50OiIiO3Bvc2l0aW9uOmFic29sdXRlO3RvcDozNnB4O3dpZHRoOjE1cHg7aGVpZ2h0OjIxcHg7YmFja2dyb3VuZDp2YXIoLS1iayl9Ci5mYWNlOmJlZm9yZXtsZWZ0OjI4cHh9LmZhY2U6YWZ0ZXJ7cmlnaHQ6MjhweH0KLmZhY2UgdXtwb3NpdGlvbjphYnNvbHV0ZTtsZWZ0OjM0cHg7cmlnaHQ6MzRweDtib3R0b206MjRweDtoZWlnaHQ6N3B4O2JhY2tncm91bmQ6dmFyKC0tYmspfQouc2Vje3BhZGRpbmc6MTBweCAwIDYwcHh9Ci5zZWMgaDJ7Zm9udC1zaXplOmNsYW1wKDJyZW0sNC40dncsM3JlbSk7bWFyZ2luOjE0cHggMCAyNnB4fQoucnVue2JvcmRlcjoxcHggc29saWQgdmFyKC0taW5rKTtiYWNrZ3JvdW5kOnZhcigtLXBuKTtwYWRkaW5nOjIwcHg7Ym94LXNoYWRvdzoxMnB4IDEycHggMCB2YXIoLS13aW5lKX0KLnJ1biAuaGR7ZGlzcGxheTpmbGV4O2p1c3RpZnktY29udGVudDpzcGFjZS1iZXR3ZWVuO21hcmdpbi1ib3R0b206MTZweH0KLmNlbGxze2Rpc3BsYXk6Z3JpZDtncmlkLXRlbXBsYXRlLWNvbHVtbnM6cmVwZWF0KDUsMWZyKTtnYXA6MTBweH0KLmNlbGx7Ym9yZGVyOjFweCBzb2xpZCB2YXIoLS1saW5lKTtwYWRkaW5nOjEycHggMTRweH0KLmNlbGwgYntkaXNwbGF5OmJsb2NrO2ZvbnQtc2l6ZToxLjdyZW19Ci5jZWxsIHNwYW57Zm9udDo3MDAgLjcycmVtICdTcGFjZSBNb25vJyxtb25vc3BhY2U7Y29sb3I6dmFyKC0tbXV0KTt0ZXh0LXRyYW5zZm9ybTp1cHBlcmNhc2U7ZGlzcGxheTpibG9jazttYXJnaW4tdG9wOjEwcHh9Ci5jZWxsIGVte2ZvbnQ6bm9ybWFsIDcwMCAuNjJyZW0gJ1NwYWNlIE1vbm8nLG1vbm9zcGFjZTtjb2xvcjp2YXIoLS1yMik7dGV4dC10cmFuc2Zvcm06dXBwZXJjYXNlfQouY2VsbC5me2JhY2tncm91bmQ6dmFyKC0tcmVkKTtib3JkZXItY29sb3I6dmFyKC0tcmVkKX0uY2VsbC5mIHNwYW4sLmNlbGwuZiBlbXtjb2xvcjojZmZmfQoucnVuIHB7Y29sb3I6dmFyKC0tbXV0KTttYXgtd2lkdGg6NDRyZW07bWFyZ2luOjE4cHggMCAyMHB4O2ZvbnQtc2l6ZTouOTVyZW19Ci5mZWF0e2Rpc3BsYXk6Z3JpZDtncmlkLXRlbXBsYXRlLWNvbHVtbnM6cmVwZWF0KDMsMWZyKTtnYXA6MTZweDtwYWRkaW5nOjEwcHggMCA2MHB4fQouZmVhdCBkaXZ7Ym9yZGVyOjFweCBzb2xpZCB2YXIoLS1saW5lKTtiYWNrZ3JvdW5kOnZhcigtLXBuKTtwYWRkaW5nOjIycHh9Ci5mZWF0IGJ7Y29sb3I6dmFyKC0tcjIpO2ZvbnQ6NzAwIC44NXJlbSAnU3BhY2UgTW9ubycsbW9ub3NwYWNlfQouZmVhdCBoM3tmb250LXNpemU6MS4zNXJlbTttYXJnaW46MTRweCAwIDhweH0KLmZlYXQgcHtjb2xvcjp2YXIoLS1tdXQpO2ZvbnQtc2l6ZTouOTJyZW19Ci5mb290e2JhY2tncm91bmQ6IzAzMDIwMztib3JkZXItdG9wOjFweCBzb2xpZCB2YXIoLS1saW5lKTtwYWRkaW5nOjUwcHggMCA0NHB4fQouZm9vdCBoM3tmb250LXNpemU6Y2xhbXAoMnJlbSw1dncsMy4ycmVtKTttYXJnaW46MTBweCAwIDE4cHh9Ci5mb290IHB7Y29sb3I6dmFyKC0tbXV0KTtmb250LXNpemU6LjlyZW19CgojZ2FtZXtwb3NpdGlvbjpmaXhlZDtpbnNldDowO3otaW5kZXg6MTA7b3ZlcmZsb3cteTphdXRvO2Rpc3BsYXk6bm9uZTtmbGV4LWRpcmVjdGlvbjpjb2x1bW47cGFkZGluZzoxNnB4IDR2dyAyMHB4O2JhY2tncm91bmQ6cmFkaWFsLWdyYWRpZW50KDUwcmVtIDM0cmVtIGF0IDgwJSAtNSUscmdiYSgyMjUsMjksNDYsLjIpLHRyYW5zcGFyZW50KSxyYWRpYWwtZ3JhZGllbnQoNDByZW0gMzByZW0gYXQgMCAxMDAlLHJnYmEoMTAwLDEwLDI1LC4zKSx0cmFuc3BhcmVudCksIzA5MDYwYX0KI2dhbWUub257ZGlzcGxheTpmbGV4fQouZmx7cG9zaXRpb246Zml4ZWQ7aW5zZXQ6MDtwb2ludGVyLWV2ZW50czpub25lO292ZXJmbG93OmhpZGRlbn0KLmZsIHNwYW57cG9zaXRpb246YWJzb2x1dGU7Y29sb3I6dmFyKC0tcmVkKTtvcGFjaXR5Oi4xNDtmb250OjIuNHJlbSAnUGl4ZWxpZnkgU2FucycsbW9ub3NwYWNlO2FuaW1hdGlvbjpkcmlmdCBsaW5lYXIgaW5maW5pdGV9CkBrZXlmcmFtZXMgZHJpZnR7ZnJvbXt0cmFuc2Zvcm06dHJhbnNsYXRlWSgwKSByb3RhdGUoMCl9dG97dHJhbnNmb3JtOnRyYW5zbGF0ZVkoLTExMHZoKSByb3RhdGUoMjQwZGVnKX19Ci50b3B7ZGlzcGxheTpmbGV4O2p1c3RpZnktY29udGVudDpzcGFjZS1iZXR3ZWVuO2dhcDoxMHB4O3Bvc2l0aW9uOnJlbGF0aXZlfQouY29se3dpZHRoOm1pbig3MDBweCwxMDAlKTttYXJnaW46MCBhdXRvO3Bvc2l0aW9uOnJlbGF0aXZlfQoucHJvZ3tkaXNwbGF5OmZsZXg7Z2FwOjZweDttYXJnaW46MThweCBhdXRvIDB9Ci5wcm9nIGl7ZmxleDoxO2hlaWdodDo3cHg7Ym9yZGVyLXJhZGl1czo5cHg7YmFja2dyb3VuZDpyZ2JhKDI1NSwyNTUsMjU1LC4xKX0KLnByb2cgaS5kb25le2JhY2tncm91bmQ6dmFyKC0tcjIpO2JveC1zaGFkb3c6MCAwIDEycHggcmdiYSgyNTUsNjgsODgsLjYpfQoucHJvZyBpLm5vd3tiYWNrZ3JvdW5kOmxpbmVhci1ncmFkaWVudCg5MGRlZyx2YXIoLS1yZWQpIDQwJSxyZ2JhKDI1NSwyNTUsMjU1LC4xKSA0MCUpfQouaHVke2Rpc3BsYXk6ZmxleDtqdXN0aWZ5LWNvbnRlbnQ6c3BhY2UtYmV0d2VlbjthbGlnbi1pdGVtczpjZW50ZXI7bWFyZ2luLXRvcDoxMHB4fQouaHVkIC5oZWFydHMgYntmb250LXdlaWdodDo0MDA7Y29sb3I6dmFyKC0tcjIpO2ZvbnQtc2l6ZToxLjA1cmVtO21hcmdpbi1yaWdodDozcHh9Ci5odWQgLmhlYXJ0cyBiLm9mZntjb2xvcjojM2EyYTJmfQouaHVkIC5oZWFydHMgYi5icmt7YW5pbWF0aW9uOnNoYWtlIC41c30KLmNsb2Nre2ZvbnQ6NzAwIDEuMDVyZW0gJ1NwYWNlIE1vbm8nLG1vbm9zcGFjZTtjb2xvcjp2YXIoLS1pbmspfQouY2xvY2subG93e2NvbG9yOnZhcigtLXIyKTt0ZXh0LXNoYWRvdzowIDAgMTRweCB2YXIoLS1yZWQpfQoubWFpbnttYXJnaW46YXV0bztwYWRkaW5nOjI2cHggMH0KLnRne2NvbG9yOnZhcigtLXIyKTtmb250LXNpemU6Ljk1cmVtfQpoMi5xe2ZvbnQtc2l6ZTpjbGFtcCgxLjhyZW0sNC40dncsMi43cmVtKTtsaW5lLWhlaWdodDoxLjE1O21hcmdpbjo2cHggMCA4cHg7Zm9udC13ZWlnaHQ6NzAwfQouc3Rvcnl7Y29sb3I6dmFyKC0tbXV0KTtmb250LXNpemU6Ljk1cmVtO21hcmdpbi1ib3R0b206MjJweH0KLmJvYXJke2JvcmRlcjoxcHggc29saWQgdmFyKC0tbGluZSk7YmFja2dyb3VuZDpyZ2JhKDI1NSwyNTUsMjU1LC4wMzUpO2JvcmRlci1yYWRpdXM6NnB4O3BhZGRpbmc6MjZweCAxOHB4O21hcmdpbi1ib3R0b206MTRweDt0ZXh0LWFsaWduOmNlbnRlcn0KLmVxIHB7Zm9udDo3MDAgMS44cmVtLzEuNSAnU3BhY2UgR3JvdGVzaycsc2Fucy1zZXJpZn0KLmVxIC5iaWd7Y29sb3I6dmFyKC0tcjIpO21hcmdpbi10b3A6NnB4fQouc2VxLC5jaGlwc3tkaXNwbGF5OmZsZXg7Z2FwOjEwcHg7anVzdGlmeS1jb250ZW50OmNlbnRlcjtmbGV4LXdyYXA6d3JhcH0KLnNlcSBzcGFuLC5jaGlwcyBzcGFue21pbi13aWR0aDo2NHB4O3BhZGRpbmc6MTJweCAxMHB4O2JvcmRlcjoxcHggc29saWQgdmFyKC0tbGluZSk7Ym9yZGVyLXJhZGl1czo2cHg7YmFja2dyb3VuZDpyZ2JhKDI1NSwyNTUsMjU1LC4wNSk7Zm9udDo3MDAgMS45cmVtICdTcGFjZSBHcm90ZXNrJyxzYW5zLXNlcmlmfQouc2VxIC5xLC5zcSAucXtib3JkZXI6MXB4IGRhc2hlZCB2YXIoLS1yMik7Y29sb3I6dmFyKC0tcjIpfQouY2hpcHMgc3Bhbnt3aWR0aDo3OHB4O2hlaWdodDo3OHB4O2Rpc3BsYXk6Z3JpZDtwbGFjZS1pdGVtczpjZW50ZXI7Y29sb3I6dmFyKC0tcjIpO2ZvbnQtc2l6ZToyLjNyZW19Ci5zcXtkaXNwbGF5OmdyaWQ7Z3JpZC10ZW1wbGF0ZS1jb2x1bW5zOnJlcGVhdCgzLDcycHgpO2dhcDo4cHg7anVzdGlmeS1jb250ZW50OmNlbnRlcn0KLnNxIGl7Zm9udDpub3JtYWwgNzAwIDEuOHJlbSAnU3BhY2UgR3JvdGVzaycsc2Fucy1zZXJpZjthc3BlY3QtcmF0aW86MTtkaXNwbGF5OmdyaWQ7cGxhY2UtaXRlbXM6Y2VudGVyO2JvcmRlcjoxcHggc29saWQgdmFyKC0tbGluZSk7Ym9yZGVyLXJhZGl1czo2cHg7YmFja2dyb3VuZDpyZ2JhKDI1NSwyNTUsMjU1LC4wNSl9Ci5pbnJvd3tkaXNwbGF5OmZsZXg7YWxpZ24taXRlbXM6Y2VudGVyO2dhcDoxNHB4O2JvcmRlcjoxcHggc29saWQgdmFyKC0tbGluZSk7YmFja2dyb3VuZDojMGUwODBiO2JvcmRlci1yYWRpdXM6NnB4O3BhZGRpbmc6NnB4IDE0cHg7dHJhbnNpdGlvbjpib3gtc2hhZG93IC4zcyxib3JkZXItY29sb3IgLjNzfQouaW5yb3c6Zm9jdXMtd2l0aGlue2JvcmRlci1jb2xvcjp2YXIoLS1yMil9Ci5pbnJvdyBie2Rpc3BsYXk6Z3JpZDtwbGFjZS1pdGVtczpjZW50ZXI7d2lkdGg6MjZweDtoZWlnaHQ6MjZweDtib3JkZXI6MXB4IHNvbGlkIHZhcigtLW11dCk7Ym9yZGVyLXJhZGl1czo2cHg7Zm9udDo3MDAgLjc1cmVtICdTcGFjZSBNb25vJyxtb25vc3BhY2U7Y29sb3I6dmFyKC0tbXV0KX0KLmlucm93IGlucHV0e2ZsZXg6MTtiYWNrZ3JvdW5kOm5vbmU7Ym9yZGVyOjA7b3V0bGluZTowO2ZvbnQtc2l6ZToxLjI1cmVtO3BhZGRpbmc6MTBweCAwfQouaW5yb3cuZ29vZHtib3JkZXItY29sb3I6dmFyKC0tb2spO2JveC1zaGFkb3c6MCAwIDI2cHggcmdiYSg0OSwyMTAsMTI0LC4zNSk7YmFja2dyb3VuZDpyZ2JhKDQ5LDIxMCwxMjQsLjA4KX0KLmlucm93LmJhZHtib3JkZXItY29sb3I6dmFyKC0tcmVkKTtib3gtc2hhZG93OjAgMCAyNnB4IHJnYmEoMjI1LDI5LDQ2LC40NSk7YmFja2dyb3VuZDpyZ2JhKDIyNSwyOSw0NiwuMSk7YW5pbWF0aW9uOnNoYWtlIC40c30KQGtleWZyYW1lcyBzaGFrZXsyNSV7dHJhbnNmb3JtOnRyYW5zbGF0ZVgoLThweCl9NzUle3RyYW5zZm9ybTp0cmFuc2xhdGVYKDhweCl9fQouZmJ7bWFyZ2luLXRvcDoxMnB4O3BhZGRpbmc6MTJweCAxNnB4O2JhY2tncm91bmQ6IzE1MGQxMjtib3JkZXItbGVmdDozcHggc29saWQgdmFyKC0tcjIpO2ZvbnQtc2l6ZTouOTJyZW19Ci5mYjplbXB0eXtkaXNwbGF5Om5vbmV9LmZiLm9re2JvcmRlci1jb2xvcjp2YXIoLS1vayl9Ci5hY3R7ZGlzcGxheTpmbGV4O2p1c3RpZnktY29udGVudDpzcGFjZS1iZXR3ZWVuO2FsaWduLWl0ZW1zOmNlbnRlcjttYXJnaW4tdG9wOjE2cHg7Z2FwOjEycHh9Ci5oaW50e2JhY2tncm91bmQ6bm9uZTtib3JkZXI6MDtjb2xvcjp2YXIoLS1tdXQpO2N1cnNvcjpwb2ludGVyO21hcmdpbi10b3A6MTRweDtmb250OjQwMCAuNzJyZW0gJ1NwYWNlIE1vbm8nLG1vbm9zcGFjZTtsZXR0ZXItc3BhY2luZzouMWVtO3RleHQtdHJhbnNmb3JtOnVwcGVyY2FzZTt0ZXh0LWRlY29yYXRpb246dW5kZXJsaW5lO3RleHQtdW5kZXJsaW5lLW9mZnNldDo0cHh9Ci5oaW50OmRpc2FibGVke29wYWNpdHk6LjQ7Y3Vyc29yOmRlZmF1bHR9Ci54cHtwb3NpdGlvbjphYnNvbHV0ZTtyaWdodDowO3RvcDotNnB4O2NvbG9yOnZhcigtLXIyKTtmb250OjcwMCAxLjVyZW0gJ1BpeGVsaWZ5IFNhbnMnLG1vbm9zcGFjZTtvcGFjaXR5OjA7cG9pbnRlci1ldmVudHM6bm9uZX0KLnhwLmdve2FuaW1hdGlvbjp4cCAxLjJzIGVhc2Utb3V0fQpAa2V5ZnJhbWVzIHhwe2Zyb217b3BhY2l0eToxO3RyYW5zZm9ybTp0cmFuc2xhdGVZKDEwcHgpfXRve29wYWNpdHk6MDt0cmFuc2Zvcm06dHJhbnNsYXRlWSgtMzRweCl9fQouc2xvdHN7ZGlzcGxheTpmbGV4O2dhcDoxMHB4O2p1c3RpZnktY29udGVudDpjZW50ZXI7cGFkZGluZy10b3A6NnB4O3Bvc2l0aW9uOnJlbGF0aXZlfQouc2xvdHt3aWR0aDo1MHB4O2hlaWdodDo2MHB4O2Rpc3BsYXk6Z3JpZDtwbGFjZS1pdGVtczpjZW50ZXI7Ym9yZGVyOjFweCBzb2xpZCB2YXIoLS1saW5lKTtib3JkZXItcmFkaXVzOjZweDtmb250OjcwMCAxLjdyZW0gJ1BpeGVsaWZ5IFNhbnMnLG1vbm9zcGFjZTtjb2xvcjp2YXIoLS1tdXQpfQouc2xvdC5nb3R7Y29sb3I6I2ZmZjtiYWNrZ3JvdW5kOmxpbmVhci1ncmFkaWVudCgxMzVkZWcsI2ZmM2I0ZSwjYTgwZDFjKTtib3JkZXI6MDthbmltYXRpb246cG9wIC41cztib3gtc2hhZG93OjAgMCAyNHB4IHJnYmEoMjI1LDI5LDQ2LC41NSl9CkBrZXlmcmFtZXMgcG9wezAle3RyYW5zZm9ybTpzY2FsZSguNil9NjAle3RyYW5zZm9ybTpzY2FsZSgxLjE1KX19CgojaW50cm8sI2VuZCwubW9kYWx7cG9zaXRpb246Zml4ZWQ7aW5zZXQ6MDtkaXNwbGF5Om5vbmU7cGxhY2UtaXRlbXM6Y2VudGVyO3RleHQtYWxpZ246Y2VudGVyO3BhZGRpbmc6MjRweH0KI2ludHJve3otaW5kZXg6MjA7YmFja2dyb3VuZDpyYWRpYWwtZ3JhZGllbnQoY2lyY2xlLHJnYmEoMjI1LDI5LDQ2LC41NSksIzA4MDYwYSA2MiUpfQojaW50cm8ub24sI2VuZC5vbiwubW9kYWwub257ZGlzcGxheTpncmlkfQojaW50cm8gaDJ7Zm9udC1zaXplOmNsYW1wKDMuMnJlbSwxMXZ3LDcuNXJlbSk7bGluZS1oZWlnaHQ6MTttYXJnaW46MTRweCAwO3RleHQtc2hhZG93OjAgMCA0MHB4IHJnYmEoMjU1LDY4LDg4LC45KSwwIDAgOTBweCByZ2JhKDIyNSwyOSw0NiwuNik7YW5pbWF0aW9uOnpvb20gMnMgZWFzZS1vdXR9CkBrZXlmcmFtZXMgem9vbXtmcm9te3RyYW5zZm9ybTpzY2FsZSguODYpO29wYWNpdHk6MH0yNSV7b3BhY2l0eToxfXRve3RyYW5zZm9ybTpzY2FsZSgxKX19CiNlbmR7ei1pbmRleDoyNTtiYWNrZ3JvdW5kOnJnYmEoOCw2LDEwLC45Nil9CiNlbmQgLmlje2ZvbnQtc2l6ZToyLjRyZW19CiNlbmQgaDJ7Zm9udC1zaXplOmNsYW1wKDIuNnJlbSw4dncsNXJlbSk7bGluZS1oZWlnaHQ6MS4wNTttYXJnaW46MTBweCAwIDB9CiNlbmQgcHtjb2xvcjp2YXIoLS1tdXQpO21hcmdpbjoxNHB4IGF1dG8gOHB4O21heC13aWR0aDoyOHJlbX0KI2VuZCAueHBse2NvbG9yOnZhcigtLXIyKTttYXJnaW4tYm90dG9tOjI2cHh9CiNlbmQgLnJvd3tkaXNwbGF5OmZsZXg7Z2FwOjEycHg7anVzdGlmeS1jb250ZW50OmNlbnRlcjtmbGV4LXdyYXA6d3JhcH0KLm1vZGFse3otaW5kZXg6MzA7YmFja2dyb3VuZDpyZ2JhKDQsMiw1LC44Mik7YmFja2Ryb3AtZmlsdGVyOmJsdXIoOHB4KX0KLm1vZGFsIC5mcm17YmFja2dyb3VuZDp2YXIoLS1wbik7Ym9yZGVyOjJweCBzb2xpZCB2YXIoLS1pbmspO2JveC1zaGFkb3c6MTJweCAxMnB4IDAgdmFyKC0td2luZSk7cGFkZGluZzozMHB4IDI2cHg7d2lkdGg6bWluKDQwMHB4LDEwMCUpO3RleHQtYWxpZ246bGVmdH0KLm1vZGFsIGgze2ZvbnQtc2l6ZToyLjJyZW07bWFyZ2luOjEwcHggMCAycHh9Ci5tb2RhbCBwe2NvbG9yOnZhcigtLW11dCk7bWFyZ2luLWJvdHRvbToxOHB4O2ZvbnQtc2l6ZTouOTJyZW19Ci5tb2RhbCBsYWJlbHtkaXNwbGF5OmJsb2NrO21hcmdpbi1ib3R0b206MTRweH0KLm1vZGFsIGlucHV0e3dpZHRoOjEwMCU7bWFyZ2luLXRvcDo2cHg7cGFkZGluZzoxMXB4IDE0cHg7Ym9yZGVyOjFweCBzb2xpZCB2YXIoLS1saW5lKTtiYWNrZ3JvdW5kOiMwYjA2MDk7Ym9yZGVyLXJhZGl1czo0cHg7Zm9udC1zaXplOjFyZW07b3V0bGluZTowfQoubW9kYWwgaW5wdXQ6Zm9jdXN7Ym9yZGVyLWNvbG9yOnZhcigtLXIyKX0KLm1vZGFsIC5jdGF7d2lkdGg6MTAwJTttYXJnaW4tdG9wOjZweH0KI3RvYXN0e3Bvc2l0aW9uOmZpeGVkO3JpZ2h0OjE4cHg7Ym90dG9tOjE4cHg7ei1pbmRleDoyMjtkaXNwbGF5OmZsZXg7Z2FwOjEycHg7YWxpZ24taXRlbXM6Y2VudGVyO21heC13aWR0aDozMjBweDtwYWRkaW5nOjEycHggMTZweDtiYWNrZ3JvdW5kOiNmZmY7Y29sb3I6IzExMTtib3JkZXI6MnB4IHNvbGlkICMxMTE7Ym94LXNoYWRvdzo2cHggNnB4IDAgdmFyKC0tcmVkKTt0cmFuc2Zvcm06dHJhbnNsYXRlWSgxNzAlKTt0cmFuc2l0aW9uOnRyYW5zZm9ybSAuMzVzfQojdG9hc3Qub257dHJhbnNmb3JtOm5vbmV9CiN0b2FzdCBie2ZvbnQtc2l6ZToycmVtO2ZvbnQtd2VpZ2h0OjQwMH0jdG9hc3Qgc21hbGx7Y29sb3I6dmFyKC0tcmVkKTtkaXNwbGF5OmJsb2NrO2ZvbnQ6NzAwIC42MnJlbSAnU3BhY2UgTW9ubycsbW9ub3NwYWNlO2xldHRlci1zcGFjaW5nOi4xMmVtO3RleHQtdHJhbnNmb3JtOnVwcGVyY2FzZX0jdG9hc3Qgc3Bhbntmb250LXNpemU6Ljg4cmVtO2xpbmUtaGVpZ2h0OjEuMztmb250LXdlaWdodDo1MDA7ZGlzcGxheTpibG9ja30KI2NyZWR7cG9zaXRpb246Zml4ZWQ7aW5zZXQ6MDt6LWluZGV4OjQwO2JhY2tncm91bmQ6IzAwMDtkaXNwbGF5Om5vbmU7b3ZlcmZsb3c6aGlkZGVuO3RleHQtYWxpZ246Y2VudGVyfQojY3JlZC5vbntkaXNwbGF5OmJsb2NrfQojY3JlZCAucm91bmR7cG9zaXRpb246YWJzb2x1dGU7cmlnaHQ6MjBweDt0b3A6MjBweDt6LWluZGV4OjJ9Ci5yb2xse3Bvc2l0aW9uOmFic29sdXRlO2xlZnQ6MDtyaWdodDowO3RvcDoxMDAlO2FuaW1hdGlvbjpyb2xsIDI4cyBsaW5lYXIgZm9yd2FyZHM7cGFkZGluZzowIDZ2d30KQGtleWZyYW1lcyByb2xse3Rve3RyYW5zZm9ybTp0cmFuc2xhdGVZKGNhbGMoLTEwMCUgLSAxMDB2aCkpfX0KLnJvbGwgc21hbGx7ZGlzcGxheTpibG9jaztmb250OjQwMCAuN3JlbSAnU3BhY2UgTW9ubycsbW9ub3NwYWNlO2xldHRlci1zcGFjaW5nOi4zZW07dGV4dC10cmFuc2Zvcm06dXBwZXJjYXNlO2NvbG9yOnZhcigtLXIyKTttYXJnaW46MTEwcHggMCAxNHB4fQoucm9sbCAudHtmb250OjcwMCBjbGFtcCgzLjRyZW0sMTB2dyw3cmVtKS8uOTUgJ1BpeGVsaWZ5IFNhbnMnLG1vbm9zcGFjZTt0ZXh0LXNoYWRvdzowIDAgNTBweCByZ2JhKDIyNSwyOSw0NiwuNyl9Ci5yb2xsIC5ue2ZvbnQ6NjAwIGNsYW1wKDEuOHJlbSw1dncsM3JlbSkgJ1BpeGVsaWZ5IFNhbnMnLG1vbm9zcGFjZTt0ZXh0LXNoYWRvdzowIDAgMzBweCByZ2JhKDIyNSwyOSw0NiwuNDUpfQojZmlue3Bvc2l0aW9uOmFic29sdXRlO2luc2V0OjA7ZGlzcGxheTpub25lO3BsYWNlLWl0ZW1zOmNlbnRlcjtiYWNrZ3JvdW5kOiMwMDB9CiNmaW4ub257ZGlzcGxheTpncmlkfQojZmluIGgye2ZvbnQtc2l6ZTpjbGFtcCgzcmVtLDl2dyw1LjVyZW0pO2NvbG9yOnZhcigtLXIyKTttYXJnaW4tYm90dG9tOjIycHg7dGV4dC1zaGFkb3c6MCAwIDQwcHggcmdiYSgyMjUsMjksNDYsLjYpfQpAbWVkaWEobWF4LXdpZHRoOjgyMHB4KXsuaGVyb3tncmlkLXRlbXBsYXRlLWNvbHVtbnM6MWZyO3BhZGRpbmctdG9wOjM0cHh9LnN0YWdlLWFydHtoZWlnaHQ6MzAwcHh9bmF2IC5taWR7ZGlzcGxheTpub25lfS5jZWxsc3tncmlkLXRlbXBsYXRlLWNvbHVtbnM6cmVwZWF0KDIsMWZyKX0uZmVhdHtncmlkLXRlbXBsYXRlLWNvbHVtbnM6MWZyfS5lcSBwe2ZvbnQtc2l6ZToxLjRyZW19fQpAbWVkaWEocHJlZmVycy1yZWR1Y2VkLW1vdGlvbjpyZWR1Y2Upeyp7YW5pbWF0aW9uOm5vbmUhaW1wb3J0YW50O3RyYW5zaXRpb246bm9uZSFpbXBvcnRhbnR9LnJvbGx7dG9wOjIwJX19Cjwvc3R5bGU+CjwvaGVhZD4KPGJvZHk+CjxuYXY+CiAgPGRpdiBjbGFzcz0ibG9nbyBweCI+PGI+TUU8L2I+bWF0aGVzY2FwZTwvZGl2PgogIDxkaXYgY2xhc3M9Im1pZCBtbyI+PHNwYW4+4pePIE1hdGggZXNjYXBlIC8gNSBzdGFnZXM8L3NwYW4+PHNwYW4+Q2hhbGxlbmdlPC9zcGFuPjxzcGFuPkhvdyBpdCB3b3Jrczwvc3Bhbj48L2Rpdj4KICA8c3BhbiBzdHlsZT0iZGlzcGxheTpmbGV4O2dhcDoxMHB4O2FsaWduLWl0ZW1zOmNlbnRlciI+PGEgY2xhc3M9InJvdW5kIiBocmVmPSIjIiBvbmNsaWNrPSJwYXJlbnQucG9zdE1lc3NhZ2UoJ21hdGhraW5nLWNsb3NlLWVzY2FwZScsJyonKTtyZXR1cm4gZmFsc2UiIHN0eWxlPSJ0ZXh0LWRlY29yYXRpb246bm9uZSIgPuKGkCBNYXRoa2luZyBRdWl6PC9hPjxidXR0b24gY2xhc3M9InJvdW5kIiBpZD0ic25kIiBhcmlhLWxhYmVsPSJUb2dnbGUgc291bmQiPlNvdW5kIG9uPC9idXR0b24+PC9zcGFuPgo8L25hdj4KCjxkaXYgY2xhc3M9IndyYXAiPgogIDxzZWN0aW9uIGNsYXNzPSJoZXJvIj4KICAgIDxkaXY+CiAgICAgIDxkaXYgY2xhc3M9ImV5ZWJyb3cgbW8iPlRoZSBNYXRocyBBc3NvY2lhdGlvbiBEYXkgcHV6emxlPC9kaXY+CiAgICAgIDxoMSBjbGFzcz0icHgiPk9uZSByb29tLjxzcGFuIGNsYXNzPSJvIj5GaXZlIGxvY2tzLjxpPjwvaT48L3NwYW4+PC9oMT4KICAgICAgPHAgY2xhc3M9ImxlYWQiPkZyb20gY2xhc3Nyb29tIGJhc2ljcyB0byBicmFpbi1iZW5kaW5nIHB1enpsZXMuIENyYWNrIGZvdXIgbG9ja3MsIHRoZW4gc29sdmUgdGhlIGZpbmFsIGJvc3MgdG8gZXNjYXBlIGJlZm9yZSB0aW1lIHJ1bnMgb3V0LjwvcD4KICAgICAgPGJ1dHRvbiBjbGFzcz0iY3RhIiBpZD0ic3RhcnQiPkVudGVyIHRoZSByb29tIOKGlzwvYnV0dG9uPgogICAgPC9kaXY+CiAgICA8ZGl2IGNsYXNzPSJzdGFnZS1hcnQiIGFyaWEtaGlkZGVuPSJ0cnVlIj4KICAgICAgPHNwYW4gc3R5bGU9ImxlZnQ6NiU7dG9wOjE4JSI+Kzwvc3Bhbj48c3BhbiBzdHlsZT0icmlnaHQ6NCU7dG9wOjMwJSI+w7c8L3NwYW4+PHNwYW4gc3R5bGU9ImxlZnQ6MzAlO2JvdHRvbTo2JSI+Pzwvc3Bhbj4KICAgICAgPGRpdiBjbGFzcz0id2luIj48ZGl2IGNsYXNzPSJ0YiI+PGk+PC9pPjxpPjwvaT48aT48L2k+PHNwYW4gY2xhc3M9Im1vIj5tYXRoZXNjYXBlLmV4ZTwvc3Bhbj48L2Rpdj48ZGl2IGNsYXNzPSJiZCI+PGRpdiBjbGFzcz0iZmFjZSI+PHU+PC91PjwvZGl2PjxkaXYgY2xhc3M9Im1vIj5SZWFkeSBwbGF5ZXJfMDE8L2Rpdj48L2Rpdj48L2Rpdj4KICAgIDwvZGl2PgogIDwvc2VjdGlvbj4KCiAgPHNlY3Rpb24gY2xhc3M9InNlYyIgaWQ9ImNoYWxsZW5nZSI+CiAgICA8ZGl2IGNsYXNzPSJleWVicm93IG1vIj5UaGUgbWFpbiBldmVudDwvZGl2PgogICAgPGgyIGNsYXNzPSJweCI+WW91ciBjaGFsbGVuZ2U8L2gyPgogICAgPGRpdiBjbGFzcz0icnVuIj4KICAgICAgPGRpdiBjbGFzcz0iaGQgbW8iPjxzcGFuPlRoZSBlc2NhcGUgcnVuPC9zcGFuPjxzcGFuPjUgc3RhZ2VzIMK3IG9uZSBqb3VybmV5PC9zcGFuPjwvZGl2PgogICAgICA8ZGl2IGNsYXNzPSJjZWxscyI+CiAgICAgICAgPGRpdiBjbGFzcz0iY2VsbCI+PGIgY2xhc3M9InB4Ij4wMTwvYj48c3Bhbj5GcnVpdCBtYXJrZXQ8L3NwYW4+PGVtPkVhc3k8L2VtPjwvZGl2PgogICAgICAgIDxkaXYgY2xhc3M9ImNlbGwiPjxiIGNsYXNzPSJweCI+MDI8L2I+PHNwYW4+TnVtYmVyIGxhZGRlcjwvc3Bhbj48ZW0+RWFzeTwvZW0+PC9kaXY+CiAgICAgICAgPGRpdiBjbGFzcz0iY2VsbCI+PGIgY2xhc3M9InB4Ij4wMzwvYj48c3Bhbj5NYWdpYyBzcXVhcmU8L3NwYW4+PGVtPk1lZGl1bTwvZW0+PC9kaXY+CiAgICAgICAgPGRpdiBjbGFzcz0iY2VsbCI+PGIgY2xhc3M9InB4Ij4wNDwvYj48c3Bhbj5NYWtlIDI0PC9zcGFuPjxlbT5NZWRpdW08L2VtPjwvZGl2PgogICAgICAgIDxkaXYgY2xhc3M9ImNlbGwgZiI+PGIgY2xhc3M9InB4Ij4wNTwvYj48c3Bhbj5GaW5hbCBib3NzPC9zcGFuPjxlbT5EaXZpc2lvbjwvZW0+PC9kaXY+CiAgICAgIDwvZGl2PgogICAgICA8cD5UaGUgZmlyc3QgZm91ciBsb2NrcyByZXZlYWwgY2x1ZXMuIFRoZW4gZmFjZSB0aGUgZmluYWwgYm9zczogYSBkaXZpc2lvbiBjaGFsbGVuZ2UuIFlvdSBoYXZlIDUgaGVhcnRzIGFuZCAxMiBtaW51dGVzLCBhbmQgdGhlIFZhdWx0IENhdCBpcyB3YXRjaGluZy4gU3RhZ2VzIDEgYW5kIDIgZWFzZSB5b3UgaW4uIEZyb20gU3RhZ2UgMyB0aGUgcHV6emxlcyBnZXQgYSBsaXR0bGUgdG91Z2hlci4gVGhlIHJvb20gb3BlbnMgZnVsbCBzY3JlZW4uPC9wPgogICAgICA8YnV0dG9uIGNsYXNzPSJjdGEiIGlkPSJzdGFydDIiPlN0YXJ0IDUtc3RhZ2UgZXNjYXBlIOKGlzwvYnV0dG9uPgogICAgPC9kaXY+CiAgPC9zZWN0aW9uPgoKICA8c2VjdGlvbiBjbGFzcz0iZmVhdCIgaWQ9ImhvdyI+CiAgICA8ZGl2PjxiPjAxPC9iPjxoMyBjbGFzcz0icHgiPkZ1bGwtc2NyZWVuIGZvY3VzPC9oMz48cD5UaGUgcm9vbSB0YWtlcyBvdmVyIHlvdXIgd2hvbGUgc2NyZWVuLiBObyBkaXN0cmFjdGlvbnMsIGp1c3QgeW91IGFuZCB0aGUgcHV6emxlLjwvcD48L2Rpdj4KICAgIDxkaXY+PGI+MDI8L2I+PGgzIGNsYXNzPSJweCI+R2V0cyB0b3VnaGVyIGF0IFN0YWdlIDM8L2gzPjxwPldhcm0gdXAgZ2VudGx5LCB0aGVuIGZhY2UgbWVkaXVtIHB1enpsZXMgYWdhaW5zdCBhIHRpY2tpbmcgY2xvY2suPC9wPjwvZGl2PgogICAgPGRpdj48Yj4wMzwvYj48aDMgY2xhc3M9InB4Ij5IaW50cyBjb3N0IHRpbWU8L2gzPjxwPlN0dWNrPyBUYWtlIGEgaGludCwgYnV0IGl0IGNvc3RzIDIwIHNlY29uZHMgZnJvbSB0aGUgY2xvY2suPC9wPjwvZGl2PgogIDwvc2VjdGlvbj4KPC9kaXY+CjxkaXYgY2xhc3M9ImZvb3QiPjxkaXYgY2xhc3M9IndyYXAiPgogIDxkaXYgY2xhc3M9Im1vIj5NYXRocyBBc3NvY2lhdGlvbiBEYXk8L2Rpdj4KICA8aDMgY2xhc3M9InB4Ij5NYXRoZXNjYXBlIDIwMjY8L2gzPgogIDxwPkRldmVsb3BlZCAmYW1wOyBwbGFubmVkIGJ5IERyLiBBbmlydWRoYW4gw5cgRiBWaW1hbCBLdW1hciDCtyBGdW5kZWQgJmFtcDsgcHJlc2VudGVkIGJ5IFRFQU0gNzwvcD4KPC9kaXY+PC9kaXY+Cgo8ZGl2IGNsYXNzPSJtb2RhbCIgaWQ9IndobyI+PGRpdiBjbGFzcz0iZnJtIiBpZD0id2YiPgogIDxkaXYgY2xhc3M9Im1vIj5QbGF5ZXIgcmVnaXN0cmF0aW9uPC9kaXY+CiAgPGgzIGNsYXNzPSJweCI+V2hv4oCZcyBwbGF5aW5nPzwvaDM+PHA+RW50ZXIgeW91ciBkZXRhaWxzIGJlZm9yZSB5b3Ugc3RlcCBpbnRvIHRoZSByb29tLjwvcD4KICA8bGFiZWwgY2xhc3M9Im1vIj5Zb3VyIG5hbWU8aW5wdXQgaWQ9InBuIiBtYXhsZW5ndGg9IjI0IiBhdXRvY29tcGxldGU9Im9mZiI+PC9sYWJlbD4KICA8bGFiZWwgY2xhc3M9Im1vIj5DbGFzcyBvciB5ZWFyPGlucHV0IGlkPSJwYyIgbWF4bGVuZ3RoPSIxNiIgYXV0b2NvbXBsZXRlPSJvZmYiPjwvbGFiZWw+CiAgPGJ1dHRvbiBjbGFzcz0iY3RhIiB0eXBlPSJidXR0b24iIGlkPSJ3Z28iPkNvbnRpbnVlIOKGlzwvYnV0dG9uPgo8L2Rpdj48L2Rpdj4KCjxkaXYgaWQ9ImdhbWUiIHJvbGU9ImRpYWxvZyIgYXJpYS1sYWJlbD0iTWF0aHMgZXNjYXBlIHJvb20iPgogIDxkaXYgY2xhc3M9ImZsIiBpZD0iZmwiIGFyaWEtaGlkZGVuPSJ0cnVlIj48L2Rpdj4KICA8ZGl2IGNsYXNzPSJ0b3AiPjxidXR0b24gY2xhc3M9InJvdW5kIiBpZD0iZXhpdCI+TGVhdmUgcm9vbTwvYnV0dG9uPjxidXR0b24gY2xhc3M9InJvdW5kIiBpZD0ic25kMiI+U291bmQgb248L2J1dHRvbj48L2Rpdj4KICA8ZGl2IGNsYXNzPSJjb2wiPgogICAgPGRpdiBjbGFzcz0icHJvZyIgaWQ9InByb2ciPjwvZGl2PgogICAgPGRpdiBjbGFzcz0iaHVkIj48c3BhbiBjbGFzcz0ibW8iIGlkPSJzdGwiPjwvc3Bhbj48c3BhbiBjbGFzcz0iaGVhcnRzIiBpZD0iaGVhcnRzIiBhcmlhLWxhYmVsPSJIZWFydHMgbGVmdCI+PC9zcGFuPjxzcGFuIGNsYXNzPSJjbG9jayIgaWQ9ImNsb2NrIj4xMjowMDwvc3Bhbj48L2Rpdj4KICA8L2Rpdj4KICA8bWFpbiBjbGFzcz0ibWFpbiBjb2wiPgogICAgPGRpdiBjbGFzcz0idGcgcHgiIGlkPSJ0YWciPjwvZGl2PgogICAgPGgyIGNsYXNzPSJxIiBpZD0icSI+PC9oMj4KICAgIDxwIGNsYXNzPSJzdG9yeSIgaWQ9InN0b3J5Ij48L3A+CiAgICA8ZGl2IGNsYXNzPSJib2FyZCIgaWQ9InB1eiI+PC9kaXY+CiAgICA8ZGl2IGNsYXNzPSJpbnJvdyIgaWQ9ImlyIj48Yj7igLo8L2I+PGlucHV0IGlkPSJpbiIgYXV0b2NvbXBsZXRlPSJvZmYiIGFyaWEtbGFiZWw9IllvdXIgYW5zd2VyIj48L2Rpdj4KICAgIDxkaXYgY2xhc3M9ImZiIiBpZD0iZmIiIHJvbGU9InN0YXR1cyI+PC9kaXY+CiAgICA8ZGl2IGNsYXNzPSJhY3QiPjxzcGFuIGNsYXNzPSJtbyIgaWQ9InN0Ij5UeXBlIHlvdXIgYW5zd2VyPC9zcGFuPjxzcGFuIHN0eWxlPSJwb3NpdGlvbjpyZWxhdGl2ZSI+PHNwYW4gY2xhc3M9InhwIiBpZD0ieHAiPisyMCBYUDwvc3Bhbj48YnV0dG9uIGNsYXNzPSJjdGEiIGlkPSJnbyI+U3VibWl0IGFuc3dlciDihpc8L2J1dHRvbj48L3NwYW4+PC9kaXY+CiAgICA8YnV0dG9uIGNsYXNzPSJoaW50IiBpZD0iaGludCI+TmVlZCBhIGhpbnQ/IENvc3RzIDIwIHNlY29uZHM8L2J1dHRvbj4KICA8L21haW4+CiAgPGRpdiBjbGFzcz0ic2xvdHMiIGlkPSJzbG90cyIgYXJpYS1sYWJlbD0iQ29kZSBkaWdpdHMgZm91bmQiPjwvZGl2Pgo8L2Rpdj4KCjxkaXYgaWQ9ImludHJvIj48ZGl2PjxkaXYgY2xhc3M9Im1vIiBpZD0iaVMiIHN0eWxlPSJjb2xvcjp2YXIoLS1yMikiPjwvZGl2PjxoMiBjbGFzcz0icHgiIGlkPSJpTiI+PC9oMj48ZGl2IGNsYXNzPSJtbyIgaWQ9ImlUIj48L2Rpdj48L2Rpdj48L2Rpdj4KPGRpdiBpZD0iZW5kIj48ZGl2PjxkaXYgY2xhc3M9ImljIiBpZD0iZWkiPjwvZGl2PjxoMiBjbGFzcz0icHgiIGlkPSJlaCI+PC9oMj48cCBpZD0iZXQiPjwvcD48ZGl2IGNsYXNzPSJtbyB4cGwiIGlkPSJleCI+PC9kaXY+PGRpdiBjbGFzcz0icm93Ij48YnV0dG9uIGNsYXNzPSJjdGEiIGlkPSJhZ2FpbiI+UGxheSBhZ2FpbiDihpc8L2J1dHRvbj48YnV0dG9uIGNsYXNzPSJjdGEiIGlkPSJ2YyIgc3R5bGU9ImJhY2tncm91bmQ6bm9uZTtib3JkZXI6MXB4IHNvbGlkIHZhcigtLXIyKTtib3gtc2hhZG93Om5vbmUiPlZpZXcgY3JlZGl0cyDihpc8L2J1dHRvbj48L2Rpdj48L2Rpdj48L2Rpdj4KPGRpdiBpZD0idG9hc3QiIHJvbGU9InN0YXR1cyI+PGI+8J+QiOKAjeKsmzwvYj48ZGl2PjxzbWFsbD5WYXVsdCBDYXQ8L3NtYWxsPjxzcGFuIGlkPSJjdCI+PC9zcGFuPjwvZGl2PjwvZGl2PgoKPGRpdiBpZD0iY3JlZCI+CiAgPGJ1dHRvbiBjbGFzcz0icm91bmQiIGlkPSJza2lwIj5Ta2lwIMOXPC9idXR0b24+CiAgPGRpdiBjbGFzcz0icm9sbCIgaWQ9InJvbGwiPgogICAgPHNtYWxsPkEgTWF0aGVzY2FwZSBwcm9kdWN0aW9uPC9zbWFsbD4KICAgIDxkaXYgY2xhc3M9InQiPlRIRTxicj5NQVRIPGJyPkVTQ0FQRTwvZGl2PgogICAgPHNtYWxsPkRldmVsb3BlZCAmYW1wOyBwbGFubmVkIGJ5PC9zbWFsbD4KICAgIDxkaXYgY2xhc3M9Im4iPkRyLiBBbmlydWRoYW4gw5cgRiBWaW1hbCBLdW1hcjwvZGl2PgogICAgPHNtYWxsPlN1cHBvcnRlZCBieTwvc21hbGw+CiAgICA8ZGl2IGNsYXNzPSJuIj5BcmloYXJhbiBKPC9kaXY+CiAgICA8c21hbGw+RnVuZGVkICZhbXA7IHByZXNlbnRlZCBieTwvc21hbGw+CiAgICA8ZGl2IGNsYXNzPSJuIj5URUFNIDc8L2Rpdj4KICAgIDxzbWFsbD5FdmVudDwvc21hbGw+CiAgICA8ZGl2IGNsYXNzPSJuIj5NYXRocyBBc3NvY2lhdGlvbiBEYXk8L2Rpdj4KICAgIDxzbWFsbD5TdGFycmluZzwvc21hbGw+CiAgICA8ZGl2IGNsYXNzPSJuIiBpZD0ic3RhciI+PC9kaXY+CiAgICA8c21hbGw+Tm8gbnVtYmVycyB3ZXJlIGhhcm1lZDwvc21hbGw+CiAgICA8ZGl2IHN0eWxlPSJoZWlnaHQ6MzB2aCI+PC9kaXY+CiAgPC9kaXY+CiAgPGRpdiBpZD0iZmluIj48ZGl2PjxoMiBjbGFzcz0icHgiPlRoZSBlbmQ8L2gyPjxidXR0b24gY2xhc3M9ImN0YSIgaWQ9ImhvbWUiPlJldHVybiB0byBob21lIOKGlzwvYnV0dG9uPjwvZGl2PjwvZGl2Pgo8L2Rpdj4KCjxzY3JpcHQ+CmNvbnN0IENPREU9WzcsMSw5LDRdLFRJTUU9NzIwLEhFQVJUUz01Owpjb25zdCAkPWlkPT5kb2N1bWVudC5nZXRFbGVtZW50QnlJZChpZCk7CmNvbnN0IHBhZD1uPT5TdHJpbmcobikucGFkU3RhcnQoMiwnMCcpOwpmdW5jdGlvbiBvazI0KHYpewogIGNvbnN0IHM9di5yZXBsYWNlKC9bw5d4WOKclV0vZywnKicpLnJlcGxhY2UoL1vDtzpdL2csJy8nKS5yZXBsYWNlKC9b4oiS4oCT4oCUXS9nLCctJykucmVwbGFjZSgvW++8iO+8u10vZywnKCcpLnJlcGxhY2UoL1vvvInvvL1dL2csJyknKS5yZXBsYWNlKC9ccy9nLCcnKTsKICBpZighL15bXGQrXC0qLygpXSskLy50ZXN0KHMpKXJldHVybiBmYWxzZTsKICBjb25zdCBuPShzLm1hdGNoKC9cZCsvZyl8fFtdKS5tYXAoTnVtYmVyKS5zb3J0KChhLGIpPT5hLWIpOwogIGlmKG4uam9pbigpIT09JzQsNCwxMCwxMCcpcmV0dXJuIGZhbHNlOwogIHRyeXtyZXR1cm4gTWF0aC5hYnMoRnVuY3Rpb24oJyJ1c2Ugc3RyaWN0IjtyZXR1cm4gKCcrcysnKScpKCktMjQpPDFlLTZ9Y2F0Y2goZSl7cmV0dXJuIGZhbHNlfQp9CmNvbnN0IFM9Wwoge246J0ZydWl0IG1hcmtldCcsdDonRWFzeScscTonRmluZCB0aGUgdmFsdWUgb2Yg8J+NjiDiiJIg8J+Nkycsc3Rvcnk6J1RoZSBmaXJzdCBsb2NrIGJlbG9uZ3MgdG8gYSBmcnVpdCBzZWxsZXIgd2hvIG9ubHkgc3BlYWtzIGluIGVxdWF0aW9ucy4gRXZlcnkgZnJ1aXQgaGlkZXMgb25lIG51bWJlci4nLAogIGh0bWw6JzxkaXYgY2xhc3M9ImVxIj48cD7wn42OICsg8J+NjiArIPCfjY4gPSAyNDwvcD48cD7wn42OICsg8J+NjCArIPCfjYwgPSAyMDwvcD48cD7wn42MICsg8J+NkyArIPCfjZMgPSAxMjwvcD48cCBjbGFzcz0iYmlnIj7wn42OIOKIkiDwn42TID0gPzwvcD48L2Rpdj4nLAogIGhpbnQ6J1RoZSBmaXJzdCBsaW5lIHNheXMgdGhyZWUgYXBwbGVzIG1ha2UgMjQsIHNvIHN0YXJ0IHRoZXJlLicsb2s6dj0+K3Y9PT01fSwKIHtuOidOdW1iZXIgbGFkZGVyJyx0OidFYXN5JyxxOidXaGF0IG51bWJlciBjb21lcyBuZXh0Pycsc3Rvcnk6J1RoZSBzZWNvbmQgZG9vciBoYXMgYSBsYWRkZXIgb2YgbnVtYmVycy4gRmluZCB0aGUgcnVsZSwgdGhlbiBjbGltYiBvbmUgcnVuZyBoaWdoZXIuJywKICBodG1sOic8ZGl2IGNsYXNzPSJzZXEiPjxzcGFuPjI8L3NwYW4+PHNwYW4+Njwvc3Bhbj48c3Bhbj4xMjwvc3Bhbj48c3Bhbj4yMDwvc3Bhbj48c3Bhbj4zMDwvc3Bhbj48c3BhbiBjbGFzcz0icSI+Pzwvc3Bhbj48L2Rpdj4nLAogIGhpbnQ6J0xvb2sgYXQgdGhlIGdhcHMgYmV0d2VlbiBuZWlnaGJvdXJzOiA0LCA2LCA4LCAxMCBhbmQgc28gb24uJyxvazp2PT4rdj09PTQyfSwKIHtuOidNYWdpYyBzcXVhcmUnLHQ6J01lZGl1bScscTonRmluZCB0aGUgc3VtIG9mIHRoZSBtaXNzaW5nIG51bWJlcnMnLHN0b3J5OidFdmVyeSByb3csIGNvbHVtbiBhbmQgZGlhZ29uYWwgYWRkcyB1cCB0byAxNS4gRmluZCB0aGUgdGhyZWUgbWlzc2luZyBudW1iZXJzIGFuZCBlbnRlciB0aGVpciBzdW0uJywKICBodG1sOic8ZGl2IGNsYXNzPSJzcSI+PGk+MjwvaT48aT43PC9pPjxpPjY8L2k+PGk+OTwvaT48aT41PC9pPjxpIGNsYXNzPSJxIj4/PC9pPjxpIGNsYXNzPSJxIj4/PC9pPjxpIGNsYXNzPSJxIj4/PC9pPjxpPjg8L2k+PC9kaXY+JywKICBoaW50OidSb3cgdHdvIGFscmVhZHkgaGFzIDkgYW5kIDUsIHNvIGl0cyBnYXAgaXMgMTUg4oiSIDkg4oiSIDUuIFVzZSB0aGUgZmlyc3QgY29sdW1uIGZvciBhbm90aGVyIGdhcC4nLG9rOnY9Pit2PT09OH0sCiB7bjonTWFrZSAyNCcsdDonTWVkaXVtJyxxOidNYWtlIDI0IHVzaW5nIGV2ZXJ5IG51bWJlciBvbmNlJyxzdG9yeTonVXNlICsg4oiSIMOXIMO3IGFuZCBicmFja2V0cy4gVHlwZSB5b3VyIGFuc3dlciBhcyBhbiBleHByZXNzaW9uLCBmb3IgZXhhbXBsZSAoMys0KSo1LTExLiBZb3UgbXVzdCB1c2UgYWxsIGZvdXIgbnVtYmVycy4nLAogIGh0bWw6JzxkaXYgY2xhc3M9ImNoaXBzIj48c3Bhbj40PC9zcGFuPjxzcGFuPjQ8L3NwYW4+PHNwYW4+MTA8L3NwYW4+PHNwYW4+MTA8L3NwYW4+PC9kaXY+JywKICBoaW50OidTdGFydCBiaWc6IDEwIMOXIDEwID0gMTAwLiBOb3cgdXNlIHRoZSB0d28gNHMgdG8gYnJpbmcgMTAwIGRvd24gdG8gMjQuJyxvazpvazI0fSwKIHtuOidGaW5hbCBib3NzJyx0OidGaW5hbCBjaGFsbGVuZ2UnLHE6J0NhbGN1bGF0ZSA5NiDDtyA0JyxzdG9yeTonVGhlIGZvdXIgbG9ja3MgYXJlIG9wZW4uIFRoZSBmaW5hbCBkb29yIGlzIGd1YXJkZWQgYnkgb25lIGxhc3QgY2FsY3VsYXRpb24uIEVudGVyIHRoZSBleGFjdCBhbnN3ZXIgdG8gZXNjYXBlLicsCiAgaHRtbDonPGRpdiBjbGFzcz0iZXEiPjxwPkZJTkFMIERPT1IgQUNDRVNTPC9wPjxwIGNsYXNzPSJiaWciPjk2IMO3IDQgPSA/PC9wPjxwPk9uZSBhbnN3ZXIuIE9uZSB3YXkgb3V0LjwvcD48L2Rpdj4nLAogIGhpbnQ6J0hvdyBtYW55IGdyb3VwcyBvZiA0IG1ha2UgOTY/IERpdmlkZSA5NiBieSA0Licsb2s6dj0+di5yZXBsYWNlKC9ccy9nLCcnKT09PScyNCd9Cl07CmxldCBpPTAsdGltZT1USU1FLGhlYXJ0cz1IRUFSVFMseHA9MCx0aW1lcj1udWxsLGhpbnRlZD1mYWxzZSxmb3VuZD1bXSxtdXRlPWZhbHNlLGFjLGJ1c3k9ZmFsc2Usb3Zlcj1mYWxzZSxwbGF5ZXI9JycscGFkVDsKCi8qIHNvdW5kICovCmZ1bmN0aW9uIHRvbmUoZixkPS4xNSx0PSdzaW5lJyxhdD0wLHY9LjEyKXtpZihtdXRlKXJldHVybjt0cnl7YWM9YWN8fG5ldyh3aW5kb3cuQXVkaW9Db250ZXh0fHx3aW5kb3cud2Via2l0QXVkaW9Db250ZXh0KSgpO2NvbnN0IG89YWMuY3JlYXRlT3NjaWxsYXRvcigpLGc9YWMuY3JlYXRlR2FpbigpLG49YWMuY3VycmVudFRpbWUrYXQ7by50eXBlPXQ7by5mcmVxdWVuY3kudmFsdWU9ZjtnLmdhaW4uc2V0VmFsdWVBdFRpbWUodixuKTtnLmdhaW4uZXhwb25lbnRpYWxSYW1wVG9WYWx1ZUF0VGltZSguMDAxLG4rZCk7by5jb25uZWN0KGcpO2cuY29ubmVjdChhYy5kZXN0aW5hdGlvbik7by5zdGFydChuKTtvLnN0b3AobitkKX1jYXRjaChlKXt9fQpjb25zdCBzZng9e29rOigpPT57dG9uZSg2NjApO3RvbmUoODgwLC4yLCdzaW5lJywuMTIpfSxiYWQ6KCk9Pnt0b25lKDIwMCwuMTgsJ3NxdWFyZScsMCwuMDYpO3RvbmUoMTIwLC4zLCdzYXd0b290aCcsLjEyLC4xKX0saGl0OigpPT57dG9uZSg3MCwuOSwnc2luZScsMCwuMyk7dG9uZSgxNDAsLjYsJ3RyaWFuZ2xlJywwLC4xNSl9LHdpbjooKT0+WzUyMyw2NTksNzg0LDEwNDddLmZvckVhY2goKGYsayk9PnRvbmUoZiwuMywndHJpYW5nbGUnLGsqLjEzKSksbG9zZTooKT0+e3RvbmUoMzAwLC4zKTt0b25lKDIwMCwuNDUsJ3NpbmUnLC4yNSl9fTsKY29uc3QgQ0g9W1syMjAsMjYxLjYsMzI5LjZdLFsxNzQuNiwyMjAsMjYxLjZdLFsyNjEuNiwzMjkuNiwzOTJdLFsxOTYsMjQ2LjksMjkzLjddXTsKZnVuY3Rpb24gbXVzaWMob24pe2NsZWFySW50ZXJ2YWwocGFkVCk7aWYoIW9uKXJldHVybjtsZXQgaz0wO2NvbnN0IHA9KCk9PkNIW2srKyU0XS5mb3JFYWNoKGY9PnRvbmUoZiwzLjQsJ3RyaWFuZ2xlJywwLC4wNSkpO3AoKTtwYWRUPXNldEludGVydmFsKHAsMzAwMCl9CiQoJ3NuZCcpLm9uY2xpY2s9JCgnc25kMicpLm9uY2xpY2s9KCk9PnttdXRlPSFtdXRlOyQoJ3NuZCcpLnRleHRDb250ZW50PSQoJ3NuZDInKS50ZXh0Q29udGVudD1tdXRlPydTb3VuZCBvZmYnOidTb3VuZCBvbid9OwoKLyogbWFzY290ICovCmNvbnN0IEJBRD1bJ1RoYXQgYW5zd2VyIGhhcyBiZWVuIGZvcndhcmRlZCB0byB0aGUgRGVwYXJ0bWVudCBvZiBOb3BlLicsJ05vdCBxdWl0ZS4gVGhlIGNhdCBibGlua2VkIHNsb3dseSBhdCB5b3UuJywnVGhlIGNhdCBleHBlY3RlZCBtb3JlLiBJdCBhbHdheXMgZG9lcy4nLCdNYXRocyBjYWxsZWQuIEl0IHdhbnRzIGl0cyBkaWduaXR5IGJhY2suJ107CmNvbnN0IEdPT0Q9WydGaW5lLiBUaGUgY2F0IGlzIG1pbGRseSBpbXByZXNzZWQuJywnQ29ycmVjdC4gRG8gbm90IGxldCBpdCBnbyB0byB5b3VyIGhlYWQuJywnVGhlIGxvY2sgY2xpY2tzIG9wZW4uIFN1c3BpY2lvdXMuJ107CmZ1bmN0aW9uIGNhdChhKXskKCdjdCcpLnRleHRDb250ZW50PWFbTWF0aC5mbG9vcihNYXRoLnJhbmRvbSgpKmEubGVuZ3RoKV07JCgndG9hc3QnKS5jbGFzc0xpc3QuYWRkKCdvbicpO2NsZWFyVGltZW91dChjYXQudCk7Y2F0LnQ9c2V0VGltZW91dCgoKT0+JCgndG9hc3QnKS5jbGFzc0xpc3QucmVtb3ZlKCdvbicpLDM2MDApfQoKLyogZmxvYXRpbmcgc3ltYm9scyAqLwokKCdmbCcpLmlubmVySFRNTD1BcnJheS5mcm9tKHtsZW5ndGg6MjB9LCgpPT4nPHNwYW4gc3R5bGU9ImxlZnQ6JytNYXRoLnJhbmRvbSgpKjEwMCsnJTt0b3A6JysoMTAwK01hdGgucmFuZG9tKCkqMzApKyclO2FuaW1hdGlvbi1kdXJhdGlvbjonKygyMitNYXRoLnJhbmRvbSgpKjI4KSsnczthbmltYXRpb24tZGVsYXk6LScrTWF0aC5yYW5kb20oKSo0MCsncztmb250LXNpemU6JysoMS42K01hdGgucmFuZG9tKCkqMi40KSsncmVtIj4nKyfiiJHPgOKInuKImsO3w5cr4oiS4oir4omIJc644oiGJ1tNYXRoLmZsb29yKE1hdGgucmFuZG9tKCkqMTMpXSsnPC9zcGFuPicpLmpvaW4oJycpOwoKLyogZ2FtZSAqLwpjb25zdCBmbXQ9cz0+cGFkKE1hdGguZmxvb3Iocy82MCkpKyc6JytwYWQocyU2MCk7CmZ1bmN0aW9uIHNheSh0LGMpe2NvbnN0IG09JCgnZmInKTttLnRleHRDb250ZW50PXQ7bS5jbGFzc05hbWU9J2ZiICcrKGN8fCcnKX0KZnVuY3Rpb24gZHJhd1Nsb3RzKCl7JCgnc2xvdHMnKS5pbm5lckhUTUw9Q09ERS5tYXAoKGQsayk9Pms8Zm91bmQubGVuZ3RoPyc8ZGl2IGNsYXNzPSJzbG90IGdvdCI+JytkKyc8L2Rpdj4nOic8ZGl2IGNsYXNzPSJzbG90Ij7CtzwvZGl2PicpLmpvaW4oJycpfQpmdW5jdGlvbiBkcmF3UHJvZygpeyQoJ3Byb2cnKS5pbm5lckhUTUw9Uy5tYXAoKF8sayk9Pic8aSBjbGFzcz0iJysoazxpPydkb25lJzprPT09aT8nbm93JzonJykrJyI+PC9pPicpLmpvaW4oJycpfQpmdW5jdGlvbiBkcmF3SGVhcnRzKGJyayl7JCgnaGVhcnRzJykuaW5uZXJIVE1MPUFycmF5LmZyb20oe2xlbmd0aDpIRUFSVFN9LChfLGspPT4nPGIgY2xhc3M9IicrKGs+PWhlYXJ0cz8nb2ZmJzonJykrKGJyayYmaz09PWhlYXJ0cz8nIGJyayc6JycpKyciPuKZpTwvYj4nKS5qb2luKCcnKX0KZnVuY3Rpb24gcmVuZGVyKCl7CiAgY29uc3Qgcz1TW2ldO2hpbnRlZD1mYWxzZTsKICAkKCdzdGwnKS50ZXh0Q29udGVudD0nU3RhZ2UgJytwYWQoaSsxKSsnIC8gJytwYWQoUy5sZW5ndGgpKycgwrcgJyt4cCsnIFhQJzsKICAkKCd0YWcnKS50ZXh0Q29udGVudD1zLm47JCgncScpLnRleHRDb250ZW50PXMucTskKCdzdG9yeScpLnRleHRDb250ZW50PXMuc3Rvcnk7JCgncHV6JykuaW5uZXJIVE1MPXMuaHRtbDsKICAkKCdpbicpLnZhbHVlPScnOyQoJ2luJykucGxhY2Vob2xkZXI9aT09PTM/J1R5cGUgeW91ciBleHByZXNzaW9uJzonVHlwZSB5b3VyIGFuc3dlcic7CiAgJCgnaXInKS5jbGFzc05hbWU9J2lucm93JzskKCdoaW50JykuZGlzYWJsZWQ9ZmFsc2U7JCgnZ28nKS5kaXNhYmxlZD1mYWxzZTskKCdzdCcpLnRleHRDb250ZW50PSdUeXBlIHlvdXIgYW5zd2VyJztzYXkoJycpO2RyYXdQcm9nKCk7ZHJhd1Nsb3RzKCk7ZHJhd0hlYXJ0cygpOwp9CmZ1bmN0aW9uIGludHJvKGspewogIGJ1c3k9dHJ1ZTskKCdpUycpLnRleHRDb250ZW50PSdTdGFnZSAnK3BhZChrKzEpOyQoJ2lOJykudGV4dENvbnRlbnQ9U1trXS5uOyQoJ2lUJykudGV4dENvbnRlbnQ9J0xvY2sgJysoaysxKSsnIG9mICcrUy5sZW5ndGgrJyDCtyAnK1Nba10udDsKICBjb25zdCBlPSQoJ2ludHJvJyk7ZS5jbGFzc0xpc3QucmVtb3ZlKCdvbicpO3ZvaWQgZS5vZmZzZXRXaWR0aDtlLmNsYXNzTGlzdC5hZGQoJ29uJyk7c2Z4LmhpdCgpOwogIHNldFRpbWVvdXQoKCk9PntlLmNsYXNzTGlzdC5yZW1vdmUoJ29uJyk7YnVzeT1mYWxzZTskKCdpbicpLmZvY3VzKCl9LDIxMDApOwp9CmZ1bmN0aW9uIHRpY2soKXsKICBpZihidXN5KXJldHVybjt0aW1lLS07JCgnY2xvY2snKS50ZXh0Q29udGVudD1mbXQoTWF0aC5tYXgodGltZSwwKSk7JCgnY2xvY2snKS5jbGFzc0xpc3QudG9nZ2xlKCdsb3cnLHRpbWU8PTYwKTsKICBpZih0aW1lPD0wKWZpbmlzaChmYWxzZSwndGltZScpOwp9CmZ1bmN0aW9uIGJlZ2luKCl7CiAgaT0wO3RpbWU9VElNRTtoZWFydHM9SEVBUlRTO3hwPTA7Zm91bmQ9W107b3Zlcj1mYWxzZTskKCdlbmQnKS5jbGFzc0xpc3QucmVtb3ZlKCdvbicpOyQoJ2NyZWQnKS5jbGFzc0xpc3QucmVtb3ZlKCdvbicpO211c2ljKGZhbHNlKTsKICAkKCdjbG9jaycpLnRleHRDb250ZW50PWZtdCh0aW1lKTskKCdjbG9jaycpLmNsYXNzTGlzdC5yZW1vdmUoJ2xvdycpOwogICQoJ2dhbWUnKS5jbGFzc0xpc3QuYWRkKCdvbicpO2RvY3VtZW50LmJvZHkuc3R5bGUub3ZlcmZsb3c9J2hpZGRlbic7CiAgY2xlYXJJbnRlcnZhbCh0aW1lcik7dGltZXI9c2V0SW50ZXJ2YWwodGljaywxMDAwKTtyZW5kZXIoKTtpbnRybygwKTsKfQpmdW5jdGlvbiBmaW5pc2god2luLHdoeSl7CiAgY2xlYXJJbnRlcnZhbCh0aW1lcik7b3Zlcj10cnVlOwogICQoJ2VpJykudGV4dENvbnRlbnQ9d2luPyfwn4+GJzon8J+SlCc7CiAgJCgnZWgnKS50ZXh0Q29udGVudD13aW4/J1lvdSBlc2NhcGVkISc6J1RoZSBjYXQgd29uLic7CiAgJCgnZXQnKS50ZXh0Q29udGVudD13aW4/J1dlbGwgcGxheWVkLCAnK3BsYXllcisnLiBUaGUgZmluYWwgZG9vciBvcGVucyB3aXRoICcrZm10KE1hdGgubWF4KHRpbWUsMCkpKycgbGVmdCBvbiB0aGUgY2xvY2suJzood2h5PT09J3RpbWUnPydUaW1lIHJhbiBvdXQnOidZb3UgcmFuIG91dCBvZiBoZWFydHMnKSsnIHdpdGggJytmb3VuZC5sZW5ndGgrJyBvZiA0IGxvY2tzIG9wZW4sICcrcGxheWVyKycuIFRyeSBhZ2Fpbi4nOwogICQoJ2V4JykudGV4dENvbnRlbnQ9eHArJyBYUCBlYXJuZWQnOyQoJ2FnYWluJykudGV4dENvbnRlbnQ9d2luPydQbGF5IGFnYWluIOKGlyc6J1RyeSBhZ2FpbiDihpcnOwogICQoJ2VuZCcpLmNsYXNzTGlzdC5hZGQoJ29uJyk7d2luP3NmeC53aW4oKTpzZngubG9zZSgpOwp9CmZ1bmN0aW9uIHN1Ym1pdCgpewogIGlmKG92ZXJ8fGJ1c3l8fHRpbWU8PTApcmV0dXJuOwogIGNvbnN0IHY9JCgnaW4nKS52YWx1ZS50cmltKCk7aWYoIXYpcmV0dXJuOwogIGNvbnN0IGlyPSQoJ2lyJyk7aXIuY2xhc3NOYW1lPSdpbnJvdyc7dm9pZCBpci5vZmZzZXRXaWR0aDsKICBpZihTW2ldLm9rKHYpKXsKICAgIHNmeC5vaygpO2NhdChHT09EKTtpci5jbGFzc0xpc3QuYWRkKCdnb29kJyk7eHArPTIwOyQoJ2dvJykuZGlzYWJsZWQ9dHJ1ZTsKICAgIGNvbnN0IHg9JCgneHAnKTt4LmNsYXNzTGlzdC5yZW1vdmUoJ2dvJyk7dm9pZCB4Lm9mZnNldFdpZHRoO3guY2xhc3NMaXN0LmFkZCgnZ28nKTskKCdzdCcpLnRleHRDb250ZW50PXhwKycgWFAgZWFybmVkJzsKICAgIGlmKGk9PT1TLmxlbmd0aC0xKXtzYXkoJ0NvcnJlY3QhIDk2IMO3IDQgPSAyNC4gRmluYWwgZG9vciB1bmxvY2tlZC4nLCdvaycpO292ZXI9dHJ1ZTtzZXRUaW1lb3V0KCgpPT5maW5pc2godHJ1ZSksMTEwMCk7cmV0dXJufQogICAgZm91bmQucHVzaChDT0RFW2ldKTtkcmF3U2xvdHMoKTtzYXkoJ0NvcnJlY3QuIERpZ2l0ICcrKGkrMSkrJyBpcyAnK0NPREVbaV0rJy4nLCdvaycpOwogICAgYnVzeT10cnVlO3NldFRpbWVvdXQoKCk9PntpKys7cmVuZGVyKCk7aW50cm8oaSl9LDE2MDApOwogIH1lbHNlewogICAgc2Z4LmJhZCgpO2NhdChCQUQpO2lyLmNsYXNzTGlzdC5hZGQoJ2JhZCcpO2hlYXJ0cy0tO2RyYXdIZWFydHModHJ1ZSk7CiAgICBzYXkoJ05vdCBxdWl0ZS4gQ2hlY2sgeW91ciB3b3JraW5nIGFuZCB0cnkgYWdhaW4uIFlvdSBsb3N0IGEgaGVhcnQuJyk7CiAgICBpZihoZWFydHM8PTApe292ZXI9dHJ1ZTtzZXRUaW1lb3V0KCgpPT5maW5pc2goZmFsc2UsJ2hlYXJ0cycpLDEwMDApfQogIH0KfQpjb25zdCBvcGVuV2hvPSgpPT57JCgnd2hvJykuY2xhc3NMaXN0LmFkZCgnb24nKTskKCdwbicpLmZvY3VzKCl9OwokKCdzdGFydCcpLm9uY2xpY2s9JCgnc3RhcnQyJykub25jbGljaz1vcGVuV2hvOwpmdW5jdGlvbiBnb0Z1bGwoKXt0cnl7Y29uc3QgZD1kb2N1bWVudC5kb2N1bWVudEVsZW1lbnQscj0oZC5yZXF1ZXN0RnVsbHNjcmVlbnx8ZC53ZWJraXRSZXF1ZXN0RnVsbHNjcmVlbnx8KCgpPT4wKSkuY2FsbChkKTtpZihyJiZyLmNhdGNoKXIuY2F0Y2goKCk9Pnt9KX1jYXRjaCh4KXt9fQpmdW5jdGlvbiBlbnRlcigpewogIGNvbnN0IG49JCgncG4nKS52YWx1ZS50cmltKCk7CiAgaWYoIW4peyQoJ3BuJykuc3R5bGUuYm9yZGVyQ29sb3I9J3ZhcigtLXJlZCknOyQoJ3BuJykuZm9jdXMoKTtyZXR1cm59CiAgcGxheWVyPW47Y29uc3QgYz0kKCdwYycpLnZhbHVlLnRyaW0oKTtpZihjKXBsYXllcis9JyAoJytjKycpJzsKICAkKCd3aG8nKS5jbGFzc0xpc3QucmVtb3ZlKCdvbicpO2dvRnVsbCgpOwogIHRyeXtiZWdpbigpfWNhdGNoKGVycil7Y29uc29sZS5lcnJvcihlcnIpOyQoJ2dhbWUnKS5jbGFzc0xpc3QuYWRkKCdvbicpO2RvY3VtZW50LmJvZHkuc3R5bGUub3ZlcmZsb3c9J2hpZGRlbid9Cn0KJCgnd2dvJykub25jbGljaz1lbnRlcjsKWydwbicsJ3BjJ10uZm9yRWFjaChpZD0+JChpZCkuYWRkRXZlbnRMaXN0ZW5lcigna2V5ZG93bicsZT0+e2lmKGUua2V5PT09J0VudGVyJyl7ZS5wcmV2ZW50RGVmYXVsdCgpO2VudGVyKCl9fSkpOwpkb2N1bWVudC5hZGRFdmVudExpc3RlbmVyKCdrZXlkb3duJyxlPT57aWYoZS5rZXk9PT0nRXNjYXBlJykkKCd3aG8nKS5jbGFzc0xpc3QucmVtb3ZlKCdvbicpfSk7CiQoJ2FnYWluJykub25jbGljaz1iZWdpbjskKCdnbycpLm9uY2xpY2s9c3VibWl0OwokKCdpbicpLmFkZEV2ZW50TGlzdGVuZXIoJ2tleWRvd24nLGU9PntpZihlLmtleT09PSdFbnRlcicpc3VibWl0KCl9KTsKJCgnaGludCcpLm9uY2xpY2s9KCk9PntpZihoaW50ZWR8fGJ1c3l8fG92ZXIpcmV0dXJuO2hpbnRlZD10cnVlO3RpbWU9TWF0aC5tYXgodGltZS0yMCwxKTskKCdjbG9jaycpLnRleHRDb250ZW50PWZtdCh0aW1lKTtzYXkoJ0hpbnQ6ICcrU1tpXS5oaW50KTskKCdoaW50JykuZGlzYWJsZWQ9dHJ1ZX07CiQoJ2V4aXQnKS5vbmNsaWNrPSgpPT57Y2xlYXJJbnRlcnZhbCh0aW1lcik7bXVzaWMoZmFsc2UpO3RyeXtpZihkb2N1bWVudC5mdWxsc2NyZWVuRWxlbWVudClkb2N1bWVudC5leGl0RnVsbHNjcmVlbigpLmNhdGNoKCgpPT57fSl9Y2F0Y2goeCl7fSQoJ2VuZCcpLmNsYXNzTGlzdC5yZW1vdmUoJ29uJyk7JCgnaW50cm8nKS5jbGFzc0xpc3QucmVtb3ZlKCdvbicpOyQoJ2dhbWUnKS5jbGFzc0xpc3QucmVtb3ZlKCdvbicpO2RvY3VtZW50LmJvZHkuc3R5bGUub3ZlcmZsb3c9Jyd9OwoKLyogY3JlZGl0cyAqLwpmdW5jdGlvbiBjcmVkaXRzKCl7CiAgJCgnZW5kJykuY2xhc3NMaXN0LnJlbW92ZSgnb24nKTskKCdmaW4nKS5jbGFzc0xpc3QucmVtb3ZlKCdvbicpOyQoJ3N0YXInKS50ZXh0Q29udGVudD0ocGxheWVyP3BsYXllcisnIGFuZCAnOicnKSsnZXZlcnkgc3R1ZGVudCB3aG8gZGFyZWQgdG8gcGxheSc7CiAgY29uc3Qgcj0kKCdyb2xsJyk7ci5zdHlsZS5hbmltYXRpb249J25vbmUnO3ZvaWQgci5vZmZzZXRXaWR0aDtyLnN0eWxlLmFuaW1hdGlvbj0nJzsKICAkKCdjcmVkJykuY2xhc3NMaXN0LmFkZCgnb24nKTttdXNpYyh0cnVlKTsKfQpmdW5jdGlvbiBlbmRDcmVkaXRzKCl7bXVzaWMoZmFsc2UpOyQoJ2ZpbicpLmNsYXNzTGlzdC5hZGQoJ29uJyl9CiQoJ3ZjJykub25jbGljaz1jcmVkaXRzOyQoJ3NraXAnKS5vbmNsaWNrPWVuZENyZWRpdHM7JCgncm9sbCcpLmFkZEV2ZW50TGlzdGVuZXIoJ2FuaW1hdGlvbmVuZCcsZW5kQ3JlZGl0cyk7CiQoJ2hvbWUnKS5vbmNsaWNrPSgpPT57JCgnY3JlZCcpLmNsYXNzTGlzdC5yZW1vdmUoJ29uJyk7JCgnZmluJykuY2xhc3NMaXN0LnJlbW92ZSgnb24nKTskKCdleGl0JykuY2xpY2soKX07Cjwvc2NyaXB0Pgo8L2JvZHk+CjwvaHRtbD4K";
+  const overlay = document.getElementById("escapeEmbed");
+  const frame = document.getElementById("escapeFrame");
+  function openEscape(event) {
+    if (event) event.preventDefault();
+    frame.src = escapeUrl;
+    overlay.classList.add("open");
+    overlay.setAttribute("aria-hidden", "false");
+    document.body.classList.add("escape-open");
+  }
+  function closeEscape() {
+    overlay.classList.remove("open");
+    overlay.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("escape-open");
+    frame.removeAttribute("src");
+  }
+  document.querySelectorAll("[data-open-escape]").forEach(link => {
+    link.addEventListener("click", openEscape);
+  });
+  document.getElementById("closeEscape").addEventListener("click", closeEscape);
+  window.addEventListener("message", event => {
+    if (event.data === "mathking-close-escape") closeEscape();
+  });
+})();
+</script>
+
+</body></html>
